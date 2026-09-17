@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>اختبار درس البدل</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Cairo',Arial,sans-serif;
+    background:#eeeeee;
+    padding-top:75px;
+    line-height:1.8;
+}
+
+/* الهيدر */
+
+.header{
+    position:fixed;
+    top:0;
+    right:0;
+    width:100%;
+    background:#fff;
+    padding:12px 20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    z-index:1000;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+.back-button{
+    border:none;
+    padding:10px 20px;
+    color:#fff;
+    background:#000;
+    border-radius:40px;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.back-button:hover{
+    background:#a0b8a0;
+}
+
+/* العنوان */
+
+h1{
+    text-align:center;
+    background:#bcccbb;
+    border-radius:8px;
+    padding:10px;
+    border:2px solid #112837;
+    margin:20px 10px;
+}
+
+/* المقدمة */
+
+.intro{
+    background:#fff;
+    border:2px solid #112837;
+    border-radius:10px;
+    padding:20px;
+    margin:20px 15px;
+    text-align:center;
+}
+
+.intro p{
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* بيانات الطالب */
+
+.student-box{
+    background:#fff;
+    border:2px solid #112837;
+    border-radius:10px;
+    padding:20px;
+    margin:20px 15px;
+    text-align:center;
+}
+
+.student-box label{
+    display:block;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+#studentName{
+    width:90%;
+    max-width:500px;
+    padding:12px;
+    border:2px solid #112837;
+    border-radius:8px;
+    font-size:17px;
+    text-align:center;
+    outline:none;
+}
+
+/* الأزرار */
+
+button{
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.start-button,
+.finish-button,
+.restart-button,
+.print-button{
+    display:block;
+    margin:20px auto;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#112837;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.start-button:hover,
+.finish-button:hover,
+.restart-button:hover,
+.print-button:hover{
+    background:#147DB7;
+}
+
+/* المؤقت */
+
+#timer{
+    position:fixed;
+    top:12px;
+    left:20px;
+    background:#112837;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:bold;
+    z-index:1001;
+}
+
+#timer.danger{
+    background:#b00020;
+}
+
+/* الأسئلة */
+
+#quiz{
+    display:none;
+}
+
+.question{
+    background:#fff;
+    border:2px solid #112837;
+    border-radius:10px;
+    padding:20px;
+    margin:20px 15px;
+}
+
+.question h3{
+    margin-bottom:15px;
+    color:#112837;
+}
+
+.option{
+    display:block;
+    padding:12px;
+    margin:8px 0;
+    border:2px solid #ccc;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.2s;
+    background:#fafafa;
+}
+
+.option:hover{
+    background:#eef5ef;
+}
+
+.option input{
+    margin-left:8px;
+}
+
+.correct{
+    background:#c8e6c9 !important;
+    border-color:#2e7d32 !important;
+}
+
+.wrong{
+    background:#ffcdd2 !important;
+    border-color:#c62828 !important;
+}
+
+.feedback{
+    margin-top:12px;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+    display:none;
+}
+
+.feedback.correct-feedback{
+    background:#e0f2e1;
+    color:#1b5e20;
+}
+
+.feedback.wrong-feedback{
+    background:#ffebee;
+    color:#b71c1c;
+}
+
+/* النتيجة */
+
+#result{
+    display:none;
+    background:#fff;
+    border:3px solid #112837;
+    border-radius:12px;
+    padding:25px;
+    margin:25px 15px;
+    text-align:center;
+}
+
+#result h2{
+    display:inline-block;
+    background:#e1ebe0;
+    border:2px solid #000;
+    border-radius:8px;
+    padding:8px 20px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:24px;
+    font-weight:bold;
+    margin:10px;
+}
+
+/* الشهادة */
+
+.certificate{
+    display:none;
+    background:#fff;
+    border:8px double #112837;
+    padding:35px 20px;
+    margin:25px 15px;
+    text-align:center;
+}
+
+.certificate h2{
+    color:#112837;
+    margin-bottom:20px;
+}
+
+.certificate .student{
+    font-size:28px;
+    font-weight:bold;
+    color:#147DB7;
+    margin:15px;
+}
+
+.certificate .certificate-text{
+    font-size:18px;
+}
+
+.certificate .certificate-score{
+    font-size:24px;
+    font-weight:bold;
+    margin:15px;
+}
+
+/* الأخطاء */
+
+.errors{
+    background:#fff3f3;
+    border:2px solid #b71c1c;
+    border-radius:10px;
+    padding:20px;
+    margin-top:20px;
+    text-align:right;
+}
+
+.errors h3{
+    color:#b71c1c;
+    margin-bottom:10px;
+}
+
+.errors ul{
+    padding-right:25px;
+}
+
+footer{
+    background:#112837;
+    color:#fff;
+    text-align:center;
+    padding:15px 10px;
+    margin-top:40px;
+    font-size:15px;
+    font-weight:bold;
+    border-top:3px solid #147DB7;
+}
+
+/* الطباعة */
+
+@media print{
+
+    .header,
+    #timer,
+    .finish-button,
+    .restart-button,
+    .print-button,
+    .student-box,
+    .intro,
+    .question,
+    .errors,
+    footer{
+        display:none !important;
+    }
+
+    body{
+        padding:0;
+        background:#fff;
+    }
+
+    .certificate{
+        display:block !important;
+        border:8px double #112837;
+        margin:50px;
+    }
+
+}
+
+/* الهاتف */
+
+@media(max-width:600px){
+
+    h1{
+        font-size:23px;
+    }
+
+    .question{
+        padding:15px;
+    }
+
+    .question h3{
+        font-size:17px;
+    }
+
+    .option{
+        font-size:15px;
+    }
+
+    #timer{
+        left:10px;
+        top:12px;
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- الهيدر -->
+
+<div class="header">
+    <a href="eln7w.html" class="back-button">رجوع</a>
+</div>
+
+<div id="timer">15:00</div>
+
+<h1>اختبار درس البدل</h1>
+
+<div class="intro">
+
+    <p>
+        اختبر فهمك لدرس البدل بأنواعه (مطابق - بعض من كل - اشتمال) من خلال أسئلة تطبيقية متدرجة.
+    </p>
+
+    <p>
+        عدد الأسئلة: 21 سؤالًا | الزمن: 15 دقيقة
+    </p>
+
+    <p>
+        الدرجة النهائية: 21 | النجاح من 15 درجة
+    </p>
+
+</div>
+
+<div class="student-box">
+
+    <label for="studentName">
+        اكتب اسمك قبل بدء الاختبار
+    </label>
+
+    <input
+        type="text"
+        id="studentName"
+        placeholder="اسم الطالب"
+        autocomplete="off"
+    >
+
+    <button class="start-button" onclick="startExam()">
+        بدء الاختبار
+    </button>
+
+</div>
+
+<div id="quiz">
+
+<!-- السؤال 1 -->
+<div class="question" data-answer="b">
+<h3>1- ما التعريف الصحيح للبدل في النحو؟</h3>
+
+<label class="option"><input type="radio" name="q1" value="a"> تابع يفسر صفة الاسم الذي قبله دون مقصود بذاته</label>
+<label class="option"><input type="radio" name="q1" value="b"> تابع مقصود بالحكم يمهد له بذكر اسم قبله يسمى المبدل منه</label>
+<label class="option"><input type="radio" name="q1" value="c"> اسم مرفوع يقع دائمًا بعد أفعال المدح والذم</label>
+<label class="option"><input type="radio" name="q1" value="d"> كلمة تأتي لإزالة الإبهام عن الجملة الاسمية فقط</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 2 -->
+<div class="question" data-answer="d">
+<h3>2- في جملة «أعجبني الفاروقُ عمرُ بصلابته»، ما إعراب كلمة «عمر»؟</h3>
+
+<label class="option"><input type="radio" name="q2" value="a"> توكيد لفظي مرفوع بالضمة</label>
+<label class="option"><input type="radio" name="q2" value="b"> نعت مرفوع بالضمة</label>
+<label class="option"><input type="radio" name="q2" value="c"> مفعول به منصوب بالفتحة</label>
+<label class="option"><input type="radio" name="q2" value="d"> بدل مطابق مرفوع وعلامة رفعه الضمة</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 3 -->
+<div class="question" data-answer="a">
+<h3>3- أي الجمل التالية تحتوي على بدل «بعض من كل»؟</h3>
+
+<label class="option"><input type="radio" name="q3" value="a"> قرأت الكتابَ نصفَه.</label>
+<label class="option"><input type="radio" name="q3" value="b"> أدهشني المعلمُ شرحُه.</label>
+<label class="option"><input type="radio" name="q3" value="c"> جاء الأستاذُ أحمدُ.</label>
+<label class="option"><input type="radio" name="q3" value="d"> أحببت المدينةَ هواءَها.</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 4 -->
+<div class="question" data-answer="c">
+<h3>4- ما نوع البدل في جملة: «سمعت العندليبَ شدوَه»؟</h3>
+
+<label class="option"><input type="radio" name="q4" value="a"> بدل مطابق (كل من كل)</label>
+<label class="option"><input type="radio" name="q4" value="b"> بدل بعض من كل</label>
+<label class="option"><input type="radio" name="q4" value="c"> بدل اشتمال</label>
+<label class="option"><input type="radio" name="q4" value="d"> ليس بدلًا بل مفعول به ثانٍ</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 5 -->
+<div class="question" data-answer="b">
+<h3>5- ما الشرط الأساسي الواجب توافره في بدل البعض من كل وبدل الاشتمال؟</h3>
+
+<label class="option"><input type="radio" name="q5" value="a"> أن يكونا اسمي علم معرفين بأل</label>
+<label class="option"><input type="radio" name="q5" value="b"> أن يتصلا بضمير يعود على المبدل منه ويطابقه</label>
+<label class="option"><input type="radio" name="q5" value="c"> أن يأتيا مجرورين دائمًا بالكسرة</label>
+<label class="option"><input type="radio" name="q5" value="d"> أن يتقدما على المبدل منه في الجملة</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 6 -->
+<div class="question" data-answer="d">
+<h3>6- «هذا الطالبُ مجتهدٌ» - ما إعراب كلمة «الطالب»؟</h3>
+
+<label class="option"><input type="radio" name="q6" value="a"> خبر المبتدأ مرفوع بالضمة</label>
+<label class="option"><input type="radio" name="q6" value="b"> نعت مرفوع بالضمة</label>
+<label class="option"><input type="radio" name="q6" value="c"> منادى مبني على الضم</label>
+<label class="option"><input type="radio" name="q6" value="d"> بدل مطابق مرفوع بالضمة</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 7 -->
+<div class="question" data-answer="a">
+<h3>7- «قال ذلك الطالبُ» vs «قال ذلك الطالبِ» - متى تُعرب الكلمة المعرفة بعد اسم الإشارة بدلًا؟</h3>
+
+<label class="option"><input type="radio" name="q7" value="a"> إذا كان اسم الإشارة يشير إليها وكانت مشتقة أو جامدة مكملة للمعنى كبدل</label>
+<label class="option"><input type="radio" name="q7" value="b"> إذا كانت نكرة فقط</label>
+<label class="option"><input type="radio" name="q7" value="c"> إذا سبقت بحرف جر دائمًا</label>
+<label class="option"><input type="radio" name="q7" value="d"> لا تُعرب بدلًا بأي حال من الأحوال</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 8 -->
+<div class="question" data-answer="c">
+<h3>8- الضبط الصحيح لكلمة (معظم) في جملة: «سهرت الليلَ معظم...»:</h3>
+
+<label class="option"><input type="radio" name="q8" value="a"> معظمُه (بالضم)</label>
+<label class="option"><input type="radio" name="q8" value="b"> معظمِه (بالكسر)</label>
+<label class="option"><input type="radio" name="q8" value="c"> معظمَه (بالفتح)</label>
+<label class="option"><input type="radio" name="q8" value="d"> معظمٌ (بالتنويين)</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 9 -->
+<div class="question" data-answer="b">
+<h3>9- ما الفارق الجوهري بين بدل «البعض من كل» وبدل «الاشتمال»؟</h3>
+
+<label class="option"><input type="radio" name="q9" value="a"> بدل الاشتمال يكون ماديًا ملموسًا، والبعض من كل يكون معنويًا</label>
+<label class="option"><input type="radio" name="q9" value="b"> بدل البعض من كل يكون جزءًا ماديًا حقيقيًا، بينما الاشتمال مما يشتمل عليه المبدل منه معنويًا</label>
+<label class="option"><input type="radio" name="q9" value="c"> لا يوجد أي فارق بينهما في المعنى أو الإعراب</label>
+<label class="option"><input type="radio" name="q9" value="d"> بدل البعض من كل لا يحتاج لضمير بخلاف بدل الاشتمال</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 10 -->
+<div class="question" data-answer="a">
+<h3>10- «سررت من الخادمِ أمانتِه» - ما إعراب «أمانته»؟</h3>
+
+<label class="option"><input type="radio" name="q10" value="a"> بدل اشتمال مجرور وعلامة جره الكسرة</label>
+<label class="option"><input type="radio" name="q10" value="b"> بدل بعض من كل مجرور بالكسرة</label>
+<label class="option"><input type="radio" name="q10" value="c"> تمييز منصوب بالفتحة</label>
+<label class="option"><input type="radio" name="q10" value="d"> مضاف إليه مجرور بالكسرة</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 11 -->
+<div class="question" data-answer="d">
+<h3>11- عند تحويل التمييز إلى بدل اشتمال في جملة «أعجبني الطالبُ خلقًا»، تصبح الجملة:</h3>
+
+<label class="option"><input type="radio" name="q11" value="a"> أعجبني خلقُ الطالبِ.</label>
+<label class="option"><input type="radio" name="q11" value="b"> أعجبني الطالبُ الخلقَ.</label>
+<label class="option"><input type="radio" name="q11" value="c"> أعجبني طالبٌ خلقُه.</label>
+<label class="option"><input type="radio" name="q11" value="d"> أعجبني الطالبُ خلقُه.</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 12 -->
+<div class="question" data-answer="c">
+<h3>12- «اتقوا الله في الضعيفين: المرأةِ واليتيمِ» - كلمة «المرأة» تُعرب:</h3>
+
+<label class="option"><input type="radio" name="q12" value="a"> بدل مطابق مجرور بالكسرة</label>
+<label class="option"><input type="radio" name="q12" value="b"> معطوف مجرور بالكسرة</label>
+<label class="option"><input type="radio" name="q12" value="c"> بدل بعض من كل (تفصيل بعد إجمال) مجرور بالكسرة</label>
+<label class="option"><input type="radio" name="q12" value="d"> خبر لمبتدأ محذوف</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 13 -->
+<div class="question" data-answer="b">
+<h3>13- أي من الجمل التالية تشتمل على بدل مطابق؟</h3>
+
+<label class="option"><input type="radio" name="q13" value="a"> أكلت الرغيفَ ثلثَه.</label>
+<label class="option"><input type="radio" name="q13" value="b"> إن العالمَ زويلًا فخرٌ لمصر.</label>
+<label class="option"><input type="radio" name="q13" value="c"> أعجبني البيتُ حدشقتُه.</label>
+<label class="option"><input type="radio" name="q13" value="d"> نفعني الطبيبُ دواؤُه.</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 14 -->
+<div class="question" data-answer="a">
+<h3>14- إذا تقدم البدل المطابق على المبدل منه (مثل: «جاء محمدٌ العالمُ» بدلاً من «جاء العالمُ محمدٌ»)، يُعرب الثاني:</h3>
+
+<label class="option"><input type="radio" name="q14" value="a"> نعتًا (صفة)</label>
+<label class="option"><input type="radio" name="q14" value="b"> بدلًا أيضًا</label>
+<label class="option"><input type="radio" name="q14" value="c"> توكيدًا لفظيًا</label>
+<label class="option"><input type="radio" name="q14" value="d"> مفعولًا به</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 15 -->
+<div class="question" data-answer="c">
+<h3>15- «أعجبني في الطالبِ خلقُه» - ما إعراب كلمة «خلقه» في هذه الجملة؟</h3>
+
+<label class="option"><input type="radio" name="q15" value="a"> بدل اشتمال مرفوع بالضمة</label>
+<label class="option"><input type="radio" name="q15" value="b"> بدل بعض من كل مرفوع بالضمة</label>
+<label class="option"><input type="radio" name="q15" value="c"> فاعل مرفوع بالضمة (لأن الجملة استوفت المجرور وبحاجة لفاعل)</label>
+<label class="option"><input type="radio" name="q15" value="d"> نائب فاعل مرفوع بالضمة</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 16 -->
+<div class="question" data-answer="d">
+<h3>16- الرسم الإملائي الصحيح للبدل المرفوع من كلمة (بهاء):</h3>
+
+<label class="option"><input type="radio" name="q16" value="a"> أعجبني البحرُ بهاءَه</label>
+<label class="option"><input type="radio" name="q16" value="b"> أعجبني البحرُ بهاءِه</label>
+<label class="option"><input type="radio" name="q16" value="c"> أعجبني البحرُ بهاءً</label>
+<label class="option"><input type="radio" name="q16" value="d"> أعجبني البحرُ بهاؤُه</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 17 -->
+<div class="question" data-answer="b">
+<h3>17- الرسم الإملائي الصحيح للبدل المنصوب من كلمة (بهاء):</h3>
+
+<label class="option"><input type="radio" name="q17" value="a"> شاهدت البحرَ بهاؤُه</label>
+<label class="option"><input type="radio" name="q17" value="b"> شاهدت البحرَ بهاءَه</label>
+<label class="option"><input type="radio" name="q17" value="c"> شاهدت البحرَ بهاءِه</label>
+<label class="option"><input type="radio" name="q17" value="d"> شاهدت البحرَ بهاءٍ</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 18 -->
+<div class="question" data-answer="a">
+<h3>18- «يا هذا الطالبُ اقترب» - ما إعراب «الطالب» إذا سُبق اسم الإشارة بمنادى؟</h3>
+
+<label class="option"><input type="radio" name="q18" value="a"> نعت مرفوع (وليس بدلًا)</label>
+<label class="option"><input type="radio" name="q18" value="b"> بدل مطابق مرفوع</label>
+<label class="option"><input type="radio" name="q18" value="c"> منادى ثانٍ منصوب</label>
+<label class="option"><input type="radio" name="q18" value="d"> مضاف إليه مجرور</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 19 -->
+<div class="question" data-answer="c">
+<h3>19- «بنينا الشرفَ شرفَ آ بائنا» - كلمة «شرفَ» الثانية تُعرب:</h3>
+
+<label class="option"><input type="radio" name="q19" value="a"> توكيدًا لفظيًا منصوبًا</label>
+<label class="option"><input type="radio" name="q19" value="b"> مفعولاً به ثانياً</label>
+<label class="option"><input type="radio" name="q19" value="c"> بدل مطابق منصوب بالفتحة (تكرار للتمحيص والإيضاح)</label>
+<label class="option"><input type="radio" name="q19" value="d"> نعتًا منصوبًا بالفتحة</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 20 -->
+<div class="question" data-answer="d">
+<h3>20- الجملة التي تحتوي على خطأ إعرابي في البدل هي:</h3>
+
+<label class="option"><input type="radio" name="q20" value="a"> أعجبني القائدُ شجاعتُه.</label>
+<label class="option"><input type="radio" name="q20" value="b"> قرأت القصةَ نصفَها.</label>
+<label class="option"><input type="radio" name="q20" value="c"> مررت بأخيك عليٍّ.</label>
+<label class="option"><input type="radio" name="q20" value="d"> استمعت إلى الشيخِ عبدُ الباسطِ.</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<!-- السؤال 21 -->
+<div class="question" data-answer="a">
+<h3>21- «أعجبتني الحديقةُ أزهارُها» vs «أعجبتني الحديقةُ رائحتُها» - نوع البدل في الجملتين على التوالي:</h3>
+
+<label class="option"><input type="radio" name="q21" value="a"> بعض من كل - اشتمال</label>
+<label class="option"><input type="radio" name="q21" value="b"> اشتمال - بعض من كل</label>
+<label class="option"><input type="radio" name="q21" value="c"> مطابق - اشتمال</label>
+<label class="option"><input type="radio" name="q21" value="d"> بعض من كل - مطابق</label>
+
+<div class="feedback"></div>
+</div>
+
+
+<button class="finish-button" onclick="finishExam()">
+إنهاء الاختبار
+</button>
+
+</div>
+
+
+<!-- النتيجة -->
+
+<div id="result">
+
+<h2>نتيجة الاختبار</h2>
+
+<div class="score" id="score"></div>
+
+<div id="resultMessage"></div>
+
+<div id="errors"></div>
+
+</div>
+
+
+<!-- الشهادة -->
+
+<div class="certificate" id="certificate">
+
+<h2>شهادة اجتياز اختبار درس البدل</h2>
+
+<p class="certificate-text">
+تشهد منصة ED التعليمية بأن الطالب
+</p>
+
+<div class="student" id="certificateName"></div>
+
+<p class="certificate-text">
+قد اجتاز اختبار درس البدل بنجاح
+</p>
+
+<div class="certificate-score" id="certificateScore"></div>
+
+<p>
+مع تمنياتنا له بمزيد من التفوق والنجاح
+</p>
+
+<button class="print-button" onclick="window.print()">
+طباعة الشهادة
+</button>
+
+</div>
+
+
+<button
+    class="restart-button"
+    id="restartButton"
+    style="display:none;"
+    onclick="location.reload()"
+>
+إعادة الاختبار
+</button>
+
+
+<footer>
+جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
+</footer>
+
+
+<script>
+
+let timerInterval;
+let timeLeft = 15 * 60;
+let score = 0;
+let answered = 0;
+let errors = [];
+
+const answerText = {
+    a:"أ",
+    b:"ب",
+    c:"ج",
+    d:"د"
+};
+
+
+/* بدء الاختبار */
+
+function startExam(){
+
+    const name = document.getElementById("studentName").value.trim();
+
+    if(!name){
+        alert("من فضلك اكتب اسم الطالب أولًا.");
+        return;
+    }
+
+    document.querySelector(".student-box").style.display="none";
+    document.querySelector(".intro").style.display="none";
+    document.getElementById("quiz").style.display="block";
+
+    startTimer();
+
+    document.querySelectorAll(".question").forEach((question,index)=>{
+
+        const options = question.querySelectorAll("input");
+
+        options.forEach(input=>{
+
+            input.addEventListener("change",function(){
+
+                if(question.dataset.done === "true"){
+                    return;
+                }
+
+                question.dataset.done="true";
+                answered++;
+
+                options.forEach(opt=>{
+                    opt.disabled=true;
+                });
+
+                const selected=this.value;
+                const correct=question.dataset.answer;
+
+                const labels=question.querySelectorAll(".option");
+                const feedback=question.querySelector(".feedback");
+
+                labels.forEach(label=>{
+
+                    const input=label.querySelector("input");
+
+                    if(input.value===correct){
+                        label.classList.add("correct");
+                    }
+
+                    if(input.value===selected && selected!==correct){
+                        label.classList.add("wrong");
+                    }
+
+                });
+
+                if(selected===correct){
+
+                    score++;
+
+                    feedback.textContent="إجابة صحيحة ✓";
+                    feedback.className="feedback correct-feedback";
+                    feedback.style.display="block";
+
+                }else{
+
+                    feedback.textContent=
+                    "إجابة غير صحيحة ✗ | الإجابة الصحيحة: "+
+                    answerText[correct];
+
+                    feedback.className="feedback wrong-feedback";
+                    feedback.style.display="block";
+
+                    errors.push({
+                        number:index+1,
+                        selected:selected,
+                        correct:correct
+                    });
+
+                }
+
+            });
+
+        });
+
+    });
+
+}
+
+
+/* المؤقت */
+
+function startTimer(){
+
+    const timer=document.getElementById("timer");
+
+    timerInterval=setInterval(()=>{
+
+        let minutes=Math.floor(timeLeft/60);
+        let seconds=timeLeft%60;
+
+        timer.textContent=
+        String(minutes).padStart(2,"0")+":"+
+        String(seconds).padStart(2,"0");
+
+        if(timeLeft<=60){
+            timer.classList.add("danger");
+        }
+
+        if(timeLeft<=0){
+
+            clearInterval(timerInterval);
+
+            alert("انتهى الوقت.");
+            finishExam();
+
+        }
+
+        timeLeft--;
+
+    },1000);
+
+}
+
+
+/* إنهاء الاختبار */
+
+function finishExam(){
+
+    clearInterval(timerInterval);
+
+    document.getElementById("quiz").style.display="none";
+
+    const result=document.getElementById("result");
+
+    result.style.display="block";
+
+    document.getElementById("score").textContent=
+    "درجتك: "+score+" / 21";
+
+    const message=document.getElementById("resultMessage");
+
+    if(score>=15){
+
+        message.innerHTML=
+        "<h3 style='color:#1b5e20;'>مبروك! لقد اجتزت الاختبار بنجاح.</h3>";
+
+        const name=escapeHTML(
+            document.getElementById("studentName").value.trim()
+        );
+
+        document.getElementById("certificateName").textContent=name;
+
+        document.getElementById("certificateScore").textContent=
+        "الدرجة: "+score+" / 21";
+
+        document.getElementById("certificate").style.display="block";
+
+    }else{
+
+        message.innerHTML=
+        "<h3 style='color:#b71c1c;'>لم تجتز الاختبار هذه المرة.</h3>"+
+        "<p>تحتاج إلى 15 درجة على الأقل للنجاح.</p>";
+
+    }
+
+    showErrors();
+
+    document.getElementById("restartButton").style.display="block";
+
+}
+
+
+/* عرض الأخطاء */
+
+function showErrors(){
+
+    const errorsBox=document.getElementById("errors");
+
+    if(errors.length===0){
+
+        errorsBox.innerHTML=
+        "<h3 style='color:#1b5e20;'>أحسنت! لم تخطئ في أي سؤال.</h3>";
+
+        return;
+
+    }
+
+    let html="<div class='errors'>";
+    html+="<h3>مراجعة الأخطاء</h3>";
+    html+="<ul>";
+
+    errors.forEach(error=>{
+
+        html+=
+        "<li>السؤال "+error.number+
+        " | إجابتك: "+answerText[error.selected]+
+        " | الصحيحة: "+answerText[error.correct]+
+        "</li>";
+
+    });
+
+    html+="</ul>";
+    html+="</div>";
+
+    errorsBox.innerHTML=html;
+
+}
+
+
+/* حماية اسم الطالب من HTML */
+
+function escapeHTML(str){
+
+    return str.replace(/[&<>"']/g,function(m){
+
+        return {
+            "&":"&amp;",
+            "<":"&lt;",
+            ">":"&gt;",
+            '"':"&quot;",
+            "'":"&#039;"
+        }[m];
+
+    });
+
+}
+
+
+/* منع النسخ */
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("copy",e=>e.preventDefault());
+document.addEventListener("cut",e=>e.preventDefault());
+document.addEventListener("selectstart",e=>e.preventDefault());
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دروس النحو</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 100px;
+    font-family: Arial, sans-serif;
+    background: #eeeeee;
+    color: #000000;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* =========================
+   الهيدر
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 75px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+
+.header-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #112837;
+}
+
+/* زر الرجوع */
+
+.my_work-button {
+    border: none;
+    padding: 10px 22px;
+    color: #eeeeee;
+    background-color: #000000;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.my_work-button:hover {
+    background-color: #eeeeee;
+    color: #000000;
+    box-shadow: 0 0 15px #000000;
+    transform: scale(1.05);
+}
+
+/* =========================
+   العنوان الرئيسي
+========================= */
+
+.main-title {
+    background: #bcccbb;
+    color: #112837;
+    border: 2px solid #112837;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto 35px;
+    padding: 18px 15px;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   خط فاصل
+========================= */
+
+hr {
+    width: 90%;
+    max-width: 800px;
+    margin: 10px auto 30px;
+    border: 0;
+    border-top: 2px solid #112837;
+}
+
+/* =========================
+   صندوق الدروس
+========================= */
+
+.lessons-container {
+    width: 92%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* =========================
+   بطاقة الدرس
+========================= */
+
+.lesson-card {
+    background: #ffffff;
+    border-right: 6px solid #147DB7;
+    border-radius: 15px;
+    padding: 25px 20px;
+    margin: 22px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.18);
+}
+
+.lesson-number {
+    display: inline-block;
+    background: #112837;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.lesson-card h2 {
+    margin: 5px 0 12px;
+    background: #bcccbb;
+    color: #112837;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 23px;
+}
+
+.lesson-card p {
+    font-size: 16px;
+    margin: 10px 0 18px;
+}
+
+/* =========================
+   أزرار الدروس
+========================= */
+
+.lesson-button {
+    display: inline-block;
+    padding: 13px 32px;
+    background: #000000;
+    color: #eeeeee;
+    border: 2px solid #000000;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.lesson-button:hover {
+    background: #eeeeee;
+    color: #000000;
+    box-shadow: 0 0 20px #000000;
+    transform: scale(1.05);
+}
+
+/* =========================
+   صندوق الملاحظة
+========================= */
+
+.note {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff3cd;
+    border-right: 5px solid #d6a800;
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* =========================
+   الفوتر
+========================= */
+
+footer {
+    background: #112837;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    border-top: 3px solid #147DB7;
+}
+
+/* =========================
+   الموبايل
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 95px;
+    }
+
+    .header {
+        height: 75px;
+        padding: 10px 12px;
+    }
+
+    .header-title {
+        font-size: 18px;
+    }
+
+    .my_work-button {
+        padding: 9px 17px;
+        font-size: 14px;
+    }
+
+    .main-title {
+        width: 94%;
+        font-size: 24px;
+        padding: 14px 10px;
+        margin-top: 15px;
+    }
+
+    .lesson-card {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .lesson-card h2 {
+        font-size: 20px;
+    }
+
+    .lesson-card p {
+        font-size: 15px;
+    }
+
+    .lesson-button {
+        width: 90%;
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+
+    .note {
+        width: 92%;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 14px 8px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     الهيدر
+========================= -->
+
+<header class="header">
+
+    <div class="header-title">
+        دروس النحو
+    </div>
+
+    <a href="index.html" class="my_work-button">
+        رجوع
+    </a>
+
+</header>
+
+
+<!-- =========================
+     العنوان
+========================= -->
+
+<h1 class="main-title">
+    دروس النحو
+</h1>
+
+<hr>
+
+
+<!-- =========================
+     الدروس
+========================= -->
+
+<div class="lessons-container">
+
+
+    <!-- الدرس الأول -->
+
+    <div class="lesson-card">
+
+        <span class="lesson-number">
+            الدرس الأول
+        </span>
+
+        <h2>
+            الأسماء الخمسة
+        </h2>
+
+        <p>
+            تعلّم قواعد الأسماء الخمسة وإعرابها مع الأمثلة والتطبيقات.
+        </p>
+
+        <a href="Five-name.html" class="lesson-button">
+            دخول إلى الدرس
+        </a>
+
+    </div>
+
+
+    <!-- الدرس الثاني -->
+
+    <div class="lesson-card">
+
+        <span class="lesson-number">
+            الدرس الثاني
+        </span>
+
+        <h2>
+            الممنوع من الصرف
+        </h2>
+
+        <p>
+            تعلّم الممنوع من الصرف وأسباب منعه من الصرف وطريقة إعرابه.
+        </p>
+
+        <a href="Mmno3.html" class="lesson-button">
+            دخول إلى الدرس
+        </a>
+
+    </div>
+
+
+    <!-- الدرس الثالث -->
+
+    <div class="lesson-card">
+
+        <span class="lesson-number">
+            الدرس الثالث
+        </span>
+
+        <h2>
+            النعت
+        </h2>
+
+        <p>
+            تعلّم درس النعت وأحكامه وعلاقته بالمنعوت مع أمثلة تطبيقية.
+        </p>
+
+        <a href="na3t.html" class="lesson-button">
+            دخول إلى الدرس
+        </a>
+
+    </div>
+
+
+    <!-- الدرس الرابع -->
+
+    <div class="lesson-card">
+
+        <span class="lesson-number">
+            الدرس الرابع
+        </span>
+
+        <h2>
+            البدل
+        </h2>
+
+        <p>
+            تعلّم درس البدل وأنواعه وإعرابه بطريقة ممتعة وبسيطة مع الأمثلة.
+        </p>
+
+        <a href="badal.html" class="lesson-button">
+            دخول إلى الدرس
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================
+     ملاحظة
+========================= -->
+
+<div class="note">
+
+    اختر الدرس الذي تريد مراجعته وابدأ التعلم و الباقي قيد التطوير.
+
+</div>
+
+
+<!-- =========================
+     الفوتر
+========================= -->
+
+<footer>
+    جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
+</footer>
+
+
+</body>
+</html>

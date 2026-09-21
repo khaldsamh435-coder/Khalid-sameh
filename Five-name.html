@@ -6,7 +6,319 @@
 
 <title>اختبار الأسماء الخمسة</title>
 
+<style><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>الأسماء الخمسة</title>
+
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', Arial, sans-serif;
+    padding-top: 70px; /* مساحة للهيدر الثابت */
+    background-color: #fdfdfd;
+    line-height: 1.8;
+}
+
+/* الهيدر الثابت بعرض الشاشة */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.دخول-button {
+    border: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #000;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.دخول-button:hover {
+    background-color: #a0b8a0;
+}
+
+h1 {
+    text-align: center;
+    background: #bcccbb;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #112837;
+    margin: 20px 10px;
+}
+
+p {
+    margin: 0.8rem 15px;
+    font-size: 1.1rem;
+}
+
+i, q {
+    color: #147DB7;
+    font-weight: bold;
+}
+
+hr {
+    margin: 30px 15px;
+    border: 1px solid #ccc;
+}
+
+table {
+    width: calc(100% - 30px);
+    margin: 20px 15px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 2px solid #112837;
+    padding: 10px 12px;
+    text-align: right;
+    vertical-align: top;
+}
+
+th {
+    background-color: #bcccbb;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.main-header {
+    background-color: #eeeeee;
+    font-size: 1.3rem;
+}
+
+ul {
+    margin: 0 25px 15px 0;
+    padding-right: 20px;
+}
+    
+h2 {
+    display: inline-block; 
+    border: 2px solid #000; 
+    padding: 8px 15px; 
+    border-radius: 8px; 
+    background-color: #e1ebe0; 
+    margin: 20px 15px 15px 0; 
+}
+    
+h3{
+    display: inline-block; 
+    border: 2px solid #000; 
+    padding: 5px 10px; 
+    border-radius: 25px; 
+    background-color: #e1ebe0; 
+    margin: 15px 15px; 
+}    
+    
+html {
+    scroll-behavior: smooth;
+}
+
+.example {
+    background-color: #f0f8ff;
+    border-right: 4px solid #147DB7;
+    padding: 8px;
+    margin: 10px 15px;
+    border-radius: 5px;
+}
+    
+    footer {
+    background: #112837;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    border-top: 3px solid #147DB7;
+}
+    
+    
+/* الحاوية الجديدة للزر الاخير */
+.lost {
+  text-align: center; /* التوسيط */
+  margin: 40px 0 30px 0; /* مسافة فوق وتحت */
+}
+    
+</style>
+</head>
+
+<body>
+
+<!-- الهيدر الثابت -->
+<div class="header">
+    <a href="eln7w.html" class="دخول-button">رجوع</a>
+</div>
+
+<h1>الأسماء الخمسة</h1>
+
+<p>
+هي أسماء معربة لها إعراب خاص. ترفع بالواو وتنصب بالألف وتجر بالياء.
+</p>
+
+<b><q>وهي: أب - أخ - حم - فو - ذو</q></b>
+<hr>
+
+<h2>أولاً: شروط إعراب الأسماء الخمسة بالحروف</h2>
+<ul>
+    <li><b>1- أن تكون مفردة</b> : فلو كانت مثنى أو جمع تعرب إعراب المثنى والجمع</li>
+    <li><b>2- أن تكون مضافة</b> : لابد أن يأتي بعدها مضاف إليه</li>
+    <li><b>3- أن تكون الإضافة لغير ياء المتكلم</b> : فلو أضيفت لياء المتكلم تعرب بحركات مقدرة</li>
+    <li><b>4- أن تكون "ذو" بمعنى صاحب</b> : ويأتي بعدها اسم ظاهر</li>
+</ul>
+
+<hr>
+
+<h1>ثانياً: إعراب الأسماء الخمسة</h1>
+
+<table>
+<tr>
+<th colspan="3" class="main-header">علامات إعراب الأسماء الخمسة</th>
+</tr>
+
+<tr>
+<th>الحالة</th>
+<th>العلامة</th>
+<th>مثال</th>
+</tr>
+
+<tr>
+<td><b>الرفع</b></td>
+<td><b>الواو</b></td>
+<td>جاء <b>أبوك</b></td>
+</tr>
+
+<tr>
+<td><b>النصب</b></td>
+<td><b>الألف</b></td>
+<td>رأيت <b>أخاك</b></td>
+</tr>
+
+<tr>
+<td><b>الجر</b></td>
+<td><b>الياء</b></td>
+<td>سلمت على <b>حميك</b></td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>أمثلة على كل اسم</h2>
+    
+    <br>
+
+<h3>1- أب</h3>
+<div class="example"><b>الرفع:</b> <q>أبوك</q> رجل كريم</div>
+<div class="example"><b>النصب:</b> احترم <q>أباك</q></div>
+<div class="example"><b>الجر:</b> سلمت على <q>أبيك</q></div>
+
+<h3>2- أخ</h3>
+<div class="example"><b>الرفع:</b> <q>أخوك</q> مجتهد</div>
+<div class="example"><b>النصب:</b> زرت <q>أخاك</q> أمس</div>
+<div class="example"><b>الجر:</b> جلست مع <q>أخيك</q></div>
+
+<h3>3- حم</h3>
+<p><b>الحم:</b> والد الزوج أو الزوجة</p>
+<div class="example"><b>الرفع:</b> <q>حموك</q> طيب</div>
+<div class="example"><b>النصب:</b> زرت <q>حماك</q></div>
+<div class="example"><b>الجر:</b> تحدثت مع <q>حميك</q></div>
+
+<h3>4- فو</h3>
+<p><b>الفو:</b> الفم</p>
+<div class="example"><b>الرفع:</b> <q>فوك</q> نظيف</div>
+<div class="example"><b>النصب:</b> اغسل <q>فاك</q></div>
+<div class="example"><b>الجر:</b> تمضمضت من <q>فيك</q></div>
+
+<h3>5- ذو</h3>
+<p><b>ذو:</b> بمعنى صاحب</p>
+<div class="example"><b>الرفع:</b> محمد <q>ذو</q> علم</div>
+<div class="example"><b>النصب:</b> قابلت رجلا <q>ذا</q> خلق</div>
+<div class="example"><b>الجر:</b> سلمت على امرأة <q>ذي</q> مكانة</div>
+
+<hr>
+
+<h1>ثالثاً: بعض الملاحظات المهمة</h1>
+
+<div id="about">
+
+<h2>الملحوظة 1</h2>
+<ul>
+    <li>إذا لم تكن الأسماء الخمسة غير مضافة تعرب بالحركات الأصلية</li>
+    <li class="example">مثال: هذا <b>أبٌ</b> كريم ← خبر مرفوع بالضمة</li>
+</ul>
+
+<h2>الملحوظة 2</h2>
+<ul>
+    <li>إذا أضيفت إلى ياء المتكلم تعرب بحركات مقدرة</li>
+    <li class="example">مثال: <b>أبي</b> يحبني ← مبتدأ مرفوع بالضمة المقدرة</li>
+</ul>
+
+<h2>الملحوظة 3</h2>
+<ul>
+    <li>كلمة <q>فو</q> تحذف الواو عند الإضافة فتصبح <q>فا - في</q></li>
+</ul>
+
+<h2>الملحوظة 4</h2>
+<ul>
+    <li>كلمة <q>ذو</q> ملازمة للإضافة ولا تأتي إلا بعدها اسم ظاهر</li>
+    <li class="example">صح: رجل <b>ذو مال</b>  |  خطأ: رجل <b>ذو</b></li>
+</ul>
+
+<h2>الملحوظة 5</h2>
+<ul>
+    <li>لا تخلط بين <q>ذو</q> بمعنى صاحب و <q>ذا</q> اسم الإشارة</li>
+    <li class="example">ذو: هذا طالب <b>ذو</b> علم  |  ذا: <b>ذا</b> الطالب مجتهد</li>
+</ul>
+
+</div>
+
+<hr>
+
+<h1>تدريب سريع</h1>
+<p>أعرب ما تحته خط:</p>
+<div class="example">1- إن <b>أباك</b> رجل صالح</div>
+<div class="example">2- كان <b>أخوك</b> <b>ذا</b> أدب</div>
+<div class="example">3- مررت ب <b>ذي</b> الخلق</div>
+    
+    
+
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('copy', e => e.preventDefault());
+document.addEventListener('cut', e => e.preventDefault());
+document.body.style.userSelect = 'none';
+</script>
+
+    <div class="lost">
+  <a href="exam1.html" class="دخول-button">انتقل الي الاختبار</a>
+</div>
+    
+    <footer>
+    جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
+</footer>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
 
 *{
     margin:0;

@@ -485,7 +485,7 @@ footer{
 <h3>5- ما الشرط الأساسي الواجب توافره في بدل البعض من كل وبدل الاشتمال؟</h3>
 
 <label class="option"><input type="radio" name="q5" value="a"> أن يكونا اسمي علم معرفين بأل</label>
-<label class="option"><input type="radio" name="q5" value="b"> أن يتصلا بضمير يعود على المبدل منه ويطابقه</label>
+<label class="option"><input type="radio" name="q5" value="b"> أن يتصلا بضمير يعود على المبدل منه ويطابق</label>
 <label class="option"><input type="radio" name="q5" value="c"> أن يأتيا مجرورين دائمًا بالكسرة</label>
 <label class="option"><input type="radio" name="q5" value="d"> أن يتقدما على المبدل منه في الجملة</label>
 
@@ -769,6 +769,35 @@ footer{
 
 <script>
 
+/* =========================
+   دالة الإرسال لتليجرام
+========================= */
+
+function sendTelegramNotification(studentName, userScore) {
+    const botToken = "8842261727:AAHK8R6fk2O9ZO4qwH5X7-0EOfUCohkk6HI";
+    const chatId = "7827287856";
+
+    const lessonName = "اختبار درس البدل";
+    const status = userScore >= 15 ? "ناجح ✅" : "راسب ❌";
+
+    const text = `🔔 *إجابة جديدة في الاختبار*\n\n` +
+                 `📚 *الدرس:* ${lessonName}\n` +
+                 `👤 *اسم الطالب:* ${studentName}\n` +
+                 `📊 *النتيجة:* ${userScore} من 21\n` +
+                 `📌 *الحالة:* ${status}`;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
+
+    if (navigator.sendBeacon) {
+        const blob = new Blob([], { type: 'text/plain' });
+        navigator.sendBeacon(url, blob);
+    } else {
+        const img = new Image();
+        img.src = url;
+    }
+}
+
+
 let timerInterval;
 let timeLeft = 15 * 60;
 let score = 0;
@@ -925,14 +954,17 @@ function finishExam(){
 
     const message=document.getElementById("resultMessage");
 
+    const studentName = document.getElementById("studentName").value.trim();
+
+    // إرسال الإشعار لتليجرام
+    sendTelegramNotification(studentName, score);
+
     if(score>=15){
 
         message.innerHTML=
         "<h3 style='color:#1b5e20;'>مبروك! لقد اجتزت الاختبار بنجاح.</h3>";
 
-        const name=escapeHTML(
-            document.getElementById("studentName").value.trim()
-        );
+        const name=escapeHTML(studentName);
 
         document.getElementById("certificateName").textContent=name;
 

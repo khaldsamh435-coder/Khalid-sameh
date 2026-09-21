@@ -1209,6 +1209,38 @@ const answerText = {
 };
 
 
+/* إرسال إشعار التليجرام */
+
+function sendTelegramNotification(studentName, score, isPassed){
+
+    const botToken = "8857523585:AAEfLxuPSOqLQBX_qM9Wgssd4er3bo0moN0";
+    const chatId = "7827287856";
+    const lessonTitle = "الأسماء الخمسة";
+    const status = isPassed ? "ناجح ✅" : "راسب ❌";
+
+    const message = `🔔 *إشعار اختبار جديد*\n\n` +
+                    `👤 *اسم الطالب:* ${studentName}\n` +
+                    `📚 *الدرس:* ${lessonTitle}\n` +
+                    `📊 *الدرجة:* ${score} / 21\n` +
+                    `📌 *الحالة:* ${status}`;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: "Markdown"
+        })
+    }).catch(error => console.error("Error sending Telegram message:", error));
+
+}
+
+
 /* بدء الاختبار */
 
 function startExam(){
@@ -1351,7 +1383,9 @@ function finishExam(){
 
     const message=document.getElementById("resultMessage");
 
-    if(score>=15){
+    const isPassed = score >= 15;
+
+    if(isPassed){
 
         message.innerHTML=
         "<h3 style='color:#1b5e20;'>مبروك! لقد اجتزت الاختبار بنجاح.</h3>";
@@ -1374,6 +1408,13 @@ function finishExam(){
         "<p>تحتاج إلى 15 درجة على الأقل للنجاح.</p>";
 
     }
+
+    // إرسال الإشعار لتليجرام
+    sendTelegramNotification(
+        document.getElementById("studentName").value.trim(),
+        score,
+        isPassed
+    );
 
     showErrors();
 

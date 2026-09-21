@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الممنوع من الصرف - الدرس كامل</title>
 
 <style>
@@ -10,19 +11,28 @@ body { font-family: 'Cairo', Arial, sans-serif; padding-top: 70px; background-co
 .header { position: fixed; top: 0; right: 0; width: 100%; background: #fff; padding: 12px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 1000; }
 .دخول-button { border: none; padding: 10px 20px; color: #fff; background-color: #000; border-radius: 40px; text-decoration: none; font-size: 15px; font-weight: bold; display: inline-block; cursor: pointer; transition: 0.3s; }
 .دخول-button:hover { background-color: #333; } /* تأثير لما تحط الماوس */
-h1 { text-align: center; background: #bcccbb; border-radius: 8px; padding: 12px; border: 2px solid #112837; margin: 20px 10px; }
-h2 { display: inline-block; border: 2px solid #000; padding: 8px 15px; border-radius: 8px; background-color: #e1ebe0; margin: 20px 15px 15px 0; }
-h3{ display: inline-block; border: 2px solid #000; padding: 5px 10px; border-radius: 25px; background-color: #e1ebe0; margin: 15px 15px; }    
+h1 { text-align: center; background: #bcccbb; border-radius: 8px; padding: 12px; border: 2px solid #112837; margin: 20px 10px; font-size: 1.6rem; }
+h2 { display: inline-block; border: 2px solid #000; padding: 8px 15px; border-radius: 8px; background-color: #e1ebe0; margin: 20px 15px 15px 0; font-size: 1.3rem; }
+h3 { display: inline-block; border: 2px solid #000; padding: 5px 10px; border-radius: 25px; background-color: #e1ebe0; margin: 15px 15px; font-size: 1.1rem; }    
 p { margin: 0.8rem 15px; font-size: 1.1rem; }
 i, q { color: #147DB7; font-weight: bold; }
 hr { margin: 30px 15px; border: 1px solid #ccc; }
-table { width: calc(100% - 30px); margin: 20px 15px; border-collapse: collapse; background-color: #ffffff; }
-th, td { border: 2px solid #112837; padding: 10px 12px; text-align: right; }
+
+
+.table-responsive {
+    width: calc(100% - 30px);
+    margin: 20px 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table { width: 100%; border-collapse: collapse; background-color: #ffffff; }
+th, td { border: 2px solid #112837; padding: 10px 12px; text-align: right; vertical-align: top; }
 th { background-color: #bcccbb; text-align: center; font-size: 1.1rem; }
 .main-header { background-color: #eeeeee; font-size: 1.3rem; }
-ul { margin: 0 25px 15px 0; padding-right: 20px; }
-.example { background-color: #f0f8ff; border-right: 4px solid #147DB7; padding: 10px; margin: 10px 15px; border-radius: 5px; }
-.note { background-color: #fff3cd; border-right: 4px solid #ffc107; padding: 10px; margin: 10px 15px; border-radius: 5px; }
+ul, ol { margin: 0 25px 15px 0; padding-right: 20px; }
+.example { background-color: #f0f8ff; border-right: 4px solid #147DB7; padding: 10px; margin: 10px 15px; border-radius: 5px; word-wrap: break-word; }
+.note { background-color: #fff3cd; border-right: 4px solid #ffc107; padding: 10px; margin: 10px 15px; border-radius: 5px; word-wrap: break-word; }
 html { scroll-behavior: smooth; }
 
 /* الحاوية الجديدة للزر الاخير */
@@ -30,8 +40,80 @@ html { scroll-behavior: smooth; }
   text-align: center; /* التوسيط */
   margin: 40px 0 30px 0; /* مسافة فوق وتحت */
 }
-.fonts{
-  font-size: 15px;}
+
+/* ===================================================
+   تحسينات التجاوب للشاشات المختلفة (الهاتف والتابلت)
+   =================================================== */
+
+/* شاشات التابلت والهواتف (أقل من 768px) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .header {
+        padding: 10px 15px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        padding: 8px;
+        margin: 15px 10px;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+        margin: 15px 10px 10px 0;
+        max-width: calc(100% - 20px);
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 10px 10px;
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 0.8rem 10px;
+    }
+
+    ul, ol {
+        margin: 0 15px 15px 0;
+        padding-right: 15px;
+    }
+
+    .example, .note {
+        margin: 8px 10px;
+        font-size: 0.95rem;
+    }
+
+    th, td {
+        padding: 8px 6px;
+        font-size: 0.95rem;
+    }
+
+    .main-header {
+        font-size: 1.1rem;
+    }
+}
+
+/* الشاشات الصغيرة جداً - الهواتف الذكية (أقل من 480px) */
+@media (max-width: 480px) {
+    .دخول-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 1.15rem;
+    }
+
+    th, td {
+        padding: 6px 4px;
+        font-size: 0.85rem;
+    }
+}
 </style>
 </head>
 
@@ -45,7 +127,7 @@ html { scroll-behavior: smooth; }
 
 <p><b>تعريفه:</b> هو الاسم المعرب الذي لا يقبل <b>التنوين</b> ولا يجر <b>بالكسرة</b>.</p>
 <p><b>حكم إعرابه:</b> يرفع بالضمة وينصب بالفتحة ويجر <b>بالفتحة نيابة عن الكسرة</b> اذا تجرد من (الـ) و الاضافه.</p>
-<b><q>وينقسم إلى: ممنوع من الصرف لعلة واحدة - ممنوع من الصرف لعلتين</q></b>
+<p><b><q>وينقسم إلى: ممنوع من الصرف لعلة واحدة - ممنوع من الصرف لعلتين</q></b></p>
 <hr>
 
 <h1>أولاً: الممنوع من الصرف لعلة واحدة</h1>
@@ -76,30 +158,32 @@ html { scroll-behavior: smooth; }
 
 <h1>ثانياً: الممنوع من الصرف لعلتين</h1>
 
-<table>
-<tr><th colspan="2" class="main-header">أسباب المنع لعلتين</th></tr>
-<tr><th>1- العلمية</th><th>2- الوصفية</th></tr>
-<tr>
-<td>
-<ul>
-  <li><b>العلمية والتأنيث</b></li>
-  <li><b>العلمية والعجمة</b></li>
-  <li><b>العلمية وزيادة الألف والنون</b></li>
-  <li><b>العلمية ووزن الفعل</b></li>
-  <li><b>العلمية ووزن فُعَل</b></li>
-  <li><b>العلمية والتركيب المزجي</b></li>
-</ul>
-</td>
-<td>
-<ul>
-<li><b>الوصفية ووزن أفعل</b></li>
-<li><b>الوصفية ووزن فعلان</b></li>
-<li><b>الوصفية ووزن فُعال ومَفعَل</b></li>
-<li><b>الوصفية ووزن فُعَل</b></li>
-</ul>
-</td>
-</tr>
-</table>
+<div class="table-responsive">
+    <table>
+    <tr><th colspan="2" class="main-header">أسباب المنع لعلتين</th></tr>
+    <tr><th>1- العلمية</th><th>2- الوصفية</th></tr>
+    <tr>
+    <td>
+    <ul>
+      <li><b>العلمية والتأنيث</b></li>
+      <li><b>العلمية والعجمة</b></li>
+      <li><b>العلمية وزيادة الألف والنون</b></li>
+      <li><b>العلمية ووزن الفعل</b></li>
+      <li><b>العلمية ووزن فُعَل</b></li>
+      <li><b>العلمية والتركيب المزجي</b></li>
+    </ul>
+    </td>
+    <td>
+    <ul>
+    <li><b>الوصفية ووزن أفعل</b></li>
+    <li><b>الوصفية ووزن فعلان</b></li>
+    <li><b>الوصفية ووزن فُعال ومَفعَل</b></li>
+    <li><b>الوصفية ووزن فُعَل</b></li>
+    </ul>
+    </td>
+    </tr>
+    </table>
+</div>
 
 <div id="vivo">
 
@@ -167,7 +251,7 @@ html { scroll-behavior: smooth; }
 </div>
 
 <h1>رابعاً: ملحوظات عامة</h1>
-<ul class="fonts">
+<ul>
     <li><b>اي جمع تكسير اخرها همزه قبلها الف زائده يُمنع مثل:</b> علماء، شعراء، نبغاء...</li>
     <li><b>جميع شهور السنة الميلادية و القبطيه ممنوعة:</b>  يناير، فبراير...، آدار، بارمودا، ...</li>
     <li><b>أسماء الملائكة ممنوعة ماعدا</b> رضوان، مالك، مُنكر، نكير، ...</li>

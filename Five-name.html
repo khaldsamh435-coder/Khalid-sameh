@@ -2,312 +2,1492 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>الأسماء الخمسة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>اختبار الأسماء الخمسة</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Cairo', Arial, sans-serif;
-    padding-top: 70px; /* مساحة للهيدر الثابت */
-    background-color: #fdfdfd;
-    line-height: 1.8;
+html{
+    scroll-behavior:smooth;
 }
 
-/* الهيدر الثابت بعرض الشاشة */
-.header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    background: #ffffff;
-    padding: 12px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 1000;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+body{
+    font-family:'Cairo',Arial,sans-serif;
+    background:#eeeeee;
+    padding-top:75px;
+    line-height:1.8;
 }
 
-.دخول-button {
-    border: none;
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #000;
-    border-radius: 40px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.دخول-button:hover {
-    background-color: #a0b8a0;
+/* الهيدر */
+
+.header{
+    position:fixed;
+    top:0;
+    right:0;
+    width:100%;
+    background:#fff;
+    padding:12px 20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    z-index:1000;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
 }
 
-h1 {
-    text-align: center;
-    background: #bcccbb;
-    border-radius: 8px;
-    padding: 10px;
-    border: 2px solid #112837;
-    margin: 20px 10px;
+.back-button{
+    border:none;
+    padding:10px 20px;
+    color:#fff;
+    background:#000;
+    border-radius:40px;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-p {
-    margin: 0.8rem 15px;
-    font-size: 1.1rem;
+.back-button:hover{
+    background:#a0b8a0;
 }
 
-i, q {
-    color: #147DB7;
-    font-weight: bold;
+/* العنوان */
+
+h1{
+    text-align:center;
+    background:#bcccbb;
+    border-radius:8px;
+    padding:10px;
+    border:2px solid #112837;
+    margin:20px 10px;
 }
 
-hr {
-    margin: 30px 15px;
-    border: 1px solid #ccc;
+/* المقدمة */
+
+.intro{
+    background:#fff;
+    border:2px solid #112837;
+    border-radius:10px;
+    padding:20px;
+    margin:20px 15px;
+    text-align:center;
 }
 
-table {
-    width: calc(100% - 30px);
-    margin: 20px 15px;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.intro p{
+    font-size:18px;
+    font-weight:bold;
 }
 
-th, td {
-    border: 2px solid #112837;
-    padding: 10px 12px;
-    text-align: right;
-    vertical-align: top;
+/* بيانات الطالب */
+
+.student-box{
+    background:#fff;
+    border:2px solid #112837;
+    border-radius:10px;
+    padding:20px;
+    margin:20px 15px;
+    text-align:center;
 }
 
-th {
-    background-color: #bcccbb;
-    text-align: center;
-    font-size: 1.1rem;
+.student-box label{
+    display:block;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.main-header {
-    background-color: #eeeeee;
-    font-size: 1.3rem;
+#studentName{
+    width:90%;
+    max-width:500px;
+    padding:12px;
+    border:2px solid #112837;
+    border-radius:8px;
+    font-size:17px;
+    text-align:center;
+    outline:none;
 }
 
-ul {
-    margin: 0 25px 15px 0;
-    padding-right: 20px;
-}
-    
-h2 {
-    display: inline-block; 
-    border: 2px solid #000; 
-    padding: 8px 15px; 
-    border-radius: 8px; 
-    background-color: #e1ebe0; 
-    margin: 20px 15px 15px 0; 
-}
-    
-h3{
-    display: inline-block; 
-    border: 2px solid #000; 
-    padding: 5px 10px; 
-    border-radius: 25px; 
-    background-color: #e1ebe0; 
-    margin: 15px 15px; 
-}    
-    
-html {
-    scroll-behavior: smooth;
+/* الأزرار */
+
+button{
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
 }
 
-.example {
-    background-color: #f0f8ff;
-    border-right: 4px solid #147DB7;
-    padding: 8px;
-    margin: 10px 15px;
-    border-radius: 5px;
+.start-button,
+.finish-button,
+.restart-button,
+.print-button{
+    display:block;
+    margin:20px auto;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#112837;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    transition:.3s;
 }
-    
-    footer {
-    background: #112837;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    margin-top: 40px;
-    font-size: 15px;
-    font-weight: bold;
-    border-top: 3px solid #147DB7;
+
+.start-button:hover,
+.finish-button:hover,
+.restart-button:hover,
+.print-button:hover{
+    background:#147DB7;
 }
-    
-    
-/* الحاوية الجديدة للزر الاخير */
-.lost {
-  text-align: center; /* التوسيط */
-  margin: 40px 0 30px 0; /* مسافة فوق وتحت */
+
+/* المؤقت */
+
+#timer{
+    position:fixed;
+    top:12px;
+    left:20px;
+    background:#112837;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:bold;
+    z-index:1001;
 }
-    
+
+#timer.danger{
+    background:#b00020;
+}
+
+/* الأسئلة */
+
+#quiz{
+    display:none;
+}
+
+.question{
+    background:#fff;
+    border:2px solid #112837;
+    border-radius:10px;
+    padding:20px;
+    margin:20px 15px;
+}
+
+.question h3{
+    margin-bottom:15px;
+    color:#112837;
+}
+
+.option{
+    display:block;
+    padding:12px;
+    margin:8px 0;
+    border:2px solid #ccc;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.2s;
+    background:#fafafa;
+}
+
+.option:hover{
+    background:#eef5ef;
+}
+
+.option input{
+    margin-left:8px;
+}
+
+.correct{
+    background:#c8e6c9 !important;
+    border-color:#2e7d32 !important;
+}
+
+.wrong{
+    background:#ffcdd2 !important;
+    border-color:#c62828 !important;
+}
+
+.feedback{
+    margin-top:12px;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+    display:none;
+}
+
+.feedback.correct-feedback{
+    background:#e0f2e1;
+    color:#1b5e20;
+}
+
+.feedback.wrong-feedback{
+    background:#ffebee;
+    color:#b71c1c;
+}
+
+/* النتيجة */
+
+#result{
+    display:none;
+    background:#fff;
+    border:3px solid #112837;
+    border-radius:12px;
+    padding:25px;
+    margin:25px 15px;
+    text-align:center;
+}
+
+#result h2{
+    display:inline-block;
+    background:#e1ebe0;
+    border:2px solid #000;
+    border-radius:8px;
+    padding:8px 20px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:24px;
+    font-weight:bold;
+    margin:10px;
+}
+
+/* الشهادة */
+
+.certificate{
+    display:none;
+    background:#fff;
+    border:8px double #112837;
+    padding:35px 20px;
+    margin:25px 15px;
+    text-align:center;
+}
+
+.certificate h2{
+    color:#112837;
+    margin-bottom:20px;
+}
+
+.certificate .student{
+    font-size:28px;
+    font-weight:bold;
+    color:#147DB7;
+    margin:15px;
+}
+
+.certificate .certificate-text{
+    font-size:18px;
+}
+
+.certificate .certificate-score{
+    font-size:24px;
+    font-weight:bold;
+    margin:15px;
+}
+
+/* الأخطاء */
+
+.errors{
+    background:#fff3f3;
+    border:2px solid #b71c1c;
+    border-radius:10px;
+    padding:20px;
+    margin-top:20px;
+    text-align:right;
+}
+
+.errors h3{
+    color:#b71c1c;
+    margin-bottom:10px;
+}
+
+.errors ul{
+    padding-right:25px;
+}
+
+footer{
+    background:#112837;
+    color:#fff;
+    text-align:center;
+    padding:15px 10px;
+    margin-top:40px;
+    font-size:15px;
+    font-weight:bold;
+    border-top:3px solid #147DB7;
+}
+
+/* الطباعة */
+
+@media print{
+
+    .header,
+    #timer,
+    .finish-button,
+    .restart-button,
+    .print-button,
+    .student-box,
+    .intro,
+    .question,
+    .errors,
+    footer{
+        display:none !important;
+    }
+
+    body{
+        padding:0;
+        background:#fff;
+    }
+
+    .certificate{
+        display:block !important;
+        border:8px double #112837;
+        margin:50px;
+    }
+
+}
+
+/* الهواتف والتابلت */
+
+@media(max-width:768px){
+
+    body{
+        padding-top:65px;
+    }
+
+    h1{
+        font-size:20px;
+        margin:15px 10px;
+    }
+
+    .intro, .student-box, .question, #result, .certificate{
+        margin:15px 10px;
+        padding:15px;
+    }
+
+    .question h3{
+        font-size:16px;
+    }
+
+    .option{
+        font-size:14px;
+        padding:10px;
+    }
+
+    #studentName{
+        width:100%;
+        font-size:15px;
+    }
+
+    #timer{
+        left:10px;
+        top:12px;
+        font-size:13px;
+        padding:6px 14px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- الهيدر الثابت -->
+<!-- الهيدر -->
+
 <div class="header">
-    <a href="eln7w.html" class="دخول-button">رجوع</a>
+    <a href="Five-name.html" class="back-button">رجوع</a>
 </div>
 
-<h1>الأسماء الخمسة</h1>
+<div id="timer">15:00</div>
 
-<p>
-هي أسماء معربة لها إعراب خاص. ترفع بالواو وتنصب بالألف وتجر بالياء.
+<h1>اختبار الأسماء الخمسة</h1>
+
+<div class="intro">
+
+    <p>
+        اختبر فهمك لدرس الأسماء الخمسة من خلال مجموعة من الأسئلة التطبيقية.
+    </p>
+
+    <p>
+        عدد الأسئلة: 21 سؤالًا | الزمن: 15 دقيقة
+    </p>
+
+    <p>
+        الدرجة النهائية: 21 | النجاح من 15 درجة
+    </p>
+
+</div>
+
+<div class="student-box">
+
+    <label for="studentName">
+        اكتب اسمك قبل بدء الاختبار
+    </label>
+
+    <input
+        type="text"
+        id="studentName"
+        placeholder="اسم الطالب"
+        autocomplete="off"
+    >
+
+    <button class="start-button" onclick="startExam()">
+        بدء الاختبار
+    </button>
+
+</div>
+
+<div id="quiz">
+
+<!-- السؤال 1 -->
+
+<div class="question" data-answer="c">
+
+<h3>
+1- قال طالب: في الجملتين «جاء أبوك» و«رأيت أباك» تغيّرت الكلمة لأن معناها تغيّر.
+ما التصحيح الأدق؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+لأن كلمة «أبوك» جمع، بينما «أباك» مفرد
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+لأن كل كلمة من الأسماء الخمسة لها أكثر من معنى
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+تغيّر موقعها الإعرابي من فاعل مرفوع إلى مفعول به منصوب
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="d">
+لأن الأسماء الخمسة تتغير دائمًا في كل جملة
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 2 -->
+
+<div class="question" data-answer="a">
+
+<h3>
+2- اختر الجملة التي استُعمل فيها أحد الأسماء الخمسة استعمالًا صحيحًا:
+</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+مررت بأخيك بعد الدرس.
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+رأيت أبوك بعد الدرس.
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+جاء أبيك مبكرًا.
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="d">
+سلّمت على أخوك.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 3 -->
+
+<div class="question" data-answer="d">
+
+<h3>
+3- أراد طالب تحويل «جاء أبوك» إلى جملة يكون فيها «أبوك» مفعولًا به.
+أي صياغة صحيحة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+جاء أباك.
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+مررت بأبوك.
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+جاء أبيك.
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="d">
+رأيت أباك.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 4 -->
+
+<div class="question" data-answer="b">
+
+<h3>
+4- في جملة «مررت بأبيك»، ما الذي يفسر استخدام الياء في «أبيك»؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+لأن «أبيك» مفعول به منصوب
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+لأن «أبيك» اسم مجرور وهو من الأسماء الخمسة المستوفية للشروط
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+لأن كل كلمة مضافة تنتهي بالياء
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="d">
+لأن كلمة «أب» لا ترفع إلا بالياء
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 5 -->
+
+<div class="question" data-answer="a">
+
+<h3>
+5- أي جملة لا تُعرب فيها الكلمة بالحروف الخاصة بالأسماء الخمسة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+جاء أبي مبكرًا.
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+جاء أبوك مبكرًا.
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+رأيت أخاك أمس.
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="d">
+مررت بأبيك أمس.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 6 -->
+
+<div class="question" data-answer="c">
+
+<h3>
+6- قارن بين: «جاء أخوك» و«رأيت أخاك» و«سلّمت على أخيك».
+ما الاستنتاج الصحيح؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q6" value="a">
+علامة الإعراب ثابتة في الحالات الثلاث
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="b">
+الأسماء الخمسة تنصب بالياء دائمًا
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="c">
+تتغير علامة الإعراب بحسب الموقع: واو، ألف، ياء
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="d">
+كل الكلمات الثلاث جمع
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 7 -->
+
+<div class="question" data-answer="b">
+
+<h3>
+7- أي جملة تُظهر أن «حم» استُعمل مستوفيًا شروط الإعراب بالحروف؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q7" value="a">
+رأيت حميك أمس.
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="b">
+جاء حموك مبكرًا.
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="c">
+مررت بحماك.
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="d">
+جاء حمٌ طيب.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 8 -->
+
+<div class="question" data-answer="d">
+
+<h3>
+8- إذا أردت أن تجعل «ذو» بمعنى «صاحب» مفعولًا به، فأي صياغة صحيحة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q8" value="a">
+كرّمت ذو خلقٍ.
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="b">
+كرّمت ذي خلقٍ.
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="c">
+كرّمت ذوك.
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="d">
+كرّمت ذا خلقٍ.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 9 -->
+
+<div class="question" data-answer="c">
+
+<h3>
+9- في جملة «مررت بذي خلقٍ»، لماذا صارت «ذو» إلى «ذي»؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q9" value="a">
+لأن «ذي» اسم إشارة
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="b">
+لأن كلمة «ذو» تتحول دائمًا إلى «ذي»
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="c">
+لأنها مجرورة بحرف الجر، وهي مستوفية لشروط الأسماء الخمسة
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="d">
+لأنها مفعول به
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 10 -->
+
+<div class="question" data-answer="a">
+
+<h3>
+10- أي مجموعة مرتبة من حيث الرفع ثم النصب ثم الجر؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q10" value="a">
+أبوك - أباك - أبيك
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="b">
+أباك - أبوك - أبيك
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="c">
+أبيك - أباك - أبوك
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="d">
+أبوك - أبيك - أباك
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 11 -->
+
+<div class="question" data-answer="b">
+
+<h3>
+11- أي جملة استُعملت فيها «فو» بالصورة الصحيحة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q11" value="a">
+رأيت فوك في المرآة.
+</label>
+
+<label class="option">
+<input type="radio" name="q11" value="b">
+رأيت فاك في المرآة.
+</label>
+
+<label class="option">
+<input type="radio" name="q11" value="c">
+رأيت فمك في المرآة.
+</label>
+
+<label class="option">
+<input type="radio" name="q11" value="d">
+رأيت فيك في المرآة.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 12 -->
+
+<div class="question" data-answer="d">
+
+<h3>
+12- أي جملة بقيت فيها الميم في «فم»، ولذلك لا تُطبق عليها علامة الأسماء الخمسة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q12" value="a">
+فوك نظيف.
+</label>
+
+<label class="option">
+<input type="radio" name="q12" value="b">
+اغسل فاك.
+</label>
+
+<label class="option">
+<input type="radio" name="q12" value="c">
+تمضمضت من فيك.
+</label>
+
+<label class="option">
+<input type="radio" name="q12" value="d">
+غسلت فمك قبل الطعام.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 13 -->
+
+<div class="question" data-answer="a">
+
+<h3>
+13- أي جملة لا يستوفي فيها الاسم شرط الإفراد، ولذلك لا يُعرب إعراب الأسماء الخمسة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q13" value="a">
+جاء أبواك إلى المدرسة.
+</label>
+
+<label class="option">
+<input type="radio" name="q13" value="b">
+جاء أبوك إلى المدرسة.
+</label>
+
+<label class="option">
+<input type="radio" name="q13" value="c">
+رأيت أباك.
+</label>
+
+<label class="option">
+<input type="radio" name="q13" value="d">
+مررت بأبيك.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 14 -->
+
+<div class="question" data-answer="c">
+
+<h3>
+14- أي جملة تحتوي كلمة من أصل الأسماء الخمسة لكنها خرجت من الإعراب الخاص بسبب الجمع؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q14" value="a">
+جاء أبوك.
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="b">
+مررت بأخيك.
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="c">
+حضر آباءُ الطلاب.
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="d">
+رأيت أباك.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 15 -->
+
+<div class="question" data-answer="d">
+
+<h3>
+15- قال طالب: «كل كلمة أب تُرفع بالواو».
+أي مثال يرد على كلامه؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q15" value="a">
+جاء أبوك.
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="b">
+جاء أخوك.
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="c">
+هذا ذو علم.
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="d">
+جاء أبٌ كريمٌ.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 16 -->
+
+<div class="question" data-answer="b">
+
+<h3>
+16- في جملة «جاء أبوك»، أي تحليل هو الأدق؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q16" value="a">
+أبو: مفعول به منصوب بالألف
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="b">
+أبو: فاعل مرفوع بالواو لأنه من الأسماء الخمسة، وهو مضاف والكاف مضاف إليه
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="c">
+أبو: اسم مجرور بالياء
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="d">
+أبو: مبتدأ مرفوع بالضمة
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 17 -->
+
+<div class="question" data-answer="c">
+
+<h3>
+17- أي جملة تحتوي «ذو» صحيحة وفق معناها «صاحب»؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q17" value="a">
+هذا طالب ذو.
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="b">
+رأيت طالبًا ذو أدبٍ.
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="c">
+هذا طالبٌ ذو أدبٍ.
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="d">
+مررت بطالبٍ ذو أدبٍ.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 18 -->
+
+<div class="question" data-answer="a">
+
+<h3>
+18- في «هذا طالبٌ ذو أدبٍ»، إذا استبدلناها بجملة تبدأ بـ«رأيت»، فما الصياغة الصحيحة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q18" value="a">
+رأيت ذا أدبٍ.
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="b">
+رأيت ذو أدبٍ.
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="c">
+رأيت ذي أدبٍ.
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="d">
+رأيت ذوك.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 19 -->
+
+<div class="question" data-answer="d">
+
+<h3>
+19- ما التصحيح الصحيح للجملة: «مررت بأخوك»؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q19" value="a">
+مررت بأخاك.
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="b">
+مررت بأخوك.
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="c">
+مررت بأخٌ.
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="d">
+مررت بأخيك.
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 20 -->
+
+<div class="question" data-answer="b">
+
+<h3>
+20- كتب طالب: «رأيت أبو محمد».
+أين الخطأ وكيف يصحح؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q20" value="a">
+الصواب: رأيت أبي محمد، لأن أبا مضاف إليه
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="b">
+الصواب: رأيت أبا محمدٍ، لأن أبا مفعول به منصوب بالألف وهو مضاف
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="c">
+الصواب: رأيت أبو محمدٍ، لأن المفعول به يرفع بالواو
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="d">
+الجملة صحيحة ولا تحتاج إلى تعديل
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<!-- السؤال 21 -->
+
+<div class="question" data-answer="c">
+
+<h3>
+21- كتب طالب: «جاء أبوك، ثم رأيت أباك، ثم مررت بأبيك».
+ما الذي يثبت أنه فهم القاعدة؟
+</h3>
+
+<label class="option">
+<input type="radio" name="q21" value="a">
+أنه استخدم ثلاث كلمات مختلفة تمامًا
+</label>
+
+<label class="option">
+<input type="radio" name="q21" value="b">
+أنه جعل كل الكلمات مرفوعة
+</label>
+
+<label class="option">
+<input type="radio" name="q21" value="c">
+أنه غيّر صورة الاسم بحسب الرفع والنصب والجر مع بقاء معنى الإضافة
+</label>
+
+<label class="option">
+<input type="radio" name="q21" value="d">
+أنه وضع الكلمة نفسها في ثلاث جمل دون تغيير
+</label>
+
+<div class="feedback"></div>
+
+</div>
+
+
+<button class="finish-button" onclick="finishExam()">
+إنهاء الاختبار
+</button>
+
+</div>
+
+
+<!-- النتيجة -->
+
+<div id="result">
+
+<h2>نتيجة الاختبار</h2>
+
+<div class="score" id="score"></div>
+
+<div id="resultMessage"></div>
+
+<div id="errors"></div>
+
+</div>
+
+
+<!-- الشهادة -->
+
+<div class="certificate" id="certificate">
+
+<h2>شهادة اجتياز اختبار الأسماء الخمسة</h2>
+
+<p class="certificate-text">
+تشهد منصة ED التعليمية بأن الطالب
 </p>
 
-<b><q>وهي: أب - أخ - حم - فو - ذو</q></b>
-<hr>
+<div class="student" id="certificateName"></div>
 
-<h2>أولاً: شروط إعراب الأسماء الخمسة بالحروف</h2>
-<ul>
-    <li><b>1- أن تكون مفردة</b> : فلو كانت مثنى أو جمع تعرب إعراب المثنى والجمع</li>
-    <li><b>2- أن تكون مضافة</b> : لابد أن يأتي بعدها مضاف إليه</li>
-    <li><b>3- أن تكون الإضافة لغير ياء المتكلم</b> : فلو أضيفت لياء المتكلم تعرب بحركات مقدرة</li>
-    <li><b>4- أن تكون "ذو" بمعنى صاحب</b> : ويأتي بعدها اسم ظاهر</li>
-</ul>
+<p class="certificate-text">
+قد اجتاز اختبار الأسماء الخمسة بنجاح
+</p>
 
-<hr>
+<div class="certificate-score" id="certificateScore"></div>
 
-<h1>ثانياً: إعراب الأسماء الخمسة</h1>
+<p>
+مع تمنياتنا له بمزيد من التفوق والنجاح
+</p>
 
-<table>
-<tr>
-<th colspan="3" class="main-header">علامات إعراب الأسماء الخمسة</th>
-</tr>
-
-<tr>
-<th>الحالة</th>
-<th>العلامة</th>
-<th>مثال</th>
-</tr>
-
-<tr>
-<td><b>الرفع</b></td>
-<td><b>الواو</b></td>
-<td>جاء <b>أبوك</b></td>
-</tr>
-
-<tr>
-<td><b>النصب</b></td>
-<td><b>الألف</b></td>
-<td>رأيت <b>أخاك</b></td>
-</tr>
-
-<tr>
-<td><b>الجر</b></td>
-<td><b>الياء</b></td>
-<td>سلمت على <b>حميك</b></td>
-</tr>
-
-</table>
-
-<hr>
-
-<h2>أمثلة على كل اسم</h2>
-    
-    <br>
-
-<h3>1- أب</h3>
-<div class="example"><b>الرفع:</b> <q>أبوك</q> رجل كريم</div>
-<div class="example"><b>النصب:</b> احترم <q>أباك</q></div>
-<div class="example"><b>الجر:</b> سلمت على <q>أبيك</q></div>
-
-<h3>2- أخ</h3>
-<div class="example"><b>الرفع:</b> <q>أخوك</q> مجتهد</div>
-<div class="example"><b>النصب:</b> زرت <q>أخاك</q> أمس</div>
-<div class="example"><b>الجر:</b> جلست مع <q>أخيك</q></div>
-
-<h3>3- حم</h3>
-<p><b>الحم:</b> والد الزوج أو الزوجة</p>
-<div class="example"><b>الرفع:</b> <q>حموك</q> طيب</div>
-<div class="example"><b>النصب:</b> زرت <q>حماك</q></div>
-<div class="example"><b>الجر:</b> تحدثت مع <q>حميك</q></div>
-
-<h3>4- فو</h3>
-<p><b>الفو:</b> الفم</p>
-<div class="example"><b>الرفع:</b> <q>فوك</q> نظيف</div>
-<div class="example"><b>النصب:</b> اغسل <q>فاك</q></div>
-<div class="example"><b>الجر:</b> تمضمضت من <q>فيك</q></div>
-
-<h3>5- ذو</h3>
-<p><b>ذو:</b> بمعنى صاحب</p>
-<div class="example"><b>الرفع:</b> محمد <q>ذو</q> علم</div>
-<div class="example"><b>النصب:</b> قابلت رجلا <q>ذا</q> خلق</div>
-<div class="example"><b>الجر:</b> سلمت على امرأة <q>ذي</q> مكانة</div>
-
-<hr>
-
-<h1>ثالثاً: بعض الملاحظات المهمة</h1>
-
-<div id="about">
-
-<h2>الملحوظة 1</h2>
-<ul>
-    <li>إذا لم تكن الأسماء الخمسة غير مضافة تعرب بالحركات الأصلية</li>
-    <li class="example">مثال: هذا <b>أبٌ</b> كريم ← خبر مرفوع بالضمة</li>
-</ul>
-
-<h2>الملحوظة 2</h2>
-<ul>
-    <li>إذا أضيفت إلى ياء المتكلم تعرب بحركات مقدرة</li>
-    <li class="example">مثال: <b>أبي</b> يحبني ← مبتدأ مرفوع بالضمة المقدرة</li>
-</ul>
-
-<h2>الملحوظة 3</h2>
-<ul>
-    <li>كلمة <q>فو</q> تحذف الواو عند الإضافة فتصبح <q>فا - في</q></li>
-</ul>
-
-<h2>الملحوظة 4</h2>
-<ul>
-    <li>كلمة <q>ذو</q> ملازمة للإضافة ولا تأتي إلا بعدها اسم ظاهر</li>
-    <li class="example">صح: رجل <b>ذو مال</b>  |  خطأ: رجل <b>ذو</b></li>
-</ul>
-
-<h2>الملحوظة 5</h2>
-<ul>
-    <li>لا تخلط بين <q>ذو</q> بمعنى صاحب و <q>ذا</q> اسم الإشارة</li>
-    <li class="example">ذو: هذا طالب <b>ذو</b> علم  |  ذا: <b>ذا</b> الطالب مجتهد</li>
-</ul>
+<button class="print-button" onclick="window.print()">
+طباعة الشهادة
+</button>
 
 </div>
 
-<hr>
 
-<h1>تدريب سريع</h1>
-<p>أعرب ما تحته خط:</p>
-<div class="example">1- إن <b>أباك</b> رجل صالح</div>
-<div class="example">2- كان <b>أخوك</b> <b>ذا</b> أدب</div>
-<div class="example">3- مررت ب <b>ذي</b> الخلق</div>
-    
-    
+<button
+    class="restart-button"
+    id="restartButton"
+    style="display:none;"
+    onclick="location.reload()"
+>
+إعادة الاختبار
+</button>
+
+
+<footer>
+جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
+</footer>
+
 
 <script>
-document.addEventListener('contextmenu', e => e.preventDefault());
-document.addEventListener('copy', e => e.preventDefault());
-document.addEventListener('cut', e => e.preventDefault());
-document.body.style.userSelect = 'none';
-</script>
 
-    <div class="lost">
-  <a href="exam1.html" class="دخول-button">انتقل الي الاختبار</a>
-</div>
-    
-    <footer>
-    جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
-</footer>
-    <script defer src="/_vercel/insights/script.js"></script>
+let timerInterval;
+let timeLeft = 15 * 60;
+let score = 0;
+let answered = 0;
+let errors = [];
+
+const answerText = {
+    a:"أ",
+    b:"ب",
+    c:"ج",
+    d:"د"
+};
+
+/* دالة الإرسال الصامت لتليجرام */
+/* دالة الإرسال الصامت لتليجرام */
+function sendTelegramNotification(studentName, userScore) {
+    const botToken = "8842261727:AAHK8R6fk2O9ZO4qwH5X7-0EOfUCohkk6HI";
+    const chatId = "7827287856";
+
+    const lessonName = "اختبار الأسماء الخمسة";
+    const status = userScore >= 15 ? "ناجح ✅" : "راسب ❌";
+
+    const text = `🔔 *إجابة جديدة في الاختبار*\n\n` +
+                 `📚 *الدرس:* ${lessonName}\n` +
+                 `👤 *اسم الطالب:* ${studentName}\n` +
+                 `📊 *النتيجة:* ${userScore} من 21\n` +
+                 `📌 *الحالة:* ${status}`;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
+
+    if (navigator.sendBeacon) {
+        const blob = new Blob([], { type: 'text/plain' });
+        navigator.sendBeacon(url, blob);
+    } else {
+        const img = new Image();
+        img.src = url;
+    }
+}
+
+
+/* بدء الاختبار */
+
+function startExam(){
+
+    const name = document.getElementById("studentName").value.trim();
+
+    if(!name){
+        alert("من فضلك اكتب اسم الطالب أولًا.");
+        return;
+    }
+
+    document.querySelector(".student-box").style.display="none";
+    document.querySelector(".intro").style.display="none";
+    document.getElementById("quiz").style.display="block";
+
+    startTimer();
+
+    document.querySelectorAll(".question").forEach((question,index)=>{
+
+        const options = question.querySelectorAll("input");
+
+        options.forEach(input=>{
+
+            input.addEventListener("change",function(){
+
+                if(question.dataset.done === "true"){
+                    return;
+                }
+
+                question.dataset.done="true";
+                answered++;
+
+                options.forEach(opt=>{
+                    opt.disabled=true;
+                });
+
+                const selected=this.value;
+                const correct=question.dataset.answer;
+
+                const labels=question.querySelectorAll(".option");
+                const feedback=question.querySelector(".feedback");
+
+                labels.forEach(label=>{
+
+                    const input=label.querySelector("input");
+
+                    if(input.value===correct){
+                        label.classList.add("correct");
+                    }
+
+                    if(input.value===selected && selected!==correct){
+                        label.classList.add("wrong");
+                    }
+
+                });
+
+                if(selected===correct){
+
+                    score++;
+
+                    feedback.textContent="إجابة صحيحة ✓";
+                    feedback.className="feedback correct-feedback";
+                    feedback.style.display="block";
+
+                }else{
+
+                    feedback.textContent=
+                    "إجابة غير صحيحة ✗ | الإجابة الصحيحة: "+
+                    answerText[correct];
+
+                    feedback.className="feedback wrong-feedback";
+                    feedback.style.display="block";
+
+                    errors.push({
+                        number:index+1,
+                        selected:selected,
+                        correct:correct
+                    });
+
+                }
+
+            });
+
+        });
+
+    });
+
+}
+
+
+/* المؤقت */
+
+function startTimer(){
+
+    const timer=document.getElementById("timer");
+
+    timerInterval=setInterval(()=>{
+
+        let minutes=Math.floor(timeLeft/60);
+        let seconds=timeLeft%60;
+
+        timer.textContent=
+        String(minutes).padStart(2,"0")+":"+
+        String(seconds).padStart(2,"0");
+
+        if(timeLeft<=60){
+            timer.classList.add("danger");
+        }
+
+        if(timeLeft<=0){
+
+            clearInterval(timerInterval);
+
+            alert("انتهى الوقت.");
+            finishExam();
+
+        }
+
+        timeLeft--;
+
+    },1000);
+
+}
+
+
+/* إنهاء الاختبار */
+
+function finishExam(){
+
+    clearInterval(timerInterval);
+
+    document.getElementById("quiz").style.display="none";
+
+    const result=document.getElementById("result");
+
+    result.style.display="block";
+
+    document.getElementById("score").textContent=
+    "درجتك: "+score+" / 21";
+
+    const name = document.getElementById("studentName").value.trim();
+
+    // إرسال الإشعار لتليجرام فور الانتهاء
+    sendTelegramNotification(name, score);
+
+    const message=document.getElementById("resultMessage");
+
+    if(score>=15){
+
+        message.innerHTML=
+        "<h3 style='color:#1b5e20;'>مبروك! لقد اجتزت الاختبار بنجاح.</h3>";
+
+        const safeName=escapeHTML(name);
+
+        document.getElementById("certificateName").textContent=safeName;
+
+        document.getElementById("certificateScore").textContent=
+        "الدرجة: "+score+" / 21";
+
+        document.getElementById("certificate").style.display="block";
+
+    }else{
+
+        message.innerHTML=
+        "<h3 style='color:#b71c1c;'>لم تجتز الاختبار هذه المرة.</h3>"+
+        "<p>تحتاج إلى 15 درجة على الأقل للنجاح.</p>";
+
+    }
+
+    showErrors();
+
+    document.getElementById("restartButton").style.display="block";
+
+}
+
+
+/* عرض الأخطاء */
+
+function showErrors(){
+
+    const errorsBox=document.getElementById("errors");
+
+    if(errors.length===0){
+
+        errorsBox.innerHTML=
+        "<h3 style='color:#1b5e20;'>أحسنت! لم تخطئ في أي سؤال.</h3>";
+
+        return;
+
+    }
+
+    let html="<div class='errors'>";
+    html+="<h3>مراجعة الأخطاء</h3>";
+    html+="<ul>";
+
+    errors.forEach(error=>{
+
+        html+=
+        "<li>السؤال "+error.number+
+        " | إجابتك: "+answerText[error.selected]+
+        " | الصحيحة: "+answerText[error.correct]+
+        "</li>";
+
+    });
+
+    html+="</ul>";
+    html+="</div>";
+
+    errorsBox.innerHTML=html;
+
+}
+
+
+/* حماية اسم الطالب من HTML */
+
+function escapeHTML(str){
+
+    return str.replace(/[&<>"']/g,function(m){
+
+        return {
+            "&":"&amp;",
+            "<":"&lt;",
+            ">":"&gt;",
+            '"':"&quot;",
+            "'":"&#039;"
+        }[m];
+
+    });
+
+}
+
+
+/* منع النسخ */
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("copy",e=>e.preventDefault());
+document.addEventListener("cut",e=>e.preventDefault());
+document.addEventListener("selectstart",e=>e.preventDefault());
+
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

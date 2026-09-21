@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>النعت - الدرس كامل</title>
 
 <style>
@@ -10,17 +11,18 @@ body { font-family: 'Cairo', Arial, sans-serif; padding-top: 70px; background-co
 .header { position: fixed; top: 0; right: 0; width: 100%; background: #fff; padding: 12px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 1000; }
 .دخول-button { border: none; padding: 10px 20px; color: #fff; background-color: #000; border-radius: 40px; text-decoration: none; font-size: 15px; font-weight: bold; display: inline-block; cursor: pointer; transition: 0.3s; }
 .دخول-button:hover { background-color: #333; }
-h1 { text-align: center; background: #bcccbb; border-radius: 8px; padding: 12px; border: 2px solid #112837; margin: 20px 10px; }
-h2 { display: inline-block; border: 2px solid #000; padding: 8px 15px; border-radius: 8px; background-color: #e1ebe0; margin: 20px 15px 15px 0; }
-h3{ display: inline-block; border: 2px solid #000; padding: 5px 10px; border-radius: 25px; background-color: #e1ebe0; margin: 15px 15px; }    
+h1 { text-align: center; background: #bcccbb; border-radius: 8px; padding: 12px; border: 2px solid #112837; margin: 20px 10px; font-size: 1.6rem; }
+h2 { display: inline-block; border: 2px solid #000; padding: 8px 15px; border-radius: 8px; background-color: #e1ebe0; margin: 20px 15px 15px 0; font-size: 1.3rem; }
+h3 { display: inline-block; border: 2px solid #000; padding: 5px 10px; border-radius: 25px; background-color: #e1ebe0; margin: 15px 15px; font-size: 1.1rem; }    
 p { margin: 0.8rem 15px; font-size: 1.1rem; }
 i, q { color: #147DB7; font-weight: bold; }
 hr { margin: 30px 15px; border: 1px solid #ccc; }
-ul { margin: 0 25px 15px 0; padding-right: 20px; }
-.example { background-color: #f0f8ff; border-right: 4px solid #147DB7; padding: 10px; margin: 10px 15px; border-radius: 5px; }
-.note { background-color: #fff3cd; border-right: 4px solid #ffc107; padding: 10px; margin: 10px 15px; border-radius: 5px; }
+ul, ol { margin: 0 25px 15px 0; padding-right: 20px; }
+.example { background-color: #f0f8ff; border-right: 4px solid #147DB7; padding: 10px; margin: 10px 15px; border-radius: 5px; word-wrap: break-word; }
+.note { background-color: #fff3cd; border-right: 4px solid #ffc107; padding: 10px; margin: 10px 15px; border-radius: 5px; word-wrap: break-word; }
 html { scroll-behavior: smooth; }
-.حاوية-زر-اخير { text-align: center; margin: 40px 0 30px 0; }footer {
+.حاوية-زر-اخير { text-align: center; margin: 40px 0 30px 0; }
+footer {
     background: #112837;
     color: #fff;
     text-align: center;
@@ -30,8 +32,66 @@ html { scroll-behavior: smooth; }
     font-weight: bold;
     border-top: 3px solid #147DB7;
 }
-    
-    
+
+/* ===================================================
+   تحسينات التجاوب للشاشات المختلفة (الهاتف والتابلت)
+   =================================================== */
+
+/* شاشات التابلت والهواتف (أقل من 768px) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .header {
+        padding: 10px 15px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        padding: 8px;
+        margin: 15px 10px;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+        margin: 15px 10px 10px 0;
+        max-width: calc(100% - 20px);
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 10px 10px;
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 0.8rem 10px;
+    }
+
+    ul, ol {
+        margin: 0 15px 15px 0;
+        padding-right: 15px;
+    }
+
+    .example, .note {
+        margin: 8px 10px;
+        font-size: 0.95rem;
+    }
+}
+
+/* الشاشات الصغيرة جداً - الهواتف الذكية (أقل من 480px) */
+@media (max-width: 480px) {
+    .دخول-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 1.15rem;
+    }
+}
 </style>
 </head>
 
@@ -45,7 +105,7 @@ html { scroll-behavior: smooth; }
 
 <p><b>تعريفه:</b> هو الاسم التابع لما قبله في الإعراب وفي التعريف والتنكير وفي الإفراد والتثنية والجمع وفي التذكير والتأنيث.</p>
 <p><b>ويسمى:</b> الصفة، والمنعوت هو الموصوف.</p>
-<div class="example">مثال: <q>جاء الطالبُ <b>المجتهدُ</b></q> → المجتهد نعت للطالب</div>
+<div class="example">مثال: <q>جاء الطالبُ <b>المجتهدُ</b></q> ← المجتهد نعت للطالب</div>
 <hr>
 
 <h1>أولاً: أنواع النعت</h1>
@@ -57,8 +117,8 @@ html { scroll-behavior: smooth; }
 
 <h2>2- النعت الجملة</h2>
 <p><b>ينقسم إلى جملة فعلية وجملة اسمية</b></p>
-<div class="example">مثال 1: رأيت طالباً <b>يجتهدُ</b> → جملة فعلية</div>
-<div class="example">مثال 2: قابلت معلماً <b>علمه غزيرٌ</b> → جملة اسمية</div>
+<div class="example">مثال 1: رأيت طالباً <b>يجتهدُ</b> ← جملة فعلية</div>
+<div class="example">مثال 2: قابلت معلماً <b>علمه غزيرٌ</b> ← جملة اسمية</div>
 <div class="note"><b>قاعدة:</b> الجمل بعد النكرات صفات. والجمل بعد المعارف أحوال</div>
 
 <h2>3- النعت شبه الجملة</h2>
@@ -91,8 +151,8 @@ html { scroll-behavior: smooth; }
 <div class="حاوية-زر-اخير">
   <a href="exam3.html" class="دخول-button">انتقل الي الاختبار</a>
 </div>
-    
-    <footer>
+
+<footer>
 جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
 </footer>
 

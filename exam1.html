@@ -348,30 +348,43 @@ footer{
 
 }
 
-/* الهاتف */
+/* الهواتف والتابلت */
 
-@media(max-width:600px){
+@media(max-width:768px){
 
-    h1{
-        font-size:23px;
+    body{
+        padding-top:65px;
     }
 
-    .question{
+    h1{
+        font-size:20px;
+        margin:15px 10px;
+    }
+
+    .intro, .student-box, .question, #result, .certificate{
+        margin:15px 10px;
         padding:15px;
     }
 
     .question h3{
-        font-size:17px;
+        font-size:16px;
     }
 
     .option{
+        font-size:14px;
+        padding:10px;
+    }
+
+    #studentName{
+        width:100%;
         font-size:15px;
     }
 
     #timer{
         left:10px;
         top:12px;
-        font-size:14px;
+        font-size:13px;
+        padding:6px 14px;
     }
 
 }
@@ -1208,36 +1221,30 @@ const answerText = {
     d:"د"
 };
 
-
-/* إرسال إشعار التليجرام */
-
-function sendTelegramNotification(studentName, score, isPassed){
-
-    const botToken = "8857523585:AAEfLxuPSOqLQBX_qM9Wgssd4er3bo0moN0";
+/* دالة الإرسال الصامت لتليجرام */
+/* دالة الإرسال الصامت لتليجرام */
+function sendTelegramNotification(studentName, userScore) {
+    const botToken = "8842261727:AAHK8R6fk2O9ZO4qwH5X7-0EOfUCohkk6HI";
     const chatId = "7827287856";
-    const lessonTitle = "الأسماء الخمسة";
-    const status = isPassed ? "ناجح ✅" : "راسب ❌";
 
-    const message = `🔔 *إشعار اختبار جديد*\n\n` +
-                    `👤 *اسم الطالب:* ${studentName}\n` +
-                    `📚 *الدرس:* ${lessonTitle}\n` +
-                    `📊 *الدرجة:* ${score} / 21\n` +
-                    `📌 *الحالة:* ${status}`;
+    const lessonName = "اختبار الأسماء الخمسة";
+    const status = userScore >= 15 ? "ناجح ✅" : "راسب ❌";
 
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const text = `🔔 *إجابة جديدة في الاختبار*\n\n` +
+                 `📚 *الدرس:* ${lessonName}\n` +
+                 `👤 *اسم الطالب:* ${studentName}\n` +
+                 `📊 *النتيجة:* ${userScore} من 21\n` +
+                 `📌 *الحالة:* ${status}`;
 
-    fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-            parse_mode: "Markdown"
-        })
-    }).catch(error => console.error("Error sending Telegram message:", error));
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
 
+    if (navigator.sendBeacon) {
+        const blob = new Blob([], { type: 'text/plain' });
+        navigator.sendBeacon(url, blob);
+    } else {
+        const img = new Image();
+        img.src = url;
+    }
 }
 
 
@@ -1381,20 +1388,21 @@ function finishExam(){
     document.getElementById("score").textContent=
     "درجتك: "+score+" / 21";
 
+    const name = document.getElementById("studentName").value.trim();
+
+    // إرسال الإشعار لتليجرام فور الانتهاء
+    sendTelegramNotification(name, score);
+
     const message=document.getElementById("resultMessage");
 
-    const isPassed = score >= 15;
-
-    if(isPassed){
+    if(score>=15){
 
         message.innerHTML=
         "<h3 style='color:#1b5e20;'>مبروك! لقد اجتزت الاختبار بنجاح.</h3>";
 
-        const name=escapeHTML(
-            document.getElementById("studentName").value.trim()
-        );
+        const safeName=escapeHTML(name);
 
-        document.getElementById("certificateName").textContent=name;
+        document.getElementById("certificateName").textContent=safeName;
 
         document.getElementById("certificateScore").textContent=
         "الدرجة: "+score+" / 21";
@@ -1408,13 +1416,6 @@ function finishExam(){
         "<p>تحتاج إلى 15 درجة على الأقل للنجاح.</p>";
 
     }
-
-    // إرسال الإشعار لتليجرام
-    sendTelegramNotification(
-        document.getElementById("studentName").value.trim(),
-        score,
-        isPassed
-    );
 
     showErrors();
 
@@ -1489,4 +1490,4 @@ document.addEventListener("selectstart",e=>e.preventDefault());
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
-</html>
+    </html>

@@ -1,0 +1,21 @@
+{
+  "name": "دروس النحو ثانية بكالوريا",
+  "short_name": "دروس النحو",
+  "description": "منصة دروس واختبارات النحو لطلاب ثانية بكالوريا",
+  "start_url": "https://khalid-sameh.vercel.app/",
+  "scope": "https://khalid-sameh.vercel.app/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

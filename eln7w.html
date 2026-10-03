@@ -1,432 +1,1438 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 
-<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
 
-<title>دروس النحو</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+    <title>دروس النحو | الصف الثاني بكالوريا</title>
 
-* {
-    box-sizing: border-box;
-}
+    <meta name="description"
+        content="فهرس دروس النحو للصف الثاني بكالوريا، شرح مبسط ومنظم مع أمثلة تطبيقية وتدريبات.">
 
-html {
-    scroll-behavior: smooth;
-}
+    <meta name="keywords"
+        content="النحو, دروس النحو, الثاني بكالوريا, الأسماء الخمسة, الممنوع من الصرف, النعت, البدل">
 
-body {
-    margin: 0;
-    padding-top: 100px;
-    font-family: Arial, sans-serif;
-    background: #eeeeee;
-    color: #000000;
-    text-align: center;
-    line-height: 1.8;
-}
+    <meta name="author" content="خالد سامح">
 
-/* =========================
-   الهيدر
-========================= */
+    <meta name="robots" content="index, follow">
 
-.header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 75px;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    z-index: 1000;
-}
+    <meta name="google-site-verification"
+        content="YcytkBkGponRHY5LZCbaVGUjXmBoLaq6FHFot-6eHr8">
 
-.header-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: #112837;
-}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="دروس النحو | الصف الثاني بكالوريا">
+    <meta property="og:description"
+        content="تعلم النحو بطريقة بسيطة ومنظمة مع شرح واضح وتطبيقات تساعدك على فهم القواعد.">
+    <meta property="og:image"
+        content="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png">
 
-/* زر الرجوع */
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="دروس النحو | الصف الثاني بكالوريا">
+    <meta name="twitter:description"
+        content="فهرس دروس النحو للصف الثاني بكالوريا.">
+    <meta name="twitter:image"
+        content="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png">
 
-.my_work-button {
-    border: none;
-    padding: 10px 22px;
-    color: #eeeeee;
-    background-color: #000000;
-    border-radius: 40px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    transition: 0.3s;
-}
 
-.my_work-button:hover {
-    background-color: #eeeeee;
-    color: #000000;
-    box-shadow: 0 0 15px #000000;
-    transform: scale(1.05);
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* =========================
-   العنوان الرئيسي
-========================= */
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-.main-title {
-    background: #bcccbb;
-    color: #112837;
-    border: 2px solid #112837;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 700px;
-    margin: 20px auto 35px;
-    padding: 18px 15px;
-    font-size: 30px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-}
 
-/* =========================
-   خط فاصل
-========================= */
+    <style>
 
-hr {
-    width: 90%;
-    max-width: 800px;
-    margin: 10px auto 30px;
-    border: 0;
-    border-top: 2px solid #112837;
-}
+        :root {
 
-/* =========================
-   صندوق الدروس
-========================= */
+            --bg-light: #f8fafc;
 
-.lessons-container {
-    width: 92%;
-    max-width: 800px;
-    margin: auto;
-}
+            --card-bg: #ffffff;
 
-/* =========================
-   بطاقة الدرس
-========================= */
+            --card-border: #e2e8f0;
 
-.lesson-card {
-    background: #ffffff;
-    border-right: 6px solid #147DB7;
-    border-radius: 15px;
-    padding: 25px 20px;
-    margin: 22px auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    transition: 0.3s;
-}
+            --primary: #2563eb;
 
-.lesson-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 7px 18px rgba(0,0,0,0.18);
-}
+            --primary-hover: #1d4ed8;
 
-.lesson-number {
-    display: inline-block;
-    background: #112837;
-    color: #ffffff;
-    padding: 5px 15px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+            --accent: #0d9488;
 
-.lesson-card h2 {
-    margin: 5px 0 12px;
-    background: #bcccbb;
-    color: #112837;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 23px;
-}
+            --text-main: #0f172a;
 
-.lesson-card p {
-    font-size: 16px;
-    margin: 10px 0 18px;
-}
+            --text-muted: #64748b;
 
-/* =========================
-   أزرار الدروس
-========================= */
+            --soft-blue: #eff6ff;
 
-.lesson-button {
-    display: inline-block;
-    padding: 13px 32px;
-    background: #000000;
-    color: #eeeeee;
-    border: 2px solid #000000;
-    border-radius: 40px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+            --soft-green: #f0fdfa;
 
-.lesson-button:hover {
-    background: #eeeeee;
-    color: #000000;
-    box-shadow: 0 0 20px #000000;
-    transform: scale(1.05);
-}
+            --shadow-sm:
+                0 4px 6px -1px rgba(0,0,0,.05),
+                0 2px 4px -1px rgba(0,0,0,.03);
 
-/* =========================
-   صندوق الملاحظة
-========================= */
+            --shadow-md:
+                0 10px 25px -5px rgba(37,99,235,.08),
+                0 8px 10px -6px rgba(0,0,0,.01);
 
-.note {
-    width: 90%;
-    max-width: 700px;
-    margin: 30px auto;
-    background: #fff3cd;
-    border-right: 5px solid #d6a800;
-    border-radius: 10px;
-    padding: 15px;
-    font-weight: bold;
-}
+            --shadow-lg:
+                0 20px 35px -10px rgba(37,99,235,.16);
+        }
 
-/* =========================
-   الفوتر
-========================= */
 
-footer {
-    background: #112837;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    margin-top: 40px;
-    font-size: 15px;
-    font-weight: bold;
-    border-top: 3px solid #147DB7;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* =========================
-   الموبايل
-========================= */
 
-@media (max-width: 600px) {
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-        padding-top: 95px;
-    }
 
-    .header {
-        height: 75px;
-        padding: 10px 12px;
-    }
+        body {
 
-    .header-title {
-        font-size: 18px;
-    }
+            min-height: 100vh;
 
-    .my_work-button {
-        padding: 9px 17px;
-        font-size: 14px;
-    }
+            font-family: 'Cairo', sans-serif;
 
-    .main-title {
-        width: 94%;
-        font-size: 24px;
-        padding: 14px 10px;
-        margin-top: 15px;
-    }
+            color: var(--text-main);
 
-    .lesson-card {
-        width: 100%;
-        padding: 20px 15px;
-    }
+            background-color: var(--bg-light);
 
-    .lesson-card h2 {
-        font-size: 20px;
-    }
+            background-image:
+                radial-gradient(
+                    #cbd5e1 0.7px,
+                    transparent 0.7px
+                );
 
-    .lesson-card p {
-        font-size: 15px;
-    }
+            background-size: 24px 24px;
 
-    .lesson-button {
-        width: 90%;
-        font-size: 16px;
-        padding: 12px 15px;
-    }
+            overflow-x: hidden;
+        }
 
-    .note {
-        width: 92%;
-        font-size: 14px;
-    }
 
-    footer {
-        font-size: 14px;
-        padding: 14px 8px;
-    }
-}
+        /* =========================
+           HEADER
+        ========================= */
 
-</style>
+        .topbar {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            height: 90px;
+
+            margin: auto;
+
+            padding: 0 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo-img {
+
+            width: 52px;
+
+            height: 52px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 2px solid var(--primary);
+
+            box-shadow: var(--shadow-sm);
+
+            transition: .4s ease;
+        }
+
+
+        .logo-img:hover {
+            transform: rotate(360deg);
+        }
+
+
+        .top-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .top-button {
+
+            height: 44px;
+
+            padding: 0 22px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: .3s ease;
+        }
+
+
+        .about-button {
+
+            color: var(--text-main);
+
+            background: #fff;
+
+            border: 1px solid var(--card-border);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        .developer-button {
+
+            color: #fff;
+
+            background: var(--primary);
+
+            border: 1px solid var(--primary);
+
+            box-shadow:
+                0 4px 14px rgba(37,99,235,.25);
+        }
+
+
+        .top-button:hover {
+            transform: translateY(-2px);
+        }
+
+
+        .about-button:hover {
+
+            background: #f1f5f9;
+
+            border-color: #cbd5e1;
+        }
+
+
+        .developer-button:hover {
+
+            background: var(--primary-hover);
+
+            box-shadow:
+                0 7px 20px rgba(37,99,235,.32);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            width: 90%;
+
+            max-width: 1050px;
+
+            margin: 35px auto 45px;
+
+            padding: 55px 35px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.97),
+                    rgba(248,250,252,.96)
+                );
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 30px;
+
+            box-shadow: var(--shadow-md);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+
+            height: 260px;
+
+            background: rgba(37,99,235,.07);
+
+            border-radius: 50%;
+
+            top: -150px;
+
+            left: -100px;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            background: rgba(13,148,136,.06);
+
+            border-radius: 50%;
+
+            bottom: -140px;
+
+            right: -80px;
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 8px 20px;
+
+            margin-bottom: 18px;
+
+            color: var(--primary);
+
+            background: var(--soft-blue);
+
+            border: 1px solid #bfdbfe;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        .badge::before {
+
+            content: "";
+
+            width: 7px;
+
+            height: 7px;
+
+            margin-left: 8px;
+
+            background: var(--primary);
+
+            border-radius: 50%;
+        }
+
+
+        h1 {
+
+            font-size: 48px;
+
+            line-height: 1.3;
+
+            font-weight: 900;
+
+            letter-spacing: -.5px;
+        }
+
+
+        .hero-text {
+
+            max-width: 650px;
+
+            margin: 15px auto 0;
+
+            color: var(--text-muted);
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            font-weight: 600;
+        }
+
+
+        .hero-line {
+
+            width: 65px;
+
+            height: 4px;
+
+            margin: 25px auto 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--accent)
+                );
+
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           LESSONS
+        ========================= */
+
+        .lessons-section {
+
+            width: 90%;
+
+            max-width: 1050px;
+
+            margin: 0 auto 80px;
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .heading-text h2 {
+
+            font-size: 27px;
+
+            font-weight: 900;
+        }
+
+
+        .heading-text p {
+
+            margin-top: 5px;
+
+            color: var(--text-muted);
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        .lesson-count {
+
+            padding: 8px 17px;
+
+            color: var(--primary);
+
+            background: var(--soft-blue);
+
+            border: 1px solid #bfdbfe;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .lessons-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .lesson-card {
+
+            position: relative;
+
+            padding: 27px;
+
+            background: var(--card-bg);
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 22px;
+
+            box-shadow: var(--shadow-sm);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+
+            overflow: hidden;
+        }
+
+
+        .lesson-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+
+            top: 0;
+
+            width: 4px;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--primary),
+                    var(--accent)
+                );
+
+            opacity: .9;
+        }
+
+
+        .lesson-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color: #bfdbfe;
+
+            box-shadow: var(--shadow-lg);
+        }
+
+
+        .lesson-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 20px;
+        }
+
+
+        .lesson-number {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--primary);
+
+            background: var(--soft-blue);
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 14px;
+
+            font-size: 15px;
+
+            font-weight: 900;
+        }
+
+
+        .lesson-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--accent);
+
+            background: var(--soft-green);
+
+            border: 1px solid #ccfbf1;
+
+            border-radius: 13px;
+
+            font-size: 17px;
+        }
+
+
+        .lesson-card h3 {
+
+            margin-bottom: 8px;
+
+            font-size: 22px;
+
+            font-weight: 900;
+        }
+
+
+        .lesson-card p {
+
+            min-height: 48px;
+
+            color: var(--text-muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            font-weight: 600;
+        }
+
+
+        .lesson-bottom {
+
+            margin-top: 22px;
+
+            padding-top: 17px;
+
+            border-top: 1px solid #eef2f7;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 12px;
+        }
+
+
+        .lesson-type {
+
+            color: var(--text-muted);
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .lesson-button {
+
+            min-width: 110px;
+
+            height: 40px;
+
+            padding: 0 17px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #fff;
+
+            background: var(--primary);
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            transition: .3s ease;
+        }
+
+
+        .lesson-button:hover {
+
+            background: var(--primary-hover);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .info {
+
+            width: 90%;
+
+            max-width: 1050px;
+
+            margin: 0 auto 80px;
+
+            padding: 30px 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+
+            background: #fff;
+
+            border: 1px solid var(--card-border);
+
+            border-radius: 22px;
+
+            box-shadow: var(--shadow-md);
+        }
+
+
+        .info-text h2 {
+
+            margin-bottom: 5px;
+
+            color: var(--primary);
+
+            font-size: 22px;
+
+            font-weight: 900;
+        }
+
+
+        .info-text p {
+
+            color: var(--text-muted);
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        .info-label {
+
+            flex-shrink: 0;
+
+            padding: 10px 20px;
+
+            color: var(--accent);
+
+            background: var(--soft-green);
+
+            border: 1px solid #bbf7d0;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding: 30px 15px;
+
+            text-align: center;
+
+            background: #fff;
+
+            border-top: 1px solid var(--card-border);
+        }
+
+
+        .footer-name {
+
+            margin-bottom: 6px;
+
+            color: var(--text-main);
+
+            font-size: 16px;
+
+            font-weight: 800;
+        }
+
+
+        .footer-copy {
+
+            color: var(--text-muted);
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        .hero,
+        .lesson-card {
+
+            animation: fadeUp .7s ease both;
+        }
+
+
+        .lesson-card:nth-child(2) {
+            animation-delay: .08s;
+        }
+
+
+        .lesson-card:nth-child(3) {
+            animation-delay: .16s;
+        }
+
+
+        .lesson-card:nth-child(4) {
+            animation-delay: .24s;
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .topbar {
+
+                height: 75px;
+
+                padding: 0 18px;
+            }
+
+
+            .logo-img {
+
+                width: 44px;
+
+                height: 44px;
+            }
+
+
+            .top-actions {
+
+                gap: 7px;
+            }
+
+
+            .top-button {
+
+                height: 39px;
+
+                padding: 0 13px;
+
+                font-size: 11px;
+            }
+
+
+            .hero {
+
+                width: 92%;
+
+                margin-top: 20px;
+
+                padding: 40px 20px;
+
+                border-radius: 24px;
+            }
+
+
+            h1 {
+                font-size: 34px;
+            }
+
+
+            .hero-text {
+
+                font-size: 14px;
+
+                line-height: 1.8;
+            }
+
+
+            .lessons-section {
+
+                width: 92%;
+            }
+
+
+            .section-heading {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                margin-bottom: 18px;
+            }
+
+
+            .heading-text h2 {
+                font-size: 23px;
+            }
+
+
+            .lessons-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+
+            .lesson-card {
+
+                padding: 22px;
+            }
+
+
+            .lesson-card h3 {
+                font-size: 20px;
+            }
+
+
+            .info {
+
+                width: 92%;
+
+                padding: 25px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                margin-bottom: 60px;
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .about-button {
+                display: none;
+            }
+
+
+            .developer-button {
+                padding: 0 16px;
+            }
+
+
+            .hero {
+                padding: 35px 17px;
+            }
+
+
+            h1 {
+                font-size: 31px;
+            }
+
+
+            .lesson-bottom {
+                align-items: flex-start;
+            }
+
+
+            .lesson-button {
+                min-width: 100px;
+            }
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
+
 <!-- =========================
-     الهيدر
+     HEADER
 ========================= -->
 
-<header class="header">
+<header class="topbar">
 
-    <div class="header-title">
-        دروس النحو
-    </div>
+    <img
+        src="https://files.catbox.moe/ut4y5k.png"
+        alt="شعار منصة دروس النحو"
+        class="logo-img"
+        width="52"
+        height="52"
+    >
 
-    <a href="index.html" class="my_work-button">
-        رجوع
-    </a>
+
+    <nav class="top-actions">
+
+        <a
+            href="about.html"
+            class="top-button about-button"
+        >
+            عن الموقع
+        </a>
+
+
+        <a
+            href="https://wa.me/201123898466?text=السلام%20عليكم%20يا%20خالد%2C%20شفت%20موقعك%20وعايز%20استفسر"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="top-button developer-button"
+        >
+            تواصل مع المطور
+        </a>
+
+    </nav>
 
 </header>
 
 
+<main>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                الصف الثاني بكالوريا
+            </div>
+
+
+            <h1>
+                فهرس دروس النحو
+            </h1>
+
+
+            <p class="hero-text">
+                اختر الدرس الذي تريد دراسته وابدأ رحلة التعلم
+                بشرح واضح ومنظم يساعدك على فهم القواعد وتطبيقها.
+            </p>
+
+
+            <div class="hero-line"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LESSONS
+    ========================= -->
+
+    <section class="lessons-section">
+
+        <div class="section-heading">
+
+            <div class="heading-text">
+
+                <h2>
+                    دروس المنهج
+                </h2>
+
+                <p>
+                    جميع الدروس مرتبة لتسهيل الوصول والمذاكرة.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-count">
+                4 دروس
+            </div>
+
+        </div>
+
+
+        <div class="lessons-grid">
+
+
+            <!-- الدرس الأول -->
+
+            <article class="lesson-card">
+
+                <div class="lesson-top">
+
+                    <div class="lesson-number">
+                        01
+                    </div>
+
+                    <div class="lesson-icon">
+                        نحو
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    الأسماء الخمسة
+                </h3>
+
+
+                <p>
+                    تعرف على الأسماء الخمسة وشروط إعرابها
+                    وعلامات إعرابها بطريقة مبسطة.
+                </p>
+
+
+                <div class="lesson-bottom">
+
+                    <span class="lesson-type">
+                        درس نحوي
+                    </span>
+
+
+                    <a
+                        href="Five-name.html"
+                        class="lesson-button"
+                    >
+                        ابدأ الدرس
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- الدرس الثاني -->
+
+            <article class="lesson-card">
+
+                <div class="lesson-top">
+
+                    <div class="lesson-number">
+                        02
+                    </div>
+
+                    <div class="lesson-icon">
+                        نحو
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    الممنوع من الصرف
+                </h3>
+
+
+                <p>
+                    فهم الممنوع من الصرف وأهم قواعده
+                    مع أمثلة تساعدك على التطبيق.
+                </p>
+
+
+                <div class="lesson-bottom">
+
+                    <span class="lesson-type">
+                        درس نحوي
+                    </span>
+
+
+                    <a
+                        href="Mmno3.html"
+                        class="lesson-button"
+                    >
+                        ابدأ الدرس
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- الدرس الثالث -->
+
+            <article class="lesson-card">
+
+                <div class="lesson-top">
+
+                    <div class="lesson-number">
+                        03
+                    </div>
+
+                    <div class="lesson-icon">
+                        نحو
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    النعت
+                </h3>
+
+
+                <p>
+                    شرح النعت وأنواعه وأحكامه
+                    مع توضيح العلاقة بين النعت والمنعوت.
+                </p>
+
+
+                <div class="lesson-bottom">
+
+                    <span class="lesson-type">
+                        درس نحوي
+                    </span>
+
+
+                    <a
+                        href="na3t.html"
+                        class="lesson-button"
+                    >
+                        ابدأ الدرس
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- الدرس الرابع -->
+
+            <article class="lesson-card">
+
+                <div class="lesson-top">
+
+                    <div class="lesson-number">
+                        04
+                    </div>
+
+                    <div class="lesson-icon">
+                        نحو
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    البدل
+                </h3>
+
+
+                <p>
+                    تعلم البدل وأنواعه وأهم قواعده
+                    مع أمثلة تطبيقية سهلة.
+                </p>
+
+
+                <div class="lesson-bottom">
+
+                    <span class="lesson-type">
+                        درس نحوي
+                    </span>
+
+
+                    <a
+                        href="badal.html"
+                        class="lesson-button"
+                    >
+                        ابدأ الدرس
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INFO
+    ========================= -->
+
+    <section class="info">
+
+        <div class="info-text">
+
+            <h2>
+                ابدأ من أول درس
+            </h2>
+
+            <p>
+                اختر أحد الدروس السابقة وابدأ في دراسة القاعدة
+                خطوة بخطوة.
+            </p>
+
+        </div>
+
+
+        <div class="info-label">
+            محتوى تعليمي
+        </div>
+
+    </section>
+
+
+</main>
+
+
 <!-- =========================
-     العنوان
-========================= -->
-
-<h1 class="main-title">
-    دروس النحو
-</h1>
-
-<hr>
-
-
-<!-- =========================
-     الدروس
-========================= -->
-
-<div class="lessons-container">
-
-
-    <!-- الدرس الأول -->
-
-    <div class="lesson-card">
-
-        <span class="lesson-number">
-            الدرس الأول
-        </span>
-
-        <h2>
-            الأسماء الخمسة
-        </h2>
-
-        <p>
-            تعلّم قواعد الأسماء الخمسة وإعرابها مع الأمثلة والتطبيقات.
-        </p>
-
-        <a href="Five-name.html" class="lesson-button">
-            دخول إلى الدرس
-        </a>
-
-    </div>
-
-
-    <!-- الدرس الثاني -->
-
-    <div class="lesson-card">
-
-        <span class="lesson-number">
-            الدرس الثاني
-        </span>
-
-        <h2>
-            الممنوع من الصرف
-        </h2>
-
-        <p>
-            تعلّم الممنوع من الصرف وأسباب منعه من الصرف وطريقة إعرابه.
-        </p>
-
-        <a href="Mmno3.html" class="lesson-button">
-            دخول إلى الدرس
-        </a>
-
-    </div>
-
-
-    <!-- الدرس الثالث -->
-
-    <div class="lesson-card">
-
-        <span class="lesson-number">
-            الدرس الثالث
-        </span>
-
-        <h2>
-            النعت
-        </h2>
-
-        <p>
-            تعلّم درس النعت وأحكامه وعلاقته بالمنعوت مع أمثلة تطبيقية.
-        </p>
-
-        <a href="na3t.html" class="lesson-button">
-            دخول إلى الدرس
-        </a>
-
-    </div>
-
-
-    <!-- الدرس الرابع -->
-
-    <div class="lesson-card">
-
-        <span class="lesson-number">
-            الدرس الرابع
-        </span>
-
-        <h2>
-            البدل
-        </h2>
-
-        <p>
-            تعلّم درس البدل وأنواعه وإعرابه بطريقة ممتعة وبسيطة مع الأمثلة.
-        </p>
-
-        <a href="badal.html" class="lesson-button">
-            دخول إلى الدرس
-        </a>
-
-    </div>
-
-
-</div>
-
-
-<!-- =========================
-     ملاحظة
-========================= -->
-
-<div class="note">
-
-    اختر الدرس الذي تريد مراجعته وابدأ التعلم و الباقي قيد التطوير.
-
-</div>
-
-
-<!-- =========================
-     الفوتر
+     FOOTER
 ========================= -->
 
 <footer>
-    جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
+
+    <div class="footer-name">
+        الباشمبرمج خالد سامح
+    </div>
+
+
+    <div class="footer-copy">
+        جميع الحقوق محفوظة © 2026
+    </div>
+
 </footer>
 
 
+<script>
+
+/* منع القائمة بالزر الأيمن */
+
+document.addEventListener(
+    'contextmenu',
+    e => e.preventDefault()
+);
+
+
+/* منع النسخ */
+
+document.addEventListener(
+    'copy',
+    e => e.preventDefault()
+);
+
+
+/* منع القص */
+
+document.addEventListener(
+    'cut',
+    e => e.preventDefault()
+);
+
+
+/* منع تحديد النص */
+
+document.body.style.userSelect = 'none';
+
+</script>
+
+
+<!-- Vercel Analytics -->
+
+<script
+    defer
+    src="/_vercel/insights/script.js">
+</script>
+
+
+<script
+    defer
+    src="/_vercel/speed-insights/script.js">
+</script>
+
+
+<!-- Service Worker -->
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register(
+            "/service-worker.js"
+        );
+
+    });
+
+}
+
+</script>
+
+
 </body>
+
 </html>

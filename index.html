@@ -1,179 +1,299 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta name="google-site-verification" content="YcytkBkGponRHY5LZCbaVGUjXmBoLaq6FHFot-6eHr8" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+  <title>دروس النحو للصف الثاني بكالوريا</title>
 
-* {
-  box-sizing: border-box;
-}
+  <meta name="description" content="دروس النحو للصف الثاني بكالوريا بطريقة بسيطة ومنظمة.">
 
-body {
-  margin: 0;
-  padding: 40px 15px;
-  font-family: Arial, sans-serif;
-  background: #eeeeee;
-  color: #000000;
-  text-align: center;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.developer-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 10px 20px;
-  background-color: #000000;
-  color: #eeeeee;
-  border-radius: 40px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.دخول-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 35px;
-  background: transparent;
-  background-color: #000;
-  color: #eeeeee;
-  border: 2px solid #000;
-  border-radius: 40px;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    body {
+      margin: 0;
+      padding: 30px 15px;
+      min-height: 100vh;
+      font-family: Arial, Tahoma, sans-serif;
+      background: #eeeeee;
+      color: #000000;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
 
-.دخول-button:hover {
-  background-color: #eeeeee;
-  color: #000;
-  box-shadow: 0 0 20px #000000;
-  transform: scale(1.05);
-}
+    .top-buttons {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-button.onl {
-  border: none;
-  padding: 14px 35px;
-  color: #eeeeee;
-  background-color: #000;
-  border-radius: 40px;
-}
+    .developer-button,
+    .about-button {
+      padding: 10px 18px;
+      background-color: #000000;
+      color: #eeeeee;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.25s;
+      white-space: nowrap;
+    }
 
-/* ستايل الصورة الرئيسي */
-.header-img {
-  width: 140px; /* تحديد عرض ثابت وواضح بالشاشات الكبيرة بدلاً من النسبة المئوية الصغيرة */
-  height: auto;
-  border-radius: 50%;
-  margin: 20px auto;
-  display: block;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-  
-.logo-img {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+    .developer-button:hover,
+    .about-button:hover {
+      background-color: #222222;
+      transform: translateY(-2px);
+    }
 
-hr {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #ccc;
-}
+    .logo-img {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
-footer {
-  color: #374151;
-  text-align: center;
-  padding: 15px 10px;
-  margin-top: 40px;
-  font-size: 15px;
-  font-weight: bold;
-}
+    main {
+      width: 100%;
+      max-width: 900px;
+      margin: 65px auto 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-/* التجاوب مع شاشات الهواتف (أقل من 600px) */
-@media (max-width: 600px) {
-  body {
-    padding: 20px 10px;
-  }
+    hr {
+      width: 100%;
+      margin: 35px 0 45px;
+      border: 0;
+      border-top: 1px solid #cfcfcf;
+    }
 
-  .developer-button {
-    font-size: 12px;
-    padding: 8px 14px;
-    top: 12px;
-    right: 10px;
-  }
+    .header-img {
+      width: 145px;
+      height: 145px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      display: block;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    }
 
-  .logo-img {
-    width: 40px;
-    height: 40px;
-    top: 12px;
-    left: 10px;
-  }
+    h1 {
+      margin: 0;
+      max-width: 850px;
+      padding: 0 15px;
+      font-size: 30px;
+      line-height: 1.6;
+      font-weight: bold;
+    }
 
-  hr {
-    margin-top: 50px;
-  }
+    .subtitle {
+      margin-top: 10px;
+      color: #666666;
+      font-size: 16px;
+    }
 
-  .header-img {
-    width: 110px; /* حجم مناسب ومستجيب للهاتف */
-  }
+    .دخول-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 38px;
+      background-color: #000000;
+      color: #eeeeee;
+      border: 2px solid #000000;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-  h1 {
-    font-size: 22px;
-    padding: 0 10px;
-  }
+    .دخول-button:hover {
+      background-color: #eeeeee;
+      color: #000000;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+      transform: scale(1.05);
+    }
 
-  .دخول-button {
-    padding: 12px 28px;
-    font-size: 15px;
-  }
-}
-  
-</style>
+    footer {
+      color: #374151;
+      text-align: center;
+      padding: 20px 10px 10px;
+      margin-top: 45px;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
+    @media (max-width: 600px) {
+
+      body {
+        padding: 20px 10px;
+      }
+
+      .top-buttons {
+        top: 12px;
+        right: 10px;
+        gap: 6px;
+      }
+
+      .developer-button,
+      .about-button {
+        font-size: 11px;
+        padding: 8px 11px;
+      }
+
+      .logo-img {
+        width: 42px;
+        height: 42px;
+        top: 12px;
+        left: 10px;
+      }
+
+      main {
+        margin-top: 65px;
+      }
+
+      hr {
+        width: 95%;
+        margin: 35px 0 35px;
+      }
+
+      .header-img {
+        width: 115px;
+        height: 115px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 23px;
+        line-height: 1.6;
+        padding: 0 8px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+
+      .دخول-button {
+        padding: 12px 30px;
+        font-size: 15px;
+        margin-top: 22px;
+      }
+
+      footer {
+        font-size: 13px;
+        margin-top: 35px;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      .top-buttons {
+        gap: 4px;
+      }
+
+      .developer-button,
+      .about-button {
+        font-size: 10px;
+        padding: 7px 9px;
+      }
+
+      .logo-img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .header-img {
+        width: 105px;
+        height: 105px;
+      }
+
+      h1 {
+        font-size: 21px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<a href="https://wa.me/201123898466?text=السلام%20عليكم%20يا%20خالد%2C%20شفت%20موقعك%20وعايز%20استفسر" target="_blank" class="developer-button">تواصل مع المطور</a>
-<img src="https://files.catbox.moe/ut4y5k.png" alt="logo" class="logo-img">
+  <div class="top-buttons">
 
-<hr>
+    <a href="about.html" class="about-button">
+      عن الموقع
+    </a>
 
-<!-- صورة الهيدر -->
-<img src="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png" alt="صورة الهيدر" class="header-img">
+    <a href="https://wa.me/201123898466?text=السلام%20عليكم%20يا%20خالد%2C%20شفت%20موقعك%20وعايز%20استفسر"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="developer-button">
+      تواصل مع المطور
+    </a>
 
-<h1>دروس النحو للصف الثاني بكالوريا</h1>
+  </div>
 
-<a href="eln7w.html" class="دخول-button">دخول</a>
-  
-<script>
-// منع كليك يمين
-document.addEventListener('contextmenu', e => e.preventDefault());
+  <img src="https://files.catbox.moe/ut4y5k.png"
+       alt="شعار الموقع"
+       class="logo-img">
 
-// منع التحديد والنسخ Ctrl+C
-document.addEventListener('copy', e => e.preventDefault());
-document.addEventListener('cut', e => e.preventDefault());
+  <main>
 
-// منع تحديد النص
-document.body.style.userSelect = 'none';
-</script>
+    <hr>
 
-<script defer src="/_vercel/insights/script.js"></script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
+    <img src="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png"
+         alt="صورة الموقع"
+         class="header-img">
 
-<footer>
+    <h1>
+      دروس النحو للصف الثاني بكالوريا
+    </h1>
+
+    <p class="subtitle">
+      تعلم النحو بطريقة بسيطة ومنظمة
+    </p>
+
+    <a href="eln7w.html" class="دخول-button">
+      دخول
+    </a>
+
+  </main>
+
+  <footer>
     جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
-</footer>
-  
+  </footer>
+
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    document.addEventListener('copy', e => e.preventDefault());
+
+    document.addEventListener('cut', e => e.preventDefault());
+
+    document.body.style.userSelect = 'none';
+  </script>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
 </body>
+
 </html>

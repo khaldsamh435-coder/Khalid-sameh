@@ -1,399 +1,1453 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الأسماء الخمسة</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>الأسماء الخمسة | دروس النحو للصف الثاني بكالوريا</title>
 
-body {
-    font-family: 'Cairo', Arial, sans-serif;
-    padding-top: 70px; 
-    background-color: #fdfdfd;
-    line-height: 1.8;
-}
+    <meta name="description"
+        content="شرح درس الأسماء الخمسة للصف الثاني بكالوريا بطريقة بسيطة ومنظمة مع شروط الإعراب والأمثلة والتدريبات.">
 
+    <meta name="keywords"
+        content="الأسماء الخمسة, شرح الأسماء الخمسة, إعراب الأسماء الخمسة, النحو, الصف الثاني بكالوريا, دروس النحو">
 
-.header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    background: #ffffff;
-    padding: 12px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 1000;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
+    <meta name="author" content="خالد سامح">
+    <meta name="robots" content="index, follow">
 
-.دخول-button {
-    border: none;
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #000;
-    border-radius: 40px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    transition: 0.3s;
-    display: inline-block;
-}
+    <meta name="google-site-verification"
+        content="YcytkBkGponRHY5LZCbaVGUjXmBoLaq6FHFot-6eHr8">
 
-.دخول-button:hover {
-    background-color: #a0b8a0;
-}
+    <meta property="og:title" content="الأسماء الخمسة | دروس النحو">
+    <meta property="og:description"
+        content="شرح مبسط ومنظم لدرس الأسماء الخمسة للصف الثاني بكالوريا مع الأمثلة والتدريبات.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://khalid-sameh.vercel.app/">
+    <meta property="og:image"
+        content="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png">
 
-h1 {
-    text-align: center;
-    background: #bcccbb;
-    border-radius: 8px;
-    padding: 10px;
-    border: 2px solid #112837;
-    margin: 20px 15px;
-    font-size: 1.6rem;
-}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="الأسماء الخمسة | دروس النحو">
+    <meta name="twitter:description"
+        content="شرح درس الأسماء الخمسة للصف الثاني بكالوريا بطريقة بسيطة ومنظمة.">
+    <meta name="twitter:image"
+        content="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png">
 
-p {
-    margin: 0.8rem 15px;
-    font-size: 1.1rem;
-}
+    <link rel="icon" href="https://files.catbox.moe/ut4y5k.png">
 
-i, q {
-    color: #147DB7;
-    font-weight: bold;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-hr {
-    margin: 30px 15px;
-    border: 1px solid #ccc;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-/* حاوية الجدول لضمان عدم خروجه عن الشاشة في الهواتف */
-.table-responsive {
-    width: calc(100% - 30px);
-    margin: 20px 15px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
+    <link rel="manifest" href="/manifest.json">
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-th, td {
-    border: 2px solid #112837;
-    padding: 10px 12px;
-    text-align: right;
-    vertical-align: top;
-}
-
-th {
-    background-color: #bcccbb;
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-.main-header {
-    background-color: #eeeeee;
-    font-size: 1.3rem;
-}
-
-ul {
-    margin: 0 25px 15px 0;
-    padding-right: 20px;
-}
-    
-h2 {
-    display: inline-block; 
-    border: 2px solid #000; 
-    padding: 8px 15px; 
-    border-radius: 8px; 
-    background-color: #e1ebe0; 
-    margin: 20px 15px 15px 0; 
-    font-size: 1.3rem;
-}
-    
-h3 {
-    display: inline-block; 
-    border: 2px solid #000; 
-    padding: 5px 10px; 
-    border-radius: 25px; 
-    background-color: #e1ebe0; 
-    margin: 15px 15px; 
-    font-size: 1.1rem;
-}    
-    
-html {
-    scroll-behavior: smooth;
-}
-
-.example {
-    background-color: #f0f8ff;
-    border-right: 4px solid #147DB7;
-    padding: 8px 12px;
-    margin: 10px 15px;
-    border-radius: 5px;
-    word-wrap: break-word;
-}
-
-/* الحاوية الجديدة للزر الاخير */
-.lost {
-    text-align: center; /* التوسيط */
-    margin: 40px 0 30px 0; /* مسافة فوق وتحت */
-}
-    
-footer {
-    background: #112837;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    margin-top: 40px;
-    font-size: 15px;
-    font-weight: bold;
-    border-top: 3px solid #147DB7;
-}
-
-/* ===================================================
-   تحسينات التجاوب للشاشات المختلفة (الهاتف والتابلت)
-   =================================================== */
-
-/* شاشات التابلت والهواتف (أقل من 768px) */
-@media (max-width: 768px) {
-    body {
-        padding-top: 60px;
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        "name": "الأسماء الخمسة",
+        "description": "شرح درس الأسماء الخمسة للصف الثاني بكالوريا مع الشروط والأمثلة والتدريبات.",
+        "author": {
+            "@type": "Person",
+            "name": "خالد سامح"
+        },
+        "educationalLevel": "الصف الثاني بكالوريا",
+        "learningResourceType": "درس تعليمي",
+        "inLanguage": "ar",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "دروس النحو للصف الثاني بكالوريا",
+            "url": "https://khalid-sameh.vercel.app/"
+        }
     }
+    </script>
 
-    .header {
-        padding: 10px 15px;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    h1 {
-        font-size: 1.3rem;
-        padding: 8px;
-        margin: 15px 10px;
-    }
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent: #0d9488;
+            --text: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --soft-blue: #eff6ff;
+            --soft-teal: #f0fdfa;
 
-    h2 {
-        font-size: 1.1rem;
-        padding: 6px 12px;
-        margin: 15px 10px 10px 0;
-        max-width: calc(100% - 20px);
-    }
+            --shadow-sm: 0 4px 10px rgba(15, 23, 42, 0.05);
+            --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.07);
+            --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.09);
+        }
 
-    h3 {
-        font-size: 1rem;
-        margin: 10px 10px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    p {
-        font-size: 1rem;
-        margin: 0.8rem 10px;
-    }
+        body {
+            font-family: "Cairo", Arial, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.04) 0 2px, transparent 2px),
+                radial-gradient(circle at 90% 30%, rgba(13, 148, 136, 0.035) 0 2px, transparent 2px),
+                var(--bg);
+            background-size: 34px 34px, 42px 42px, auto;
+            color: var(--text);
+            line-height: 1.9;
+            min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
 
-    ul {
-        margin: 0 15px 15px 0;
-        padding-right: 15px;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .example {
-        margin: 8px 10px;
-        font-size: 0.95rem;
-    }
+        button {
+            font-family: inherit;
+        }
 
-    th, td {
-        padding: 8px 6px;
-        font-size: 0.95rem;
-    }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+            display: flex;
+            align-items: center;
+        }
 
-    .main-header {
-        font-size: 1.1rem;
-    }
-}
+        .topbar-inner {
+            width: min(1200px, calc(100% - 32px));
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
 
-/* الشاشات الصغيرة جداً - الهواتف الذكية (أقل من 480px) */
-@media (max-width: 480px) {
-    .دخول-button {
-        padding: 8px 16px;
-        font-size: 13px;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
 
-    h1 {
-        font-size: 1.15rem;
-    }
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+            flex-shrink: 0;
+        }
 
-    th, td {
-        padding: 6px 4px;
-        font-size: 0.85rem;
-    }
-}
-</style>
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .brand-subtitle {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .theme-button,
+        .back-button {
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .theme-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: var(--card);
+            color: var(--text);
+            font-size: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-button:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .back-button {
+            padding: 9px 17px;
+            border-radius: 13px;
+            background: var(--primary);
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .back-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 28px));
+            margin: 30px auto 60px;
+        }
+
+        .hero {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            padding: 38px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(37, 99, 235, 0.06);
+            border-radius: 50%;
+            top: -100px;
+            left: -80px;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--soft-blue);
+            color: var(--primary);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            padding: 6px 13px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(27px, 4vw, 42px);
+            line-height: 1.4;
+            margin-bottom: 10px;
+            color: var(--text);
+            font-weight: 800;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 15px;
+            max-width: 750px;
+        }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            padding: 34px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .section-number {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: var(--soft-blue);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section-title h2 {
+            font-size: clamp(20px, 3vw, 27px);
+            color: var(--text);
+            font-weight: 800;
+        }
+
+        .section p {
+            color: var(--text);
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            padding: 17px 20px;
+            margin: 18px 0;
+            color: var(--text);
+        }
+
+        .highlight q {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .conditions {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .condition {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            padding: 15px 17px;
+        }
+
+        .condition-number {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .condition-text {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .condition-text b {
+            color: var(--primary);
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .name-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            padding: 17px 12px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: 0.25s ease;
+        }
+
+        .name-card:hover {
+            transform: translateY(-3px);
+            border-color: #bfdbfe;
+            box-shadow: var(--shadow-md);
+        }
+
+        .name-card strong {
+            display: block;
+            color: var(--primary);
+            font-size: 19px;
+            margin-bottom: 3px;
+        }
+
+        .name-card span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 19px;
+            background: var(--card);
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 560px;
+            background: var(--card);
+        }
+
+        th,
+        td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        th {
+            background: #f1f5f9;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        th.main-header {
+            background: #dbeafe;
+            color: #1e3a8a;
+            font-size: 15px;
+        }
+
+        td {
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        td strong {
+            color: var(--text);
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .example {
+            background: var(--soft-teal);
+            border: 1px solid #ccfbf1;
+            border-right: 4px solid var(--accent);
+            border-radius: 17px;
+            padding: 15px 17px;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .example b {
+            color: var(--accent);
+        }
+
+        .example q {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .name-section {
+            margin-top: 25px;
+        }
+
+        .name-section h3 {
+            display: inline-flex;
+            align-items: center;
+            background: var(--soft-blue);
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 12px;
+            font-size: 18px;
+            margin-bottom: 13px;
+        }
+
+        .name-section > p {
+            margin-bottom: 13px;
+        }
+
+        .notes {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .note {
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 18px;
+            background: #f8fafc;
+        }
+
+        .note h3 {
+            color: var(--primary);
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .note ul,
+        .condition ul {
+            padding-right: 20px;
+        }
+
+        .note li {
+            color: var(--text);
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .practice {
+            background: linear-gradient(135deg, #eff6ff, #f0fdfa);
+            border: 1px solid #dbeafe;
+            border-radius: 22px;
+            padding: 22px;
+            margin-top: 20px;
+        }
+
+        .practice-title {
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .practice-description {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .practice-items {
+            display: grid;
+            gap: 10px;
+        }
+
+        .practice-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 13px 16px;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .exam-button-wrapper {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .exam-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 14px;
+            background: var(--primary);
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 10px 22px rgba(37, 99, 235, 0.2);
+            transition: 0.25s ease;
+        }
+
+        .exam-button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 28px 15px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            margin-top: 10px;
+        }
+
+        .footer-name {
+            color: var(--text);
+            font-weight: 800;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+        }
+
+        .raf {
+            background: #dcfce7;
+            color: #166534;
+            padding: 3px 8px;
+            border-radius: 7px;
+        }
+
+        .nasb {
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 3px 8px;
+            border-radius: 7px;
+        }
+
+        .jarr {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 3px 8px;
+            border-radius: 7px;
+        }
+
+        body.dark {
+            --bg: #0f172a;
+            --card: #111c2e;
+            --primary: #60a5fa;
+            --primary-hover: #3b82f6;
+            --accent: #2dd4bf;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --border: #26364d;
+            --soft-blue: #172554;
+            --soft-teal: #042f2e;
+            --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.18);
+            --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.22);
+            --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.3);
+
+            background:
+                radial-gradient(circle at 10% 10%, rgba(96, 165, 250, 0.06) 0 2px, transparent 2px),
+                radial-gradient(circle at 90% 30%, rgba(45, 212, 191, 0.05) 0 2px, transparent 2px),
+                var(--bg);
+        }
+
+        body.dark .topbar {
+            background: rgba(15, 23, 42, 0.88);
+            border-bottom-color: rgba(51, 65, 85, 0.8);
+        }
+
+        body.dark .hero,
+        body.dark .section,
+        body.dark .name-card,
+        body.dark .practice-item {
+            background: var(--card);
+        }
+
+        body.dark .hero h1,
+        body.dark .section-title h2,
+        body.dark .brand-title,
+        body.dark .footer-name {
+            color: #f8fafc;
+        }
+
+        body.dark .hero-description,
+        body.dark .brand-subtitle,
+        body.dark .footer-copy {
+            color: #cbd5e1;
+        }
+
+        body.dark .section p,
+        body.dark .condition-text,
+        body.dark .example,
+        body.dark .note,
+        body.dark .practice-item,
+        body.dark td {
+            color: #e2e8f0;
+        }
+
+        body.dark .condition {
+            background: #172235;
+            color: #e2e8f0;
+        }
+
+        body.dark .example {
+            background: var(--soft-teal);
+            border-color: #134e4a;
+        }
+
+        body.dark .example h3 {
+            color: #2dd4bf;
+        }
+
+        body.dark .highlight {
+            background: linear-gradient(135deg, #172554, #111c2e);
+            color: #f8fafc;
+            border-color: #263b70;
+        }
+
+        body.dark .practice {
+            background: linear-gradient(135deg, #111c2e, #172554);
+            border-color: #263b70;
+        }
+
+        body.dark .table-wrapper {
+            background: var(--card);
+            border-color: var(--border);
+        }
+
+        body.dark table {
+            background: var(--card);
+        }
+
+        body.dark th {
+            background: #172235 !important;
+            color: #f8fafc !important;
+            border-bottom-color: var(--border);
+        }
+
+        body.dark th.main-header {
+            background: #172554 !important;
+            color: #f8fafc !important;
+        }
+
+        body.dark td {
+            border-bottom-color: var(--border);
+            color: #e2e8f0;
+        }
+
+        body.dark td strong {
+            color: #f8fafc;
+        }
+
+        body.dark tr:nth-child(even) td {
+            background: #172235;
+        }
+
+        body.dark .name-card strong {
+            color: #60a5fa;
+        }
+
+        body.dark .name-card span {
+            color: #cbd5e1;
+        }
+
+        body.dark .theme-button {
+            background: var(--card);
+            color: #f8fafc;
+            border-color: var(--border);
+        }
+
+        body.dark .back-button {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        body.dark .back-button:hover {
+            background: #e2e8f0;
+        }
+
+        body.dark .footer {
+            border-top-color: var(--border);
+        }
+
+        body.dark .raf {
+            background: #064e3b;
+            color: #6ee7b7;
+        }
+
+        body.dark .nasb {
+            background: #172554;
+            color: #93c5fd;
+        }
+
+        body.dark .jarr {
+            background: #422006;
+            color: #fde68a;
+        }
+
+        body.dark .note {
+            background: #111c2e;
+        }
+
+        body.dark .name-section h3 {
+            background: #172554;
+            color: #60a5fa;
+        }
+
+        body.dark .practice-title {
+            color: #60a5fa;
+        }
+
+        body.dark .practice-description {
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 850px) {
+            .names-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .topbar {
+                height: 66px;
+            }
+
+            .topbar-inner {
+                width: calc(100% - 20px);
+            }
+
+            .brand-icon {
+                width: 39px;
+                height: 39px;
+                border-radius: 11px;
+            }
+
+            .brand-title {
+                font-size: 14px;
+            }
+
+            .brand-subtitle {
+                font-size: 9px;
+            }
+
+            .theme-button {
+                width: 40px;
+                height: 40px;
+            }
+
+            .back-button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .container {
+                width: calc(100% - 16px);
+                margin-top: 18px;
+            }
+
+            .hero,
+            .section {
+                padding: 21px 17px;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .section-title {
+                gap: 9px;
+            }
+
+            .section-number {
+                width: 38px;
+                height: 38px;
+                border-radius: 11px;
+            }
+
+            .section-title h2 {
+                font-size: 19px;
+            }
+
+            .names-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .condition {
+                padding: 12px;
+            }
+
+            .condition-number {
+                width: 31px;
+                height: 31px;
+            }
+
+            th,
+            td {
+                padding: 12px 9px;
+                font-size: 12px;
+            }
+
+            .example {
+                font-size: 13px;
+            }
+
+            .note {
+                padding: 15px;
+            }
+
+            .practice {
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-subtitle {
+                display: none;
+            }
+
+            .back-button {
+                padding: 7px 9px;
+            }
+
+            .names-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- الهيدر الثابت -->
-<div class="header">
-    <a href="eln7w.html" class="دخول-button">رجوع</a>
-</div>
+    <header class="topbar">
+        <div class="topbar-inner">
 
-<h1>الأسماء الخمسة</h1>
+            <div class="brand">
+                <div class="brand-icon">ن</div>
 
-<p>
-هي أسماء معربة لها إعراب خاص. ترفع بالواو وتنصب بالألف وتجر بالياء.
-</p>
+                <div class="brand-text">
+                    <div class="brand-title">دروس النحو</div>
+                    <div class="brand-subtitle">الصف الثاني بكالوريا</div>
+                </div>
+            </div>
 
-<p><b><q>وهي: أب - أخ - حم - فو - ذو</q></b></p>
-<hr>
+            <div class="top-actions">
+                <button
+                    class="theme-button"
+                    id="themeButton"
+                    aria-label="تفعيل الوضع الليلي">
+                    ☾
+                </button>
 
-<h2>أولاً: شروط إعراب الأسماء الخمسة بالحروف</h2>
-<ul>
-    <li><b>1- أن تكون مفردة</b> : فلو كانت مثنى أو جمع تعرب إعراب المثنى والجمع</li>
-    <li><b>2- أن تكون مضافة</b> : لابد أن يأتي بعدها مضاف إليه</li>
-    <li><b>3- أن تكون الإضافة لغير ياء المتكلم</b> : فلو أضيفت لياء المتكلم تعرب بحركات مقدرة</li>
-    <li><b>4- أن تكون "ذو" بمعنى صاحب</b> : ويأتي بعدها اسم ظاهر</li>
-</ul>
+                <a href="eln7w.html" class="back-button">
+                    رجوع ←
+                </a>
+            </div>
 
-<hr>
+        </div>
+    </header>
 
-<h1>ثانياً: إعراب الأسماء الخمسة</h1>
+    <main class="container">
 
-<div class="table-responsive">
-    <table>
-    <tr>
-    <th colspan="3" class="main-header">علامات إعراب الأسماء الخمسة</th>
-    </tr>
+        <section class="hero">
+            <div class="hero-badge">
+                الصف الثاني بكالوريا
+            </div>
 
-    <tr>
-    <th>الحالة</th>
-    <th>العلامة</th>
-    <th>مثال</th>
-    </tr>
+            <h1>الأسماء الخمسة</h1>
 
-    <tr>
-    <td><b>الرفع</b></td>
-    <td><b>الواو</b></td>
-    <td>جاء <b>أبوك</b></td>
-    </tr>
+            <p class="hero-description">
+                شرح درس الأسماء الخمسة مع شروط إعرابها وعلامات إعرابها وأمثلتها والتدريب عليها.
+            </p>
+        </section>
 
-    <tr>
-    <td><b>النصب</b></td>
-    <td><b>الألف</b></td>
-    <td>رأيت <b>أخاك</b></td>
-    </tr>
+        <section class="section">
 
-    <tr>
-    <td><b>الجر</b></td>
-    <td><b>الياء</b></td>
-    <td>سلمت على <b>حميك</b></td>
-    </tr>
+            <div class="section-title">
+                <div class="section-number">01</div>
+                <h2>الأسماء الخمسة</h2>
+            </div>
 
-    </table>
-</div>
+            <p>
+                هي أسماء معربة لها إعراب خاص. ترفع بالواو وتنصب بالألف وتجر بالياء.
+            </p>
 
-<hr>
+            <div class="highlight">
+                <b><q>وهي: أب - أخ - حم - فو - ذو</q></b>
+            </div>
 
-<h2>أمثلة على كل اسم</h2>
-    
-    <br>
+            <div class="names-grid">
+                <div class="name-card">
+                    <strong>أب</strong>
+                    <span>أبوك</span>
+                </div>
 
-<h3>1- أب</h3>
-<div class="example"><b>الرفع:</b> <q>أبوك</q> رجل كريم</div>
-<div class="example"><b>النصب:</b> احترم <q>أباك</q></div>
-<div class="example"><b>الجر:</b> سلمت على <q>أبيك</q></div>
+                <div class="name-card">
+                    <strong>أخ</strong>
+                    <span>أخوك</span>
+                </div>
 
-<h3>2- أخ</h3>
-<div class="example"><b>الرفع:</b> <q>أخوك</q> مجتهد</div>
-<div class="example"><b>النصب:</b> زرت <q>أخاك</q> أمس</div>
-<div class="example"><b>الجر:</b> جلست مع <q>أخيك</q></div>
+                <div class="name-card">
+                    <strong>حم</strong>
+                    <span>حموك</span>
+                </div>
 
-<h3>3- حم</h3>
-<p><b>الحم:</b> والد الزوج أو الزوجة</p>
-<div class="example"><b>الرفع:</b> <q>حموك</q> طيب</div>
-<div class="example"><b>النصب:</b> زرت <q>حماك</q></div>
-<div class="example"><b>الجر:</b> تحدثت مع <q>حميك</q></div>
+                <div class="name-card">
+                    <strong>فو</strong>
+                    <span>فوك</span>
+                </div>
 
-<h3>4- فو</h3>
-<p><b>الفو:</b> الفم</p>
-<div class="example"><b>الرفع:</b> <q>فوك</q> نظيف</div>
-<div class="example"><b>النصب:</b> اغسل <q>فاك</q></div>
-<div class="example"><b>الجر:</b> تمضمضت من <q>فيك</q></div>
+                <div class="name-card">
+                    <strong>ذو</strong>
+                    <span>ذو علم</span>
+                </div>
+            </div>
 
-<h3>5- ذو</h3>
-<p><b>ذو:</b> بمعنى صاحب</p>
-<div class="example"><b>الرفع:</b> محمد <q>ذو</q> علم</div>
-<div class="example"><b>النصب:</b> قابلت رجلا <q>ذا</q> خلق</div>
-<div class="example"><b>الجر:</b> سلمت على امرأة <q>ذي</q> مكانة</div>
+        </section>
 
-<hr>
+        <section class="section">
 
-<h1>ثالثاً: بعض الملاحظات المهمة</h1>
+            <div class="section-title">
+                <div class="section-number">02</div>
+                <h2>أولاً: شروط إعراب الأسماء الخمسة بالحروف</h2>
+            </div>
 
-<div id="about">
+            <div class="conditions">
 
-<h2>الملحوظة 1</h2>
-<ul>
-    <li>إذا لم تكن الأسماء الخمسة غير مضافة تعرب بالحركات الأصلية</li>
-    <li class="example">مثال: هذا <b>أبٌ</b> كريم ← خبر مرفوع بالضمة</li>
-</ul>
+                <div class="condition">
+                    <div class="condition-number">1</div>
 
-<h2>الملحوظة 2</h2>
-<ul>
-    <li>إذا أضيفت إلى ياء المتكلم تعرب بحركات مقدرة</li>
-    <li class="example">مثال: <b>أبي</b> يحبني ← مبتدأ مرفوع بالضمة المقدرة</li>
-</ul>
+                    <div class="condition-text">
+                        <b>أن تكون مفردة</b> : فلو كانت مثنى أو جمع تعرب إعراب المثنى والجمع
+                    </div>
+                </div>
 
-<h2>الملحوظة 3</h2>
-<ul>
-    <li>كلمة <q>فو</q> تحذف الواو عند الإضافة فتصبح <q>فا - في</q></li>
-</ul>
+                <div class="condition">
+                    <div class="condition-number">2</div>
 
-<h2>الملحوظة 4</h2>
-<ul>
-    <li>كلمة <q>ذو</q> ملازمة للإضافة ولا تأتي إلا بعدها اسم ظاهر</li>
-    <li class="example">صح: رجل <b>ذو مال</b>  |  خطأ: رجل <b>ذو</b></li>
-</ul>
+                    <div class="condition-text">
+                        <b>أن تكون مضافة</b> : لابد أن يأتي بعدها مضاف إليه
+                    </div>
+                </div>
 
-<h2>الملحوظة 5</h2>
-<ul>
-    <li>لا تخلط بين <q>ذو</q> بمعنى صاحب و <q>ذا</q> اسم الإشارة</li>
-    <li class="example">ذو: هذا طالب <b>ذو</b> علم  |  ذا: <b>ذا</b> الطالب مجتهد</li>
-</ul>
+                <div class="condition">
+                    <div class="condition-number">3</div>
 
-</div>
+                    <div class="condition-text">
+                        <b>أن تكون الإضافة لغير ياء المتكلم</b> : فلو أضيفت لياء المتكلم تعرب بحركات مقدرة
+                    </div>
+                </div>
 
-<hr>
+                <div class="condition">
+                    <div class="condition-number">4</div>
 
-<h1>تدريب سريع</h1>
-<p>أعرب ما تحته خط:</p>
-<div class="example">1- إن <b>أباك</b> رجل صالح</div>
-<div class="example">2- كان <b>أخوك</b> <b>ذا</b> أدب</div>
-<div class="example">3- مررت ب <b>ذي</b> الخلق</div>
-    
-<script>
-document.addEventListener('contextmenu', e => e.preventDefault());
-document.addEventListener('copy', e => e.preventDefault());
-document.addEventListener('cut', e => e.preventDefault());
-document.body.style.userSelect = 'none';
-</script>
+                    <div class="condition-text">
+                        <b>أن تكون "ذو" بمعنى صاحب</b> : ويأتي بعدها اسم ظاهر
+                    </div>
+                </div>
 
-<div class="lost">
-  <a href="exam1.html" class="دخول-button">انتقل الي الاختبار</a>
-</div>
-    
-<footer>
-    جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
-</footer>
-<script defer src="/_vercel/insights/script.js"></script>
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-title">
+                <div class="section-number">03</div>
+                <h2>ثانياً: إعراب الأسماء الخمسة</h2>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tr>
+                        <th colspan="3" class="main-header">
+                            علامات إعراب الأسماء الخمسة
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th>الحالة</th>
+                        <th>العلامة</th>
+                        <th>مثال</th>
+                    </tr>
+
+                    <tr>
+                        <td><b>الرفع</b></td>
+                        <td><b>الواو</b></td>
+                        <td>جاء <b>أبوك</b></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>النصب</b></td>
+                        <td><b>الألف</b></td>
+                        <td>رأيت <b>أخاك</b></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>الجر</b></td>
+                        <td><b>الياء</b></td>
+                        <td>سلمت على <b>حميك</b></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-title">
+                <div class="section-number">04</div>
+                <h2>أمثلة على كل اسم</h2>
+            </div>
+
+            <div class="name-section">
+
+                <h3>1- أب</h3>
+
+                <div class="examples-grid">
+
+                    <div class="example">
+                        <b>الرفع:</b> <q>أبوك</q> رجل كريم
+                    </div>
+
+                    <div class="example">
+                        <b>النصب:</b> احترم <q>أباك</q>
+                    </div>
+
+                    <div class="example">
+                        <b>الجر:</b> سلمت على <q>أبيك</q>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="name-section">
+
+                <h3>2- أخ</h3>
+
+                <div class="examples-grid">
+
+                    <div class="example">
+                        <b>الرفع:</b> <q>أخوك</q> مجتهد
+                    </div>
+
+                    <div class="example">
+                        <b>النصب:</b> زرت <q>أخاك</q> أمس
+                    </div>
+
+                    <div class="example">
+                        <b>الجر:</b> جلست مع <q>أخيك</q>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="name-section">
+
+                <h3>3- حم</h3>
+
+                <p>
+                    <b>الحم:</b> والد الزوج أو الزوجة
+                </p>
+
+                <div class="examples-grid">
+
+                    <div class="example">
+                        <b>الرفع:</b> <q>حموك</q> طيب
+                    </div>
+
+                    <div class="example">
+                        <b>النصب:</b> زرت <q>حماك</q>
+                    </div>
+
+                    <div class="example">
+                        <b>الجر:</b> تحدثت مع <q>حميك</q>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="name-section">
+
+                <h3>4- فو</h3>
+
+                <p>
+                    <b>الفو:</b> الفم
+                </p>
+
+                <div class="examples-grid">
+
+                    <div class="example">
+                        <b>الرفع:</b> <q>فوك</q> نظيف
+                    </div>
+
+                    <div class="example">
+                        <b>النصب:</b> اغسل <q>فاك</q>
+                    </div>
+
+                    <div class="example">
+                        <b>الجر:</b> تمضمضت من <q>فيك</q>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="name-section">
+
+                <h3>5- ذو</h3>
+
+                <p>
+                    <b>ذو:</b> بمعنى صاحب
+                </p>
+
+                <div class="examples-grid">
+
+                    <div class="example">
+                        <b>الرفع:</b> محمد <q>ذو</q> علم
+                    </div>
+
+                    <div class="example">
+                        <b>النصب:</b> قابلت رجلا <q>ذا</q> خلق
+                    </div>
+
+                    <div class="example">
+                        <b>الجر:</b> سلمت على امرأة <q>ذي</q> مكانة
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-title">
+                <div class="section-number">05</div>
+                <h2>ثالثاً: بعض الملاحظات المهمة</h2>
+            </div>
+
+            <div class="notes">
+
+                <div class="note">
+
+                    <h3>الملحوظة 1</h3>
+
+                    <ul>
+                        <li>
+                            إذا لم تكن الأسماء الخمسة غير مضافة تعرب بالحركات الأصلية
+                        </li>
+
+                        <li class="example">
+                            مثال: هذا <b>أبٌ</b> كريم ← خبر مرفوع بالضمة
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="note">
+
+                    <h3>الملحوظة 2</h3>
+
+                    <ul>
+                        <li>
+                            إذا أضيفت إلى ياء المتكلم تعرب بحركات مقدرة
+                        </li>
+
+                        <li class="example">
+                            مثال: <b>أبي</b> يحبني ← مبتدأ مرفوع بالضمة المقدرة
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="note">
+
+                    <h3>الملحوظة 3</h3>
+
+                    <ul>
+                        <li>
+                            كلمة <q>فو</q> تحذف الواو عند الإضافة فتصبح <q>فا - في</q>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="note">
+
+                    <h3>الملحوظة 4</h3>
+
+                    <ul>
+                        <li>
+                            كلمة <q>ذو</q> ملازمة للإضافة ولا تأتي إلا بعدها اسم ظاهر
+                        </li>
+
+                        <li class="example">
+                            صح: رجل <b>ذو مال</b>  |  خطأ: رجل <b>ذو</b>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="note">
+
+                    <h3>الملحوظة 5</h3>
+
+                    <ul>
+                        <li>
+                            لا تخلط بين <q>ذو</q> بمعنى صاحب و <q>ذا</q> اسم الإشارة
+                        </li>
+
+                        <li class="example">
+                            ذو: هذا طالب <b>ذو</b> علم  |  ذا: <b>ذا</b> الطالب مجتهد
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-title">
+                <div class="section-number">06</div>
+                <h2>تدريب سريع</h2>
+            </div>
+
+            <div class="practice">
+
+                <div class="practice-title">
+                    تدريب سريع
+                </div>
+
+                <p class="practice-description">
+                    أعرب ما تحته خط:
+                </p>
+
+                <div class="practice-items">
+
+                    <div class="practice-item">
+                        1- إن <b>أباك</b> رجل صالح
+                    </div>
+
+                    <div class="practice-item">
+                        2- كان <b>أخوك</b> <b>ذا</b> أدب
+                    </div>
+
+                    <div class="practice-item">
+                        3- مررت ب <b>ذي</b> الخلق
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="exam-button-wrapper">
+                <a href="exam1.html" class="exam-button">
+                    انتقل الي الاختبار
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-copy">
+            جميع الحقوق محفوظة © 2026 |
+            <span class="footer-name">الباشمبرمج خالد سامح</span>
+        </div>
+    </footer>
+
+    <script>
+        const themeButton = document.getElementById("themeButton");
+
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+            themeButton.textContent = "☀";
+            themeButton.setAttribute(
+                "aria-label",
+                "تفعيل الوضع النهاري"
+            );
+        }
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark");
+
+            const isDark =
+                document.body.classList.contains("dark");
+
+            localStorage.setItem(
+                "theme",
+                isDark ? "dark" : "light"
+            );
+
+            themeButton.textContent =
+                isDark ? "☀" : "☾";
+
+            themeButton.setAttribute(
+                "aria-label",
+                isDark
+                    ? "تفعيل الوضع النهاري"
+                    : "تفعيل الوضع الليلي"
+            );
+        });
+
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("copy", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("cut", function (event) {
+            event.preventDefault();
+        });
+
+        document.body.style.userSelect = "none";
+
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("/service-worker.js")
+                    .catch(function () {});
+            });
+        }
+    </script>
+
+    <script
+        src="/_vercel/insights/script.js"
+        defer>
+    </script>
+
+    <script
+        src="/_vercel/speed-insights/script.js"
+        defer>
+    </script>
+
 </body>
+
 </html>

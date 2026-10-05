@@ -4,27 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>اختبار الممنوع من الصرف</title>
+<title>اختبار الممنوع من الصرف | دروس النحو</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+:root{
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --primary:#2563eb;
+    --primary-hover:#1d4ed8;
+    --accent:#0d9488;
+    --text:#0f172a;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --soft-blue:#eff6ff;
+    --soft-teal:#f0fdfa;
+    --success:#16a34a;
+    --success-bg:#f0fdf4;
+    --danger:#dc2626;
+    --danger-bg:#fef2f2;
+    --warning:#d97706;
+    --warning-bg:#fffbeb;
+    --shadow:0 10px 30px rgba(15,23,42,.07);
+}
+
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:100px;
+    scroll-padding-top:90px;
 }
 
 body{
     font-family:"Cairo",Arial,sans-serif;
-    padding-top:100px;
-    background:#eeeeee;
-    line-height:1.9;
-    color:#111;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+    padding-top:82px;
+    transition:.25s;
+}
+
+body.dark{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:#334155;
+    --soft-blue:#172554;
+    --soft-teal:#134e4a;
+    --success-bg:#052e16;
+    --danger-bg:#450a0a;
+    --warning-bg:#451a03;
+    --shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 .header{
@@ -32,108 +66,297 @@ body{
     top:0;
     right:0;
     width:100%;
-    height:75px;
-    background:#fff;
-    padding:10px 20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.2);
+    height:70px;
+    padding:10px 18px;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 4px 20px rgba(15,23,42,.06);
     z-index:1000;
-
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+    gap:12px;
 }
 
-.دخول-button,
-.start-button,
-.restart-button,
-.print-button{
-    border:none;
-    padding:10px 20px;
+body.dark .header{
+    background:rgba(15,23,42,.88);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+}
+
+.brand-icon{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     color:#fff;
-    background:#000;
-    border-radius:40px;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:bold;
-    display:inline-block;
-    cursor:pointer;
-    transition:.3s;
+    font-size:21px;
+    font-weight:900;
+    background:linear-gradient(135deg,#2563eb,#0d9488);
+    box-shadow:0 6px 16px rgba(37,99,235,.25);
+    flex-shrink:0;
 }
 
-.دخول-button:hover,
-.start-button:hover,
-.restart-button:hover,
-.print-button:hover{
-    background:#333;
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.25;
+    min-width:0;
+}
+
+.brand-title{
+    font-weight:900;
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.brand-subtitle{
+    color:var(--muted);
+    font-size:11px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.theme-button,
+.back-button{
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.25s;
+}
+
+.theme-button{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    background:var(--soft-blue);
+    color:var(--primary);
+    font-size:18px;
+}
+
+.theme-button:hover{
+    transform:translateY(-2px);
+}
+
+.back-button{
+    padding:9px 16px;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    font-size:14px;
+    font-weight:800;
+}
+
+.back-button:hover{
+    background:var(--primary-hover);
+    transform:translateY(-2px);
 }
 
 .timer{
-    background:#e1ebe0;
-    border:2px solid #112837;
-    border-radius:30px;
-    padding:5px 18px;
-    font-size:18px;
-    font-weight:bold;
-    min-width:100px;
+    position:fixed;
+    left:18px;
+    top:82px;
+    z-index:900;
+    min-width:105px;
+    padding:9px 15px;
+    border-radius:14px;
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    color:var(--primary);
     text-align:center;
+    font-size:18px;
+    font-weight:900;
+    direction:ltr;
 }
 
 .timer.danger{
-    background:#ffdddd;
-    border-color:#b00000;
-    color:#b00000;
+    color:var(--danger);
+    background:var(--danger-bg);
+    border-color:#fecaca;
 }
 
-h1{
-    text-align:center;
-    background:#bcccbb;
-    border-radius:8px;
-    padding:12px;
-    border:2px solid #112837;
-    margin:20px 10px 30px;
-    font-size:1.6rem;
+.container{
+    width:min(1100px,calc(100% - 30px));
+    margin:auto;
 }
 
-.intro{
-    background:#fff;
-    border-right:4px solid #147DB7;
+.hero{
+    margin:25px 0 18px;
+    padding:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(37,99,235,.08);
+    top:-80px;
+    left:-60px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:6px 12px;
+    border-radius:999px;
+    background:var(--soft-blue);
+    color:var(--primary);
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.hero h1{
+    font-size:clamp(24px,4vw,36px);
+    line-height:1.4;
+    margin-bottom:8px;
+    position:relative;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:15px;
+    max-width:750px;
+    position:relative;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:22px;
+    position:relative;
+}
+
+.info-card{
     padding:15px;
-    margin:15px;
-    border-radius:8px;
-    text-align:center;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:var(--soft-blue);
 }
 
-.intro p{
-    margin:5px;
+.info-card:nth-child(2){
+    background:var(--soft-teal);
+}
+
+.info-card strong{
+    display:block;
+    font-size:18px;
+    margin-bottom:2px;
+}
+
+.info-card span{
+    color:var(--muted);
+    font-size:12px;
 }
 
 .name-box{
-    text-align:center;
-    margin:20px 15px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:22px;
+    margin:18px 0;
+    box-shadow:var(--shadow);
+}
+
+.name-box label{
+    display:block;
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:9px;
 }
 
 .name-box input{
-    width:min(90%,450px);
-    padding:12px;
-    border:2px solid #112837;
-    border-radius:8px;
-    font-size:17px;
-    text-align:center;
+    width:100%;
+    padding:13px 15px;
+    border:1px solid var(--border);
+    border-radius:13px;
     outline:none;
+    background:var(--bg);
+    color:var(--text);
+    font-family:inherit;
+    font-size:15px;
+    transition:.2s;
 }
 
 .name-box input:focus{
-    border-color:#147DB7;
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(37,99,235,.1);
 }
 
 .start-container{
     text-align:center;
-    margin:25px;
+    margin:20px 0 30px;
 }
 
-.start-button{
-    font-size:18px;
-    padding:12px 35px;
+.start-button,
+.submit-button,
+.restart-button,
+.print-button{
+    border:none;
+    cursor:pointer;
+    padding:12px 25px;
+    border-radius:13px;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:800;
+    transition:.25s;
+}
+
+.start-button,
+.submit-button{
+    color:#fff;
+    background:var(--primary);
+    box-shadow:0 7px 18px rgba(37,99,235,.2);
+}
+
+.start-button:hover,
+.submit-button:hover{
+    background:var(--primary-hover);
+    transform:translateY(-2px);
+}
+
+.restart-button{
+    color:#fff;
+    background:var(--accent);
+}
+
+.print-button{
+    color:#fff;
+    background:var(--primary);
+}
+
+.restart-button:hover,
+.print-button:hover{
+    transform:translateY(-2px);
 }
 
 #exam{
@@ -141,210 +364,324 @@ h1{
 }
 
 .question{
-    background:#fff;
-    margin:18px 15px;
-    padding:15px;
-    border-radius:8px;
-    border:2px solid #112837;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:22px;
+    margin:16px 0;
+    box-shadow:var(--shadow);
 }
 
 .question-title{
-    font-size:1.1rem;
-    font-weight:bold;
-    margin-bottom:12px;
+    font-size:16px;
+    font-weight:900;
+    line-height:1.9;
+    margin-bottom:15px;
 }
 
 .poem{
-    background:#f0f8ff;
-    border-right:4px solid #147DB7;
-    padding:15px;
-    margin:12px 0;
-    border-radius:5px;
-    font-weight:bold;
+    background:var(--soft-blue);
+    border-right:4px solid var(--primary);
+    padding:18px;
+    margin:15px 0;
+    border-radius:14px;
     text-align:center;
     font-size:18px;
-    word-break:break-word;
+    font-weight:800;
+    line-height:2;
 }
 
 .option{
     display:block;
-    background:#f8f8f8;
-    border:2px solid #ccc;
-    padding:10px;
-    margin:8px 0;
-    border-radius:7px;
+    position:relative;
+    background:var(--bg);
+    border:1px solid var(--border);
+    padding:13px 15px;
+    margin:9px 0;
+    border-radius:13px;
     cursor:pointer;
     transition:.2s;
-    word-wrap:break-word;
+    font-size:14px;
 }
 
 .option:hover{
-    background:#e1ebe0;
-    border-color:#112837;
+    border-color:#93c5fd;
+    background:var(--soft-blue);
 }
 
 .option input{
-    margin-left:8px;
+    margin-left:9px;
+    accent-color:var(--primary);
     cursor:pointer;
 }
 
 .option.correct{
-    background:#d8f3dc;
-    border-color:#198754;
-    color:#146c43;
-    font-weight:bold;
+    background:var(--success-bg);
+    border-color:#86efac;
+    color:var(--success);
+    font-weight:800;
 }
 
 .option.wrong{
-    background:#f8d7da;
-    border-color:#dc3545;
-    color:#842029;
-    font-weight:bold;
+    background:var(--danger-bg);
+    border-color:#fca5a5;
+    color:var(--danger);
+    font-weight:800;
 }
 
 .feedback{
-    margin-top:10px;
-    padding:10px;
-    border-radius:6px;
-    font-weight:bold;
     display:none;
+    margin-top:12px;
+    padding:11px 14px;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:800;
 }
 
 .feedback.correct-feedback{
     display:block;
-    background:#d8f3dc;
-    border-right:4px solid #198754;
-    color:#146c43;
+    color:var(--success);
+    background:var(--success-bg);
+    border-right:4px solid var(--success);
 }
 
 .feedback.wrong-feedback{
     display:block;
-    background:#f8d7da;
-    border-right:4px solid #dc3545;
-    color:#842029;
+    color:var(--danger);
+    background:var(--danger-bg);
+    border-right:4px solid var(--danger);
 }
 
 .submit-container{
     text-align:center;
-    margin:35px 0;
-}
-
-.submit-button{
-    border:none;
-    padding:13px 35px;
-    color:#fff;
-    background:#112837;
-    border-radius:40px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.submit-button:hover{
-    background:#1c435b;
+    padding:25px 0 35px;
 }
 
 #result{
     display:none;
-    margin:25px 15px;
 }
 
 .result-box{
-    background:#fff;
-    border:2px solid #112837;
-    border-radius:10px;
-    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:30px;
+    margin:25px 0;
+    box-shadow:var(--shadow);
     text-align:center;
+}
+
+.result-box h2{
+    font-size:25px;
+    margin-bottom:15px;
 }
 
 .score{
-    font-size:25px;
-    font-weight:bold;
-    margin:15px;
+    font-size:28px;
+    font-weight:900;
+    margin:15px 0;
 }
 
 .success{
-    color:#198754;
+    color:var(--success);
 }
 
 .failure{
-    color:#842029;
+    color:var(--danger);
 }
 
 .certificate{
-    background:#fff;
-    border:6px double #112837;
-    padding:35px 20px;
-    margin-top:20px;
-    border-radius:10px;
+    background:var(--card);
+    border:5px double var(--primary);
+    padding:38px 25px;
+    margin:25px auto 0;
+    border-radius:18px;
     text-align:center;
+    max-width:750px;
 }
 
 .certificate h2{
     display:inline-block;
-    border:2px solid #000;
-    padding:8px 15px;
-    border-radius:8px;
-    background:#e1ebe0;
-    margin-bottom:20px;
-    font-size:1.3rem;
+    padding:9px 18px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--soft-blue);
+    color:var(--primary);
+    margin-bottom:18px;
+    font-size:20px;
 }
 
 .student-name{
     font-size:30px;
-    color:#147DB7;
-    font-weight:bold;
+    color:var(--primary);
+    font-weight:900;
     margin:15px;
     word-break:break-word;
 }
 
+.review{
+    background:var(--soft-blue);
+    border-right:4px solid var(--primary);
+    padding:18px;
+    margin-top:22px;
+    border-radius:14px;
+    text-align:right;
+}
+
+.review h3{
+    margin-bottom:8px;
+}
+
 .error-list{
     text-align:right;
-    margin-top:20px;
+    margin-top:25px;
+}
+
+.error-list h3{
+    margin-bottom:12px;
 }
 
 .error-item{
-    background:#fff3cd;
-    border-right:4px solid #ffc107;
-    padding:12px;
+    background:var(--warning-bg);
+    border-right:4px solid var(--warning);
+    padding:13px 15px;
     margin:10px 0;
-    border-radius:6px;
-    word-break:break-word;
-}
-
-.review{
-    background:#f0f8ff;
-    border-right:4px solid #147DB7;
-    padding:15px;
-    margin-top:20px;
-    border-radius:7px;
-    text-align:right;
+    border-radius:12px;
 }
 
 footer{
-    background:#d1d5db;
-    color:#374151;
     text-align:center;
-    padding:15px 10px;
-    margin-top:40px;
-    font-size:15px;
-    font-weight:bold;
-    border-top:2px solid #9ca3af;
+    padding:25px 15px;
+    color:var(--muted);
+    font-size:13px;
 }
 
-/* ===================================================
-   تحسينات الشاشات المختلفة (الطباعة والتابلت والهواتف)
-   =================================================== */
+@media(max-width:768px){
+    body{
+        padding-top:74px;
+    }
+
+    .container{
+        width:min(100% - 20px,650px);
+    }
+
+    .header{
+        height:64px;
+        padding:8px 10px;
+    }
+
+    .brand-icon{
+        width:37px;
+        height:37px;
+        border-radius:11px;
+        font-size:18px;
+    }
+
+    .brand-title{
+        font-size:14px;
+    }
+
+    .brand-subtitle{
+        font-size:10px;
+    }
+
+    .back-button{
+        padding:8px 12px;
+        font-size:12px;
+    }
+
+    .theme-button{
+        width:36px;
+        height:36px;
+    }
+
+    .timer{
+        top:72px;
+        left:10px;
+        min-width:85px;
+        padding:7px 10px;
+        font-size:15px;
+    }
+
+    .hero{
+        padding:23px 18px;
+        border-radius:19px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .question{
+        padding:17px;
+        border-radius:17px;
+    }
+
+    .question-title{
+        font-size:15px;
+    }
+
+    .option{
+        font-size:13px;
+    }
+
+    .result-box{
+        padding:20px 15px;
+    }
+}
+
+@media(max-width:480px){
+    .brand-subtitle{
+        display:none;
+    }
+
+    .header-actions{
+        gap:5px;
+    }
+
+    .hero h1{
+        font-size:23px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .name-box{
+        padding:17px;
+    }
+
+    .question{
+        padding:14px;
+        margin:12px 0;
+    }
+
+    .poem{
+        font-size:15px;
+        padding:13px 9px;
+    }
+
+    .student-name{
+        font-size:23px;
+    }
+
+    .certificate{
+        padding:28px 14px;
+    }
+
+    .score{
+        font-size:24px;
+    }
+}
 
 @media print{
-
     body{
-        padding-top:0;
+        padding:0;
         background:#fff;
     }
 
     .header,
+    .timer,
     #exam,
     #startArea,
     .restart-button,
@@ -355,6 +692,11 @@ footer{
 
     #result{
         display:block !important;
+    }
+
+    .result-box{
+        box-shadow:none;
+        border:none;
         margin:0;
     }
 
@@ -364,918 +706,792 @@ footer{
         flex-direction:column;
         justify-content:center;
         align-items:center;
-        border:4px solid #112837;
+        border:4px solid #2563eb;
     }
 }
-
-/* شاشات التابلت والهواتف المتوسطة (أقل من 768px) */
-@media(max-width:768px){
-
-    body{
-        padding-top:85px;
-    }
-
-    html{
-        scroll-padding-top:85px;
-    }
-
-    .header{
-        height:65px;
-        padding:8px 12px;
-    }
-
-    h1{
-        font-size:1.3rem;
-        margin:15px 10px 20px;
-        padding:10px;
-    }
-
-    .question{
-        margin:12px 10px;
-        padding:12px;
-    }
-
-    .question-title{
-        font-size:1rem;
-    }
-
-    .poem{
-        font-size:16px;
-        padding:10px;
-    }
-
-    .timer{
-        font-size:15px;
-        padding:4px 12px;
-        min-width:85px;
-    }
-
-    .student-name{
-        font-size:24px;
-    }
-
-    .certificate{
-        padding:20px 10px;
-    }
-
-    .result-box{
-        padding:15px;
-    }
-
-    .submit-button,
-    .start-button{
-        padding:10px 25px;
-        font-size:15px;
-    }
-}
-
-/* الشاشات الصغيرة جداً - الهواتف الذكية (أقل من 480px) */
-@media(max-width:480px){
-
-    body{
-        padding-top:80px;
-    }
-
-    .header{
-        height:60px;
-        padding:6px 10px;
-    }
-
-    .دخول-button{
-        padding:8px 14px;
-        font-size:13px;
-    }
-
-    .timer{
-        font-size:14px;
-        padding:3px 10px;
-        min-width:75px;
-    }
-
-    h1{
-        font-size:1.15rem;
-    }
-
-    .question{
-        margin:10px 5px;
-        padding:10px;
-    }
-
-    .option{
-        font-size:0.95rem;
-        padding:8px;
-    }
-
-    .certificate h2{
-        font-size:1.1rem;
-        padding:6px 10px;
-    }
-
-    .student-name{
-        font-size:20px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<header class="header">
 
-    <a href="Mmno3.html" class="دخول-button">
-        رجوع
-    </a>
-
-    <div id="timer" class="timer">
-        15:00
+    <div class="brand">
+        <div class="brand-icon">ن</div>
+        <div class="brand-text">
+            <div class="brand-title">دروس النحو</div>
+            <div class="brand-subtitle">اختبار الممنوع من الصرف</div>
+        </div>
     </div>
 
+    <div class="header-actions">
+        <button class="theme-button" onclick="toggleTheme()" id="themeButton" aria-label="تغيير المظهر">☾</button>
+
+        <a href="Mmno3.html" class="back-button">
+            رجوع
+        </a>
+    </div>
+
+</header>
+
+<div id="timer" class="timer">
+    15:00
 </div>
 
-<h1>
-    اختبار الممنوع من الصرف
-</h1>
+<main class="container">
 
-<div id="startArea">
+    <div id="startArea">
 
-    <div class="intro">
+        <section class="hero">
 
-        <p>
-            <strong>عدد الأسئلة:</strong>
-            21 سؤالًا
-        </p>
+            <div class="badge">
+                ✦ اختبار نحوي
+            </div>
 
-        <p>
-            <strong>مدة الاختبار:</strong>
-            15 دقيقة
-        </p>
+            <h1>
+                اختبار الممنوع من الصرف
+            </h1>
 
-        <p>
-            الأسئلة تعتمد على الفهم والتطبيق،
-            وستظهر نتيجة إجابتك مباشرة.
-        </p>
+            <p>
+                اختبر فهمك لقاعدة الممنوع من الصرف من خلال أسئلة تعتمد على الفهم والتطبيق.
+            </p>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <strong>21</strong>
+                    <span>عدد الأسئلة</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>15 دقيقة</strong>
+                    <span>مدة الاختبار</span>
+                </div>
+
+                <div class="info-card">
+                    <strong>15 / 21</strong>
+                    <span>درجة النجاح</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="name-box">
+            <label for="studentName">
+                اسم الطالب
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="اكتب اسم الطالب"
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="start-container">
+            <button class="start-button" onclick="startExam()">
+                ابدأ الاختبار
+            </button>
+        </div>
 
     </div>
 
-    <div class="name-box">
+    <div id="exam">
 
-        <input
-            type="text"
-            id="studentName"
-            placeholder="اكتب اسم الطالب"
-            autocomplete="off"
-        >
+        <div class="question" data-question="1">
+
+            <div class="question-title">
+                1- قال طالب: «كلمة مساجد ممنوعة من الصرف، لذلك يجب أن أجرّها بالفتحة دائمًا». ما الخطأ في فهمه؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q1" value="a">
+                أ) لأن مساجد اسم مصروف أصلًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="b">
+                ب) لأن الممنوع من الصرف يجر بالكسرة إذا كان مضافًا أو معرفًا بـ(أل)
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="c">
+                ج) لأن الممنوع من الصرف يجر بالضمة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="d">
+                د) لأن صيغة منتهى الجموع تقبل التنوين
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="2">
+
+            <div class="question-title">
+                2- أي الجمل الآتية صحيحة؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q2" value="a">
+                أ) صليت في مساجدَ كثيرةٍ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="b">
+                ب) صليت في مساجدِ كثيرةٍ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="c">
+                ج) صليت في مساجدٍ كثيرةٍ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="d">
+                د) صليت في مساجدُ كثيرةٍ.
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="3">
+
+            <div class="question-title">
+                3- قارن بين:
+                <br>
+                «ذهبت إلى مساجدَ كثيرةٍ»
+                <br>
+                و«ذهبت إلى مساجدِ المدينةِ».
+                <br>
+                لماذا اختلفت حركة «مساجد»؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q3" value="a">
+                أ) لأن الكلمة تغيّر معناها
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="b">
+                ب) لأنها في الجملة الثانية مضافة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="c">
+                ج) لأنها أصبحت مفردًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="d">
+                د) لأن الممنوع من الصرف يجر دائمًا بالكسرة
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="4">
+
+            <div class="question-title">
+                4- أي جملة تدل على أن الطالب فهم قاعدة الممنوع من الصرف؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q4" value="a">
+                أ) مررت بأحمدِ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="b">
+                ب) مررت بأحمدَ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="c">
+                ج) مررت بأحمدٍ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="d">
+                د) مررت بأحمدُ.
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="5">
+
+            <div class="question-title">
+                5- إذا قلت:
+                «مررت بأحمدِ الفصلِ»
+                فلماذا ظهرت الكسرة على أحمد؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q5" value="a">
+                أ) لأن أحمد أصبح اسمًا مصروفًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="b">
+                ب) لأن أحمد مضاف
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="c">
+                ج) لأن أحمد أصبح فعلًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="d">
+                د) لأن العلمية زالت عنه
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="6">
+
+            <div class="question-title">
+                6- أي جملة تمثل الحالة التي يُجر فيها الممنوع من الصرف بالكسرة؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q6" value="a">
+                أ) مررت بمساجدَ كثيرةٍ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="b">
+                ب) مررت بمساجدِ المدينةِ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="c">
+                ج) رأيت مساجدَ كثيرةً.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="d">
+                د) بنيت مساجدَ جديدةً.
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="7">
+
+            <div class="question-title">
+                7- طالب قال: «كل اسم لا يقبل التنوين يُجر بالفتحة». أي جملة تكشف خطأ كلامه؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q7" value="a">
+                أ) مررت بمساجدَ كثيرةٍ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="b">
+                ب) مررت بمساجدِ المدينةِ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="c">
+                ج) رأيت مساجدَ كثيرةً.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="d">
+                د) بنيت مساجدَ جديدةً.
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="8">
+
+            <div class="question-title">
+                8- في الجملة:
+                «ذهبت إلى مدارسَ جديدةٍ».
+                ما الذي نستنتجه عن كلمة «مدارس»؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q8" value="a">
+                أ) أنها ممنوعة من الصرف، ولذلك جُرت بالفتحة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="b">
+                ب) أنها مصروفة، ولذلك جرت بالفتحة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="c">
+                ج) أنها فعل
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="d">
+                د) أنها ممنوعة من الصرف بسبب العلمية
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="9">
+
+            <div class="question-title">
+                9- إذا أصبحت الجملة:
+                «ذهبت إلى مدارسِ القريةِ»
+                فما العامل الذي غيّر حركة «مدارس»؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q9" value="a">
+                أ) دخول حرف الجر
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="b">
+                ب) الإضافة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="c">
+                ج) الجمع
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="d">
+                د) الفعل
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="10">
+
+            <div class="question-title">
+                10- أي كلمة في الجمل الآتية تحتاج إلى تطبيق قاعدة «صيغة منتهى الجموع»؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q10" value="a">
+                أ) طالب
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="b">
+                ب) مفاتيح
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="c">
+                ج) قلم
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="d">
+                د) معلم
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="11">
+
+            <div class="question-title">
+                11- أي جملة تكشف أن «صحراء» ممنوعة من الصرف؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q11" value="a">
+                أ) رأيت صحراءَ واسعةً.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="b">
+                ب) رأيت صحراءً واسعةً.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="c">
+                ج) مررت بصحراءِ واسعةٍ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="d">
+                د) هذه صحراءٌ واسعةٌ.
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="12">
+
+            <div class="question-title">
+                12- ما التغيير الذي يمكن أن يجعل الاسم الممنوع من الصرف يُجر بالكسرة؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q12" value="a">
+                أ) أن يكون مضافًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="b">
+                ب) أن يكون معرفًا بـ(أل)
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="c">
+                ج) كلا أ و ب
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="d">
+                د) أن يكون جمعًا فقط
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="13">
+
+            <div class="question-title">
+                13- اختر الجملة التي تحتوي على خطأ في استعمال الممنوع من الصرف:
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q13" value="a">
+                أ) مررت بإبراهيمَ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="b">
+                ب) مررت بإبراهيمِ الطالبِ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="c">
+                ج) مررت بالمساجدِ.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="d">
+                د) ذهبت إلى مدارسَ كثيرةٍ.
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="14">
+
+            <div class="question-title">
+                14- قال طالب:
+                «إبراهيم ممنوع من الصرف لأنه علم، وكل علم ممنوع من الصرف».
+                ما المشكلة في هذا الاستدلال؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q14" value="a">
+                أ) إبراهيم ليس علمًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="b">
+                ب) ليس كل علم ممنوعًا من الصرف، فلا بد من سبب آخر
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="c">
+                ج) إبراهيم فعل
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="d">
+                د) إبراهيم جمع
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="15">
+
+            <div class="question-title">
+                15- أمامك:
+                <br>
+                أحمد - محمد - إبراهيم
+                <br>
+                أي كلمة تحتاج إلى سبب مختلف عن الآخرين؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q15" value="a">
+                أ) أحمد
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="b">
+                ب) محمد
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="c">
+                ج) إبراهيم
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="d">
+                د) الثلاثة للسبب نفسه
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="16">
+
+            <div class="question-title">
+                16- لماذا لا يكفي أن تكون الكلمة «علمًا» حتى نحكم عليها بأنها ممنوعة من الصرف؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q16" value="a">
+                أ) لأن العلمية وحدها لا تمنع الصرف في جميع الأعلام
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="b">
+                ب) لأن كل الأعلام مصروفة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="c">
+                ج) لأن العلم لا يقبل الجر
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="d">
+                د) لأن الأعلام أفعال
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="17">
+
+            <div class="question-title">
+                17- أمامك الكلمات:
+                <br>
+                أحمد - أحمر - عُمَر
+                <br>
+                أي استنتاج صحيح؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q17" value="a">
+                أ) الثلاثة ممنوعة للسبب نفسه
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="b">
+                ب) أحمد وأحمر ممنوعان للسبب نفسه
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="c">
+                ج) يجب النظر إلى وظيفة الكلمة ووزنها قبل تحديد سبب المنع
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="d">
+                د) عُمَر اسم مصروف دائمًا
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="18">
+
+            <div class="question-title">
+                18- إذا رأيت كلمة على وزن «أفعل»، فما السؤال الذي يجب أن تسأله قبل الحكم عليها؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q18" value="a">
+                أ) هل هي وصف أم علم؟
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="b">
+                ب) هل هي مفرد أم جمع فقط؟
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="c">
+                ج) هل تبدأ بحرف الألف؟
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="d">
+                د) هل تحتوي على حرف جر؟
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="19">
+
+            <div class="question-title">
+                19- أي موقف يدل على فهم الفرق بين «العلمية ووزن الفعل»
+                و«الوصفية ووزن أفعل»؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q19" value="a">
+                أ) اعتبار كل كلمة على وزن أفعل علمًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="b">
+                ب) تحديد وظيفة الكلمة في الجملة قبل تحديد سبب منعها
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="c">
+                ج) اعتبار كل علم ممنوعًا من الصرف
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="d">
+                د) اعتبار كل جمع ممنوعًا من الصرف
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="20">
+
+            <div class="question-title">
+                20- أعطاك المعلم اسمًا ممنوعًا من الصرف، ثم وجدته مجرورًا بالكسرة.
+                ماذا تستنتج؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q20" value="a">
+                أ) أصبح مصروفًا نهائيًا
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="b">
+                ب) ربما كان مضافًا أو معرفًا بـ(أل)
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="c">
+                ج) القاعدة غير صحيحة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="d">
+                د) الاسم أصبح فعلًا
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="question" data-question="21">
+
+            <div class="question-title">
+                21- اقرأ البيت الآتي:
+            </div>
+
+            <div class="poem">
+                إن العيون التى فى طرفها حور ... قتلننا ثم لم يحيين قتلانا
+            </div>
+
+            <div class="question-title">
+                ما سبب منع كلمة «حور» من الصرف؟
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q21" value="a">
+                أ) العلمية والتأنيث
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="b">
+                ب) الوصفية ووزن أفعل
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="c">
+                ج) ألف التأنيث الممدودة
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="d">
+                د) صيغة منتهى الجموع
+            </label>
+
+            <div class="feedback"></div>
+
+        </div>
+
+        <div class="submit-container">
+            <button class="submit-button" onclick="finishExam(false)">
+                إنهاء الاختبار ورصد الدرجة
+            </button>
+        </div>
 
     </div>
 
-    <div class="start-container">
+    <div id="result">
 
-        <button
-            class="start-button"
-            onclick="startExam()"
-        >
-            ابدأ الاختبار
-        </button>
+        <div class="result-box">
+
+            <h2>
+                نتيجة الاختبار
+            </h2>
+
+            <div id="resultContent"></div>
+
+        </div>
 
     </div>
 
-</div>
-
-<div id="exam">
-
-<div class="question" data-question="1">
-
-    <div class="question-title">
-        1- قال طالب: «كلمة مساجد ممنوعة من الصرف، لذلك يجب أن أجرّها بالفتحة دائمًا».
-        ما الخطأ في فهمه؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q1" value="a">
-        أ) لأن مساجد اسم مصروف أصلًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q1" value="b">
-        ب) لأن الممنوع من الصرف يجر بالكسرة إذا كان مضافًا أو معرفًا بـ(أل)
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q1" value="c">
-        ج) لأن الممنوع من الصرف يجر بالضمة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q1" value="d">
-        د) لأن صيغة منتهى الجموع تقبل التنوين
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="2">
-
-    <div class="question-title">
-        2- أي الجمل الآتية صحيحة؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q2" value="a">
-        أ) صليت في مساجدَ كثيرةٍ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q2" value="b">
-        ب) صليت في مساجدِ كثيرةٍ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q2" value="c">
-        ج) صليت في مساجدٍ كثيرةٍ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q2" value="d">
-        د) صليت في مساجدُ كثيرةٍ.
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="3">
-
-    <div class="question-title">
-        3- قارن بين:
-        <br>
-        «ذهبت إلى مساجدَ كثيرةٍ»
-        <br>
-        و«ذهبت إلى مساجدِ المدينةِ».
-        <br>
-        لماذا اختلفت حركة «مساجد»؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q3" value="a">
-        أ) لأن الكلمة تغيّر معناها
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q3" value="b">
-        ب) لأنها في الجملة الثانية مضافة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q3" value="c">
-        ج) لأنها أصبحت مفردًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q3" value="d">
-        د) لأن الممنوع من الصرف يجر دائمًا بالكسرة
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="4">
-
-    <div class="question-title">
-        4- أي جملة تدل على أن الطالب فهم قاعدة الممنوع من الصرف؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q4" value="a">
-        أ) مررت بأحمدِ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q4" value="b">
-        ب) مررت بأحمدَ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q4" value="c">
-        ج) مررت بأحمدٍ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q4" value="d">
-        د) مررت بأحمدُ.
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="5">
-
-    <div class="question-title">
-        5- إذا قلت:
-        «مررت بأحمدِ الفصلِ»
-        فلماذا ظهرت الكسرة على أحمد؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q5" value="a">
-        أ) لأن أحمد أصبح اسمًا مصروفًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q5" value="b">
-        ب) لأن أحمد مضاف
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q5" value="c">
-        ج) لأن أحمد أصبح فعلًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q5" value="d">
-        د) لأن العلمية زالت عنه
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="6">
-
-    <div class="question-title">
-        6- أي جملة تمثل الحالة التي يُجر فيها الممنوع من الصرف بالكسرة؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q6" value="a">
-        أ) مررت بمساجدَ كثيرةٍ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q6" value="b">
-        ب) مررت بمساجدِ المدينةِ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q6" value="c">
-        ج) رأيت مساجدَ كثيرةً.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q6" value="d">
-        د) بنيت مساجدَ جديدةً.
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="7">
-
-    <div class="question-title">
-        7- طالب قال: «كل اسم لا يقبل التنوين يُجر بالفتحة».
-        أي جملة تكشف خطأ كلامه؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q7" value="a">
-        أ) مررت بمساجدَ كثيرةٍ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q7" value="b">
-        ب) مررت بمساجدِ المدينةِ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q7" value="c">
-        ج) رأيت مساجدَ كثيرةً.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q7" value="d">
-        د) بنيت مساجدَ جديدةً.
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="8">
-
-    <div class="question-title">
-        8- في الجملة:
-        «ذهبت إلى مدارسَ جديدةٍ».
-        ما الذي نستنتجه عن كلمة «مدارس»؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q8" value="a">
-        أ) أنها ممنوعة من الصرف، ولذلك جُرت بالفتحة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q8" value="b">
-        ب) أنها مصروفة، ولذلك جرت بالفتحة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q8" value="c">
-        ج) أنها فعل
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q8" value="d">
-        د) أنها ممنوعة من الصرف بسبب العلمية
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="9">
-
-    <div class="question-title">
-        9- إذا أصبحت الجملة:
-        «ذهبت إلى مدارسِ القريةِ»
-        فما العامل الذي غيّر حركة «مدارس»؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q9" value="a">
-        أ) دخول حرف الجر
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q9" value="b">
-        ب) الإضافة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q9" value="c">
-        ج) الجمع
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q9" value="d">
-        د) الفعل
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="10">
-
-    <div class="question-title">
-        10- أي كلمة في الجمل الآتية تحتاج إلى تطبيق قاعدة «صيغة منتهى الجموع»؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q10" value="a">
-        أ) طالب
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q10" value="b">
-        ب) مفاتيح
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q10" value="c">
-        ج) قلم
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q10" value="d">
-        د) معلم
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="11">
-
-    <div class="question-title">
-        11- أي جملة تكشف أن «صحراء» ممنوعة من الصرف؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q11" value="a">
-        أ) رأيت صحراءَ واسعةً.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q11" value="b">
-        ب) رأيت صحراءً واسعةً.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q11" value="c">
-        ج) مررت بصحراءِ واسعةٍ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q11" value="d">
-        د) هذه صحراءٌ واسعةٌ.
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="12">
-
-    <div class="question-title">
-        12- ما التغيير الذي يمكن أن يجعل الاسم الممنوع من الصرف يُجر بالكسرة؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q12" value="a">
-        أ) أن يكون مضافًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q12" value="b">
-        ب) أن يكون معرفًا بـ(أل)
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q12" value="c">
-        ج) كلا أ و ب
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q12" value="d">
-        د) أن يكون جمعًا فقط
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="13">
-
-    <div class="question-title">
-        13- اختر الجملة التي تحتوي على خطأ في استعمال الممنوع من الصرف:
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q13" value="a">
-        أ) مررت بإبراهيمَ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q13" value="b">
-        ب) مررت بإبراهيمِ الطالبِ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q13" value="c">
-        ج) مررت بالمساجدِ.
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q13" value="d">
-        د) ذهبت إلى مدارسَ كثيرةٍ.
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="14">
-
-    <div class="question-title">
-        14- قال طالب:
-        «إبراهيم ممنوع من الصرف لأنه علم، وكل علم ممنوع من الصرف».
-        ما المشكلة في هذا الاستدلال؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q14" value="a">
-        أ) إبراهيم ليس علمًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q14" value="b">
-        ب) ليس كل علم ممنوعًا من الصرف، فلا بد من سبب آخر
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q14" value="c">
-        ج) إبراهيم فعل
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q14" value="d">
-        د) إبراهيم جمع
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="15">
-
-    <div class="question-title">
-        15- أمامك:
-        <br>
-        أحمد - محمد - إبراهيم
-        <br>
-        أي كلمة تحتاج إلى سبب مختلف عن الآخرين؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q15" value="a">
-        أ) أحمد
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q15" value="b">
-        ب) محمد
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q15" value="c">
-        ج) إبراهيم
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q15" value="d">
-        د) الثلاثة للسبب نفسه
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="16">
-
-    <div class="question-title">
-        16- لماذا لا يكفي أن تكون الكلمة «علمًا» حتى نحكم عليها بأنها ممنوعة من الصرف؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q16" value="a">
-        أ) لأن العلمية وحدها لا تمنع الصرف في جميع الأعلام
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q16" value="b">
-        ب) لأن كل الأعلام مصروفة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q16" value="c">
-        ج) لأن العلم لا يقبل الجر
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q16" value="d">
-        د) لأن الأعلام أفعال
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="17">
-
-    <div class="question-title">
-        17- أمامك الكلمات:
-        <br>
-        أحمد - أحمر - عُمَر
-        <br>
-        أي استنتاج صحيح؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q17" value="a">
-        أ) الثلاثة ممنوعة للسبب نفسه
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q17" value="b">
-        ب) أحمد وأحمر ممنوعان للسبب نفسه
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q17" value="c">
-        ج) يجب النظر إلى وظيفة الكلمة ووزنها قبل تحديد سبب المنع
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q17" value="d">
-        د) عُمَر اسم مصروف دائمًا
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="18">
-
-    <div class="question-title">
-        18- إذا رأيت كلمة على وزن «أفعل»، فما السؤال الذي يجب أن تسأله قبل الحكم عليها؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q18" value="a">
-        أ) هل هي وصف أم علم؟
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q18" value="b">
-        ب) هل هي مفرد أم جمع فقط؟
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q18" value="c">
-        ج) هل تبدأ بحرف الألف؟
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q18" value="d">
-        د) هل تحتوي على حرف جر؟
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="19">
-
-    <div class="question-title">
-        19- أي موقف يدل على فهم الفرق بين «العلمية ووزن الفعل»
-        و«الوصفية ووزن أفعل»؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q19" value="a">
-        أ) اعتبار كل كلمة على وزن أفعل علمًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q19" value="b">
-        ب) تحديد وظيفة الكلمة في الجملة قبل تحديد سبب منعها
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q19" value="c">
-        ج) اعتبار كل علم ممنوعًا من الصرف
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q19" value="d">
-        د) اعتبار كل جمع ممنوعًا من الصرف
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="20">
-
-    <div class="question-title">
-        20- أعطاك المعلم اسمًا ممنوعًا من الصرف، ثم وجدته مجرورًا بالكسرة.
-        ماذا تستنتج؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q20" value="a">
-        أ) أصبح مصروفًا نهائيًا
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q20" value="b">
-        ب) ربما كان مضافًا أو معرفًا بـ(أل)
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q20" value="c">
-        ج) القاعدة غير صحيحة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q20" value="d">
-        د) الاسم أصبح فعلًا
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="question" data-question="21">
-
-    <div class="question-title">
-        21- اقرأ البيت الآتي:
-    </div>
-
-    <div class="poem">
-        إن العيون التى فى طرفها حور ... قتلننا ثم لم يحيين قتلانا
-    </div>
-
-    <div class="question-title">
-        ما سبب منع كلمة «حور» من الصرف؟
-    </div>
-
-    <label class="option">
-        <input type="radio" name="q21" value="a">
-        أ) العلمية والتأنيث
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q21" value="b">
-        ب) الوصفية ووزن أفعل
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q21" value="c">
-        ج) ألف التأنيث الممدودة
-    </label>
-
-    <label class="option">
-        <input type="radio" name="q21" value="d">
-        د) صيغة منتهى الجموع
-    </label>
-
-    <div class="feedback"></div>
-
-</div>
-
-<div class="submit-container">
-
-    <button
-        class="submit-button"
-        onclick="finishExam(false)"
-    >
-        إنهاء الاختبار ورصد الدرجة
-    </button>
-
-</div>
-
-</div>
-
-<div id="result">
-
-    <div class="result-box">
-
-        <h2>
-            نتيجة الاختبار
-        </h2>
-
-        <div id="resultContent"></div>
-
-    </div>
-
-</div>
+</main>
 
 <footer>
     جميع الحقوق محفوظة © 2026 | الباشمبرمج خالد سامح
 </footer>
 
 <script>
-
-/* =========================
-   دالة الإرسال لتليجرام
-========================= */
-
-function sendTelegramNotification(studentName, userScore) {
-    const botToken = "8842261727:AAHK8R6fk2O9ZO4qwH5X7-0EOfUCohkk6HI";
-    const chatId = "7827287856";
-
-    const lessonName = "اختبار الممنوع من الصرف";
-    const status = userScore >= 15 ? "ناجح ✅" : "راسب ❌";
-
-    const text = `🔔 *إجابة جديدة في الاختبار*\n\n` +
-                 `📚 *الدرس:* ${lessonName}\n` +
-                 `👤 *اسم الطالب:* ${studentName}\n` +
-                 `📊 *النتيجة:* ${userScore} من 21\n` +
-                 `📌 *الحالة:* ${status}`;
-
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
-
-    if (navigator.sendBeacon) {
-        const blob = new Blob([], { type: 'text/plain' });
-        navigator.sendBeacon(url, blob);
-    } else {
-        const img = new Image();
-        img.src = url;
-    }
-}
-
-
-/* =========================
-   الإجابات الصحيحة
-========================= */
-
-const correctAnswers = {
-
+const correctAnswers={
     q1:"b",
     q2:"a",
     q3:"b",
@@ -1297,104 +1513,86 @@ const correctAnswers = {
     q19:"b",
     q20:"b",
     q21:"c"
-
 };
 
-
-/* =========================
-   الحروف
-========================= */
-
-const answerText = {
-
+const answerText={
     a:"أ",
     b:"ب",
     c:"ج",
     d:"د"
-
 };
 
-
-/* =========================
-   المتغيرات
-========================= */
-
-let examStarted = false;
+let examStarted=false;
+let examFinished=false;
 let timerInterval;
-let timeLeft = 15 * 60;
+let timeLeft=15*60;
 
+function toggleTheme(){
+    document.body.classList.toggle("dark");
 
-/* =========================
-   بدء الاختبار
-========================= */
+    const isDark=document.body.classList.contains("dark");
+
+    localStorage.setItem("grammarQuizTheme",isDark?"dark":"light");
+
+    document.getElementById("themeButton").textContent=
+        isDark?"☀":"☾";
+}
+
+function loadTheme(){
+    const saved=localStorage.getItem("grammarQuizTheme");
+
+    if(saved==="dark"){
+        document.body.classList.add("dark");
+        document.getElementById("themeButton").textContent="☀";
+    }
+}
 
 function startExam(){
 
-    const input =
-        document.getElementById("studentName");
+    const input=document.getElementById("studentName");
+    const name=input.value.trim();
 
-    const name =
-        input.value.trim();
-
-    if(name === ""){
-
-        alert(
-            "من فضلك اكتب اسم الطالب أولًا."
-        );
-
+    if(name===""){
+        alert("من فضلك اكتب اسم الطالب أولًا.");
         input.focus();
-
         return;
-
     }
 
-    examStarted = true;
+    examStarted=true;
+    examFinished=false;
 
-    document.getElementById("exam").style.display =
-        "block";
+    document.getElementById("exam").style.display="block";
+    document.getElementById("startArea").style.display="none";
 
-    document.getElementById("startArea").style.display =
-        "none";
-
-    timeLeft = 15 * 60;
+    timeLeft=15*60;
 
     updateTimer();
 
-    timerInterval =
-        setInterval(updateTimer,1000);
+    timerInterval=setInterval(updateTimer,1000);
 
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
-
-
-/* =========================
-   المؤقت
-========================= */
 
 function updateTimer(){
 
-    const timer =
-        document.getElementById("timer");
+    const timer=document.getElementById("timer");
 
-    const minutes =
-        Math.floor(timeLeft / 60);
+    const minutes=Math.floor(timeLeft/60);
+    const seconds=timeLeft%60;
 
-    const seconds =
-        timeLeft % 60;
-
-    timer.textContent =
-        String(minutes).padStart(2,"0")
-        +
-        ":"
-        +
+    timer.textContent=
+        String(minutes).padStart(2,"0")+
+        ":"+
         String(seconds).padStart(2,"0");
 
-    if(timeLeft <= 60){
-
+    if(timeLeft<=60){
         timer.classList.add("danger");
-
     }
 
-    if(timeLeft <= 0){
+    if(timeLeft<=0){
 
         clearInterval(timerInterval);
 
@@ -1403,231 +1601,135 @@ function updateTimer(){
         finishExam(true);
 
         return;
-
     }
 
     timeLeft--;
-
 }
 
+document.addEventListener("change",function(event){
 
-/* =========================
-   عند اختيار إجابة
-========================= */
-
-document.addEventListener(
-    "change",
-    function(event){
-
-        if(!examStarted){
-            return;
-        }
-
-        if(event.target.type !== "radio"){
-            return;
-        }
-
-        const radio =
-            event.target;
-
-        const question =
-            radio.closest(".question");
-
-        if(!question){
-            return;
-        }
-
-        const number =
-            question.dataset.question;
-
-        const correct =
-            correctAnswers["q" + number];
-
-        const selected =
-            radio.value;
-
-        const options =
-            question.querySelectorAll(".option");
-
-        const feedback =
-            question.querySelector(".feedback");
-
-
-        question
-            .querySelectorAll(
-                'input[type="radio"]'
-            )
-            .forEach(function(input){
-
-                input.disabled = true;
-
-            });
-
-
-        options.forEach(function(option){
-
-            const input =
-                option.querySelector("input");
-
-            if(input.value === correct){
-
-                option.classList.add("correct");
-
-            }
-
-            if(
-                input.value === selected &&
-                selected !== correct
-            ){
-
-                option.classList.add("wrong");
-
-            }
-
-        });
-
-
-        if(selected === correct){
-
-            feedback.textContent =
-                "إجابة صحيحة ✓";
-
-            feedback.className =
-                "feedback correct-feedback";
-
-        }else{
-
-            feedback.textContent =
-                "إجابة خطأ ✗ | الإجابة الصحيحة: "
-                +
-                answerText[correct];
-
-            feedback.className =
-                "feedback wrong-feedback";
-
-        }
-
-    }
-);
-
-
-/* =========================
-   إنهاء الاختبار
-========================= */
-
-function finishExam(timeEnded){
-
-    if(!examStarted){
+    if(!examStarted || examFinished){
         return;
     }
 
+    if(event.target.type!=="radio"){
+        return;
+    }
+
+    const radio=event.target;
+    const question=radio.closest(".question");
+
+    if(!question){
+        return;
+    }
+
+    const number=question.dataset.question;
+    const correct=correctAnswers["q"+number];
+    const selected=radio.value;
+
+    const options=question.querySelectorAll(".option");
+    const feedback=question.querySelector(".feedback");
+
+    question.querySelectorAll('input[type="radio"]').forEach(function(input){
+        input.disabled=true;
+    });
+
+    options.forEach(function(option){
+
+        const input=option.querySelector("input");
+
+        if(input.value===correct){
+            option.classList.add("correct");
+        }
+
+        if(input.value===selected && selected!==correct){
+            option.classList.add("wrong");
+        }
+    });
+
+    if(selected===correct){
+
+        feedback.textContent="إجابة صحيحة ✓";
+        feedback.className="feedback correct-feedback";
+
+    }else{
+
+        feedback.textContent=
+            "إجابة خطأ ✗ | الإجابة الصحيحة: "+
+            answerText[correct];
+
+        feedback.className="feedback wrong-feedback";
+    }
+});
+
+function finishExam(timeEnded){
+
+    if(!examStarted || examFinished){
+        return;
+    }
+
+    examFinished=true;
+
     clearInterval(timerInterval);
 
-    let score = 0;
+    let score=0;
+    let errors=[];
 
-    let errors = [];
+    const total=Object.keys(correctAnswers).length;
 
-    const total =
-        Object.keys(correctAnswers).length;
+    for(let i=1;i<=total;i++){
 
+        const selected=document.querySelector(
+            'input[name="q'+i+'"]:checked'
+        );
 
-    for(let i = 1; i <= total; i++){
-
-        const selected =
-            document.querySelector(
-                'input[name="q' + i + '"]:checked'
-            );
-
-        const correct =
-            correctAnswers["q" + i];
-
+        const correct=correctAnswers["q"+i];
 
         if(selected){
 
-            if(selected.value === correct){
-
+            if(selected.value===correct){
                 score++;
-
             }else{
-
                 errors.push({
-
                     number:i,
-
                     selected:selected.value,
-
                     correct:correct
-
                 });
-
             }
 
         }else{
 
             errors.push({
-
                 number:i,
-
                 selected:"لم يجب",
-
                 correct:correct
-
             });
-
         }
-
     }
 
-    // إرسال الإشعار لتليجرام
-    const studentName = document.getElementById("studentName").value.trim();
-    sendTelegramNotification(studentName, score);
-
-
-    /* =========================
-       عرض النتيجة
-    ========================= */
-
-    showResult(
-        score,
-        total,
-        errors
-    );
-
+    showResult(score,total,errors,timeEnded);
 }
 
+function showResult(score,total,errors,timeEnded){
 
-/* =========================
-   عرض النتيجة
-========================= */
+    document.getElementById("exam").style.display="none";
 
-function showResult(score,total,errors){
+    document.getElementById("timer").style.display="none";
 
-    document.getElementById("exam").style.display =
-        "none";
+    const result=document.getElementById("result");
+    const content=document.getElementById("resultContent");
 
-    const result =
-        document.getElementById("result");
+    const name=escapeHTML(
+        document.getElementById("studentName").value.trim()
+    );
 
-    const content =
-        document.getElementById("resultContent");
+    result.style.display="block";
 
-    const name =
-        escapeHTML(
-            document
-            .getElementById("studentName")
-            .value
-            .trim()
-        );
+    let html="";
 
-    result.style.display =
-        "block";
+    if(score>=15){
 
-    let html = "";
-
-
-    if(score >= 15){
-
-        html += `
+        html+=`
 
         <div class="score success">
             الدرجة: ${score} / ${total}
@@ -1636,6 +1738,12 @@ function showResult(score,total,errors){
         <p class="success">
             مبروك، لقد اجتزت الاختبار بنجاح.
         </p>
+
+        ${timeEnded ? `
+        <p class="success">
+            تم رصد النتيجة بعد انتهاء الوقت.
+        </p>
+        ` : ""}
 
         <div class="certificate">
 
@@ -1683,7 +1791,7 @@ function showResult(score,total,errors){
 
     }else{
 
-        html += `
+        html+=`
 
         <div class="score failure">
             الدرجة: ${score} / ${total}
@@ -1692,6 +1800,12 @@ function showResult(score,total,errors){
         <p class="failure">
             لم تحصل على الدرجة المطلوبة للنجاح.
         </p>
+
+        ${timeEnded ? `
+        <p class="failure">
+            انتهى وقت الاختبار وتم رصد إجاباتك.
+        </p>
+        ` : ""}
 
         <div class="review">
 
@@ -1716,13 +1830,11 @@ function showResult(score,total,errors){
             <h3>
                 الأسئلة التي تحتاج إلى مراجعة:
             </h3>
-
         `;
-
 
         errors.forEach(function(error){
 
-            html += `
+            html+=`
 
             <div class="error-item">
 
@@ -1733,10 +1845,7 @@ function showResult(score,total,errors){
                 <br>
 
                 إجابتك:
-                ${
-                    answerText[error.selected]
-                    || error.selected
-                }
+                ${answerText[error.selected] || error.selected}
 
                 <br>
 
@@ -1746,20 +1855,14 @@ function showResult(score,total,errors){
             </div>
 
             `;
-
         });
 
-
-        html += `
-
+        html+=`
         </div>
-
         `;
-
     }
 
-
-    html += `
+    html+=`
 
         <br><br>
 
@@ -1772,105 +1875,51 @@ function showResult(score,total,errors){
 
     `;
 
-
-    content.innerHTML =
-        html;
-
+    content.innerHTML=html;
 
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
-
 }
-
-
-/* =========================
-   طباعة الشهادة
-========================= */
 
 function printCertificate(){
-
     window.print();
-
 }
-
-
-/* =========================
-   إعادة الاختبار
-========================= */
 
 function restartExam(){
-
     location.reload();
-
 }
-
-
-/* =========================
-   حماية اسم الطالب
-========================= */
 
 function escapeHTML(text){
 
-    const div =
-        document.createElement("div");
+    const div=document.createElement("div");
 
-    div.textContent =
-        text;
+    div.textContent=text;
 
     return div.innerHTML;
-
 }
 
+document.addEventListener("contextmenu",function(event){
+    event.preventDefault();
+});
 
-/* =========================
-   منع النسخ
-========================= */
+document.addEventListener("copy",function(event){
+    event.preventDefault();
+});
 
-document.addEventListener(
-    "contextmenu",
-    function(event){
+document.addEventListener("cut",function(event){
+    event.preventDefault();
+});
 
-        event.preventDefault();
+document.addEventListener("selectstart",function(event){
+    event.preventDefault();
+});
 
-    }
-);
+document.body.style.userSelect="none";
 
-document.addEventListener(
-    "copy",
-    function(event){
-
-        event.preventDefault();
-
-    }
-);
-
-document.addEventListener(
-    "cut",
-    function(event){
-
-        event.preventDefault();
-
-    }
-);
-
-document.addEventListener(
-    "selectstart",
-    function(event){
-
-        event.preventDefault();
-
-    }
-);
-
-document.body.style.userSelect =
-    "none";
-
+loadTheme();
 </script>
-  
+
 </body>
 </html>

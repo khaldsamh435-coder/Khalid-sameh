@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>انتقل إلى دروسك</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            padding: 25px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 25px 0;
+            color: #172554;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            text-decoration: none;
+            color: inherit;
+            background: white;
+            width: 100%;
+            max-width: 350px;
+            min-height: 230px;
+            border-radius: 18px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 5px 20px #00000012;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #e2e8f0;
+            box-shadow: 0 10px 25px #00000020;
+        }
+
+        .logo {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+        }
+
+        .card h2 {
+            font-size: 25px;
+        }
+
+        .card p {
+            color: #64748b;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .grammar-card h2 {
+            color: #b7791f;
+        }
+
+        .programming-card h2 {
+            color: #2563eb;
+        }
+
+        .enter {
+            background: #172554;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover .enter {
+            background: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>انتقل إلى دروسك</h1>
+
+    <div class="container">
+
+       
+        <a href="eln7w.html" class="card grammar-card">
+
+            <img
+                class="logo"
+                src="https://img.icons8.com/fluency/96/book.png"
+                alt="شعار النحو">
+
+            <h2>النحو العربي</h2>
+
+            <p>
+                تعلّم قواعد اللغة العربية والإعراب
+                بأسلوب مبسط وأمثلة واضحة.
+            </p>
+
+            <span class="enter">دخول إلى الدروس</span>
+
+        </a>
+
+        
+        <a href="programming.html" class="card programming-card">
+
+            <img
+                class="logo"
+                src="https://img.icons8.com/fluency/96/source-code.png"
+                alt="شعار البرمجة">
+
+            <h2>البرمجة</h2>
+
+            <p>
+                تعلّم HTML وCSS 
+                وابدأ في إنشاء مواقع الويب بنفسك.
+            </p>
+
+            <span class="enter">دخول إلى الدروس</span>
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

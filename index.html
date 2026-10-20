@@ -3,36 +3,55 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
+    <link rel="manifest" href="/manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>اختر مجالك التعليمي | تعلّم واكتشف</title>
+    <title>منصة تعليمية متكاملة | تعلّم واكتشف</title>
 
-    <meta name="description" content="اختر مجالك التعليمي وابدأ تعلّم النحو العربي وقواعد اللغة العربية أو تعلّم البرمجة وتصميم مواقع الويب باستخدام HTML وCSS.">
+    <meta name="description" content="منصة تعليمية تجمع بين تعلّم تصميم المواقع ودروس النحو، مع شروحات مبسطة وتعريفات ومصطلحات وأمثلة تطبيقية تساعد على الفهم والتعلم.">
 
-    <meta name="keywords" content="تعلم النحو العربي, تعلم البرمجة, HTML, CSS, تصميم المواقع, منصة تعليمية, خالد سامح">
+    <meta name="keywords" content="منصة تعليمية, تصميم المواقع, تعلم البرمجة, HTML, CSS, JavaScript, دروس النحو, التعريفات والمصطلحات, خالد سامح">
 
     <meta name="author" content="خالد سامح">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#f8fafc">
+    <meta name="google-site-verification" content="YcytkBkGponRHY5LZCbaVGUjXmBoLaq6FHFot-6eHr8">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="اختر مجالك التعليمي | تعلّم واكتشف">
-    <meta property="og:description" content="ابدأ رحلتك التعليمية في النحو العربي والبرمجة من خلال محتوى مبسط ومنظم.">
-    <meta property="og:url" content="https://khalid-sameh.vercel.app/choice.html">
+    <meta property="og:title" content="منصة تعليمية متكاملة | تعلّم واكتشف">
+    <meta property="og:description" content="اكتشف محتوى تعليميًا مبسطًا في تصميم المواقع ودروس النحو، مع تعريفات واضحة وأمثلة تطبيقية.">
     <meta property="og:image" content="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png">
 
-    <link rel="canonical" href="https://khalid-sameh.vercel.app/choice.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="منصة تعليمية متكاملة">
+    <meta name="twitter:description" content="تعلّم تصميم المواقع وافهم قواعد النحو من خلال شروحات مبسطة ومنظمة.">
+    <meta name="twitter:image" content="https://i.postimg.cc/TwZmZCch/Screenshot-20260824-003511-Whats-App-Business.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalWebSite",
+      "name": "منصة تعليمية متكاملة",
+      "description": "منصة تعليمية عربية تجمع بين تعلّم تصميم المواقع ودروس النحو من خلال شروحات مبسطة ومنظمة.",
+      "url": "https://khalid-sameh.vercel.app/",
+      "author": {
+        "@type": "Person",
+        "name": "خالد سامح"
+      },
+      "inLanguage": "ar"
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="manifest" href="/manifest.json">
-
     <style>
+
         :root {
             --bg-light: #f8fafc;
+            --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             --card-bg: #ffffff;
             --card-border: #e2e8f0;
             --primary: #2563eb;
@@ -40,17 +59,15 @@
             --accent: #0d9488;
             --text-main: #0f172a;
             --text-muted: #64748b;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, .05),
-                          0 2px 4px -1px rgba(0, 0, 0, .03);
-            --shadow-md: 0 10px 25px -5px rgba(37, 99, 235, .08),
-                         0 8px 10px -6px rgba(0, 0, 0, .01);
-            --shadow-lg: 0 20px 30px -10px rgba(37, 99, 235, .15);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 25px -5px rgba(37, 99, 235, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --shadow-lg: 0 20px 30px -10px rgba(37, 99, 235, 0.15);
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
@@ -60,87 +77,124 @@
         body {
             min-height: 100vh;
             font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-light);
-            background-image: radial-gradient(#cbd5e1 .7px, transparent .7px);
+            background: var(--bg-light);
+            background-image: radial-gradient(#cbd5e1 0.7px, transparent 0.7px);
             background-size: 24px 24px;
             color: var(--text-main);
             overflow-x: hidden;
         }
 
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
         .topbar {
             width: 100%;
             max-width: 1200px;
-            min-height: 90px;
+            height: 90px;
             margin: auto;
-            padding: 15px 30px;
+            padding: 0 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 15px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 900;
         }
 
         .logo-img {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid var(--primary);
             box-shadow: var(--shadow-sm);
-            transition: transform .4s ease;
+            transition: transform 0.4s ease;
         }
 
-        .brand:hover .logo-img {
+        .logo-img:hover {
             transform: rotate(360deg);
         }
 
-        .back-button {
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 42px;
-            padding: 8px 20px;
+            height: 44px;
+            padding: 0 22px;
             border-radius: 50px;
-            background: #ffffff;
-            border: 1px solid var(--card-border);
-            color: var(--text-main);
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 800;
-            box-shadow: var(--shadow-sm);
-            transition: .3s ease;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.3s ease;
         }
 
-        .back-button:hover {
+        .about-button {
+            color: var(--text-main);
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .developer-button {
+            color: #ffffff;
+            background: var(--primary);
+            border: 1px solid var(--primary);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+        }
+
+        .top-button:hover {
             transform: translateY(-2px);
-            border-color: #bfdbfe;
-            color: var(--primary);
+        }
+
+        .about-button:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .developer-button:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
         }
 
         .hero {
-            max-width: 1000px;
+            width: 100%;
+            max-width: 1200px;
+            min-height: calc(100vh - 90px);
             margin: auto;
-            padding: 55px 24px 35px;
+            padding: 40px 25px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            animation: fadeInUp .7s ease-out;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .image-frame {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 28px;
+            padding: 5px;
+            background: #ffffff;
+            border-radius: 50%;
+            border: 2px solid #e2e8f0;
+            box-shadow: var(--shadow-md);
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+
+        .header-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .badge {
             display: inline-block;
-            margin-bottom: 18px;
             padding: 8px 20px;
             background: #eff6ff;
             color: var(--primary);
@@ -148,279 +202,180 @@
             border-radius: 30px;
             font-size: 13px;
             font-weight: 800;
+            margin-bottom: 20px;
         }
 
-        .hero h1 {
+        h1 {
+            margin: 0;
             color: var(--text-main);
-            font-size: clamp(30px, 5vw, 44px);
+            font-size: 40px;
+            line-height: 1.25;
             font-weight: 900;
-            line-height: 1.5;
-            letter-spacing: -.5px;
+            letter-spacing: -0.5px;
         }
 
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: 14px auto 0;
+        .hero-text {
+            max-width: 600px;
+            margin: 18px auto 0;
             color: var(--text-muted);
-            font-size: 16px;
-            line-height: 2;
+            font-size: 18px;
+            line-height: 1.8;
             font-weight: 600;
         }
 
         .line {
-            width: 65px;
+            width: 60px;
             height: 4px;
-            margin: 24px auto 0;
+            margin: 28px auto;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
             border-radius: 10px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
 
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 25px auto 85px;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            min-width: 0;
-            padding: 38px 28px 32px;
-            overflow: hidden;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            color: inherit;
-            text-decoration: none;
-            box-shadow: var(--shadow-sm);
-            transition: transform .3s ease,
-                        box-shadow .3s ease,
-                        border-color .3s ease;
-            animation: fadeInUp .7s ease-out both;
-        }
-
-        .card:nth-child(2) {
-            animation-delay: .12s;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform .3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            border-color: #bfdbfe;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .icon-frame {
-            width: 112px;
-            height: 112px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 23px;
-            border-radius: 28px;
-            background: #eff6ff;
-            border: 1px solid #dbeafe;
-            transition: transform .3s ease;
-        }
-
-        .card:hover .icon-frame {
-            transform: translateY(-3px) scale(1.04);
-        }
-
-        .logo {
-            width: 78px;
-            height: 78px;
-            object-fit: contain;
-        }
-
-        .grammar-card .icon-frame {
-            background: #fffbeb;
-            border-color: #fde68a;
-        }
-
-        .programming-card .icon-frame {
-            background: #eff6ff;
-            border-color: #bfdbfe;
-        }
-
-        .card h2 {
-            margin-bottom: 10px;
-            font-size: 25px;
-            font-weight: 900;
-        }
-
-        .grammar-card h2 {
-            color: #b7791f;
-        }
-
-        .programming-card h2 {
-            color: var(--primary);
-        }
-
-        .card p {
-            max-width: 340px;
-            min-height: 58px;
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 2;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin: 20px 0 25px;
-        }
-
-        .tag {
-            padding: 5px 12px;
-            border: 1px solid var(--card-border);
-            border-radius: 30px;
-            background: #f8fafc;
-            color: #475569;
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-        .enter {
-            width: 100%;
-            max-width: 240px;
-            min-height: 49px;
+        .enter-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-top: auto;
-            padding: 10px 20px;
+            min-width: 185px;
+            height: 54px;
+            padding: 0 36px;
             background: var(--primary);
             color: #ffffff;
+            border: none;
             border-radius: 50px;
-            font-size: 14px;
+            text-decoration: none;
+            font-size: 18px;
             font-weight: 800;
-            box-shadow: 0 6px 16px rgba(37, 99, 235, .2);
-            transition: background .3s ease, transform .3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
         }
 
-        .grammar-card .enter {
-            background: #b7791f;
-            box-shadow: 0 6px 16px rgba(183, 121, 31, .18);
-        }
-
-        .card:hover .enter {
+        .enter-button:hover {
             background: var(--primary-hover);
-            transform: translateY(-2px);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: var(--shadow-lg);
         }
 
-        .grammar-card:hover .enter {
-            background: #996515;
+        .features {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 0 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
-        .arrow {
-            display: inline-block;
-            transition: transform .3s ease;
+        .feature {
+            padding: 32px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .card:hover .arrow {
-            transform: translateX(-4px);
+        .feature:hover {
+            transform: translateY(-6px);
+            border-color: #bfdbfe;
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .feature h2 {
+            margin: 0;
+            color: var(--text-main);
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .feature p {
+            margin: 8px 0 0;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 600;
         }
 
         .info {
             width: 90%;
             max-width: 1000px;
-            margin: 0 auto 80px;
-            padding: 28px 32px;
+            margin: 0 auto 90px;
+            padding: 35px 40px;
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
-            background: #ffffff;
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
+            gap: 30px;
             box-shadow: var(--shadow-md);
         }
 
-        .info h2 {
-            margin-bottom: 5px;
+        .info-text h2 {
+            margin: 0 0 6px;
             color: var(--primary);
-            font-size: 20px;
-            font-weight: 900;
+            font-size: 24px;
+            font-weight: 800;
         }
 
-        .info p {
+        .info-text p {
+            margin: 0;
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 600;
-            line-height: 1.9;
         }
 
         .info-label {
             flex-shrink: 0;
-            padding: 9px 17px;
+            padding: 10px 22px;
             background: #f0fdf4;
             border: 1px solid #bbf7d0;
             border-radius: 30px;
             color: var(--accent);
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 800;
         }
 
         footer {
-            padding: 28px 15px;
-            text-align: center;
-            background: #ffffff;
             border-top: 1px solid var(--card-border);
+            background: #ffffff;
+            color: var(--text-main);
+            text-align: center;
+            padding: 30px 15px;
         }
 
         .footer-name {
-            margin-bottom: 6px;
+            font-size: 16px;
+            font-weight: 800;
             color: var(--text-main);
-            font-size: 15px;
-            font-weight: 900;
+            margin-bottom: 6px;
         }
 
         .footer-copy {
             color: var(--text-muted);
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
-        }
-
-        a:focus-visible {
-            outline: 3px solid #60a5fa;
-            outline-offset: 5px;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(25px);
             }
 
             to {
@@ -429,237 +384,261 @@
             }
         }
 
-        @media (max-width: 700px) {
-            .topbar {
-                min-height: 76px;
-                padding: 12px 18px;
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: var(--shadow-md);
             }
 
-            .brand {
-                gap: 8px;
-                font-size: 13px;
+            50% {
+                box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .topbar {
+                height: 75px;
+                padding: 0 18px;
             }
 
             .logo-img {
-                width: 40px;
-                height: 40px;
+                width: 44px;
+                height: 44px;
             }
 
-            .back-button {
-                min-height: 38px;
-                padding: 7px 13px;
+            .top-button {
+                height: 40px;
+                padding: 0 16px;
                 font-size: 12px;
             }
 
             .hero {
-                padding: 38px 20px 20px;
+                padding: 30px 18px 60px;
             }
 
-            .hero p {
-                font-size: 14px;
+            .image-frame {
+                width: 130px;
+                height: 130px;
             }
 
-            .container {
-                width: 90%;
-                max-width: 430px;
+            h1 {
+                font-size: 34px;
+            }
+
+            .hero-text {
+                font-size: 15px;
+            }
+
+            .enter-button {
+                height: 50px;
+                min-width: 165px;
+                font-size: 16px;
+            }
+
+            .features {
+                width: 92%;
                 grid-template-columns: 1fr;
-                gap: 18px;
-                margin-top: 25px;
-            }
-
-            .card {
-                padding: 30px 22px;
-                border-radius: 20px;
-            }
-
-            .card p {
-                min-height: auto;
+                gap: 16px;
             }
 
             .info {
+                width: 92%;
+                padding: 25px;
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 23px;
-                margin-bottom: 55px;
+                gap: 15px;
             }
+
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important;
-            }
-        }
     </style>
+
 </head>
 
 <body>
 
-    <header class="topbar">
+<header class="topbar">
 
-        <a href="index.html" class="brand" aria-label="العودة إلى الصفحة الرئيسية">
-            <img
-                src="https://files.catbox.moe/ut4y5k.png"
-                alt=""
-                class="logo-img"
-                width="48"
-                height="48"
-            >
-            <span>تعلّم واكتشف</span>
+    <img
+        src="https://files.catbox.moe/ut4y5k.png"
+        alt="شعار المنصة التعليمية"
+        class="logo-img"
+        width="52"
+        height="52"
+    >
+
+    <nav class="top-actions">
+
+        <a href="adout.html" class="top-button about-button" title="عن المنصة ومعلوماتها">
+            عن المنصة
         </a>
 
-        <a href="index.html" class="back-button">
-            العودة للرئيسية
+        <a
+            href="https://wa.me/201123898466?text=السلام%20عليكم%20يا%20خالد%2C%20شفت%20منصتك%20وعايز%20استفسر"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="top-button developer-button"
+            title="تواصل مباشر عبر الواتساب مع مطور المنصة"
+        >
+            تواصل مع المطور
         </a>
 
-    </header>
+    </nav>
 
-    <main>
+</header>
 
-        <section class="hero">
+<main>
 
-            <div class="badge">خطوتك الأولى نحو المعرفة</div>
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="image-frame">
+
+                <img
+                    src="https://files.catbox.moe/blxhsf.png"
+                    alt="صورة المنصة التعليمية"
+                    class="header-img"
+                    width="160"
+                    height="160"
+                >
+
+            </div>
+
+            <div class="badge">
+                منصتك للتعلّم والمعرفة
+            </div>
 
             <h1>
-                اختر مجالك <span>التعليمي</span>
+                منصة تعليمية متكاملة
             </h1>
 
-            <p>
-                كل رحلة تعلّم تبدأ باختيار صحيح.
-                حدّد المجال الذي يناسبك، واكتشف الدروس
-                والشروحات التي تساعدك على تطوير معرفتك ومهاراتك.
+            <p class="hero-text">
+                اكتشف مجالات التعلّم المختلفة من خلال شروحات مبسطة،
+                وتعريفات واضحة، وأمثلة تطبيقية تساعدك على الفهم
+                واكتساب المعرفة بطريقة سهلة ومنظمة.
             </p>
 
             <div class="line"></div>
 
-        </section>
-
-        <section class="container" aria-label="الأقسام التعليمية">
-
-            <a href="eln7w.html"
-               class="card grammar-card"
-               aria-label="الدخول إلى دروس النحو العربي">
-
-                <div class="icon-frame">
-                    <img
-                        class="logo"
-                        src="https://img.icons8.com/fluency/96/book.png"
-                        alt=""
-                        width="78"
-                        height="78"
-                        loading="lazy"
-                    >
-                </div>
-
-                <h2>النحو العربي</h2>
-
-                <p>
-                    اكتشف قواعد اللغة العربية والإعراب،
-                    وتعلّم فهم التراكيب النحوية من خلال
-                    شروحات مبسطة وأمثلة واضحة.
-                </p>
-
-                <div class="tags" aria-label="محتوى القسم">
-                    <span class="tag">قواعد اللغة</span>
-                    <span class="tag">الإعراب</span>
-                    <span class="tag">أمثلة تطبيقية</span>
-                </div>
-
-                <span class="enter">
-                    دخول إلى الدروس
-                    <span class="arrow" aria-hidden="true">←</span>
-                </span>
-
+            <a href="choice.html" class="enter-button" title="الانتقال إلى الأقسام التعليمية">
+                دخول
             </a>
 
-            <a href="programming.html"
-               class="card programming-card"
-               aria-label="الدخول إلى دروس البرمجة">
-
-                <div class="icon-frame">
-                    <img
-                        class="logo"
-                        src="https://img.icons8.com/fluency/96/source-code.png"
-                        alt=""
-                        width="78"
-                        height="78"
-                        loading="lazy"
-                    >
-                </div>
-
-                <h2>البرمجة وتصميم المواقع</h2>
-
-                <p>
-                    ابدأ تعلّم بناء صفحات الويب باستخدام
-                    HTML وCSS، واكتشف أساسيات تصميم
-                    المواقع خطوة بخطوة.
-                </p>
-
-                <div class="tags" aria-label="محتوى القسم">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">تصميم المواقع</span>
-                </div>
-
-                <span class="enter">
-                    دخول إلى الدروس
-                    <span class="arrow" aria-hidden="true">←</span>
-                </span>
-
-            </a>
-
-        </section>
-
-        <section class="info" aria-label="معلومات عن المنصة">
-
-            <div>
-                <h2>تعلّم بطريقتك</h2>
-                <p>
-                    اختر القسم المناسب لك وابدأ من الأساسيات،
-                    وتقدّم في التعلّم خطوة بخطوة.
-                </p>
-            </div>
-
-            <div class="info-label">
-                المعرفة تبدأ بخطوة
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <div class="footer-name">
-            منصة تعليمية | خالد سامح
         </div>
 
-        <div class="footer-copy">
-            جميع الحقوق محفوظة © 2026
+    </section>
+
+    <section class="features" aria-label="مميزات المنصة">
+
+        <article class="feature">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <h2>
+                شرح مبسط
+            </h2>
+
+            <p>
+                فهم المعلومات والمفاهيم بطريقة واضحة وسهلة.
+            </p>
+
+        </article>
+
+        <article class="feature">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <h2>
+                تعريفات ومصطلحات
+            </h2>
+
+            <p>
+                التعرّف على أهم المفاهيم والمصطلحات التعليمية.
+            </p>
+
+        </article>
+
+        <article class="feature">
+
+            <div class="feature-number">
+                03
+            </div>
+
+            <h2>
+                تعلّم وتطبيق
+            </h2>
+
+            <p>
+                أمثلة وتطبيقات تساعد على فهم المعلومات.
+            </p>
+
+        </article>
+
+    </section>
+
+    <section class="info">
+
+        <div class="info-text">
+
+            <h2>
+                ابدأ رحلة التعلّم
+            </h2>
+
+            <p>
+                اختر المجال الذي تريد تعلّمه واستكشف محتواه.
+            </p>
+
         </div>
 
-    </footer>
+        <div class="info-label">
+            محتوى تعليمي
+        </div>
 
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+    </section>
 
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/service-worker.js")
-                    .catch(error => {
-                        console.error(
-                            "Service Worker registration failed:",
-                            error
-                        );
-                    });
-            });
-        }
-    </script>
+</main>
+
+<footer>
+
+    <div class="footer-name">
+        منصة تعليمية | خالد سامح
+    </div>
+
+    <div class="footer-copy">
+        جميع الحقوق محفوظة © 2026
+    </div>
+
+</footer>
+
+<script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    document.addEventListener('copy', e => e.preventDefault());
+
+    document.addEventListener('cut', e => e.preventDefault());
+
+    document.body.style.userSelect = 'none';
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("/service-worker.js")
+                .catch(error => {
+                    console.error("Service Worker registration failed:", error);
+                });
+        });
+    }
+</script>
 
 </body>
+
 </html>

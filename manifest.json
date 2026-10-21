@@ -1,6 +1,6 @@
 {
   "name": "منصه تعليميه",
-  "short_name": "دروس النحو",
+  "short_name": "منصه محور",
   "description": "منصة دروس واختبارات النحو لطلاب ثانية بكالوريا",
   "start_url": "https://khalid-sameh.vercel.app/",
   "scope": "https://khalid-sameh.vercel.app/",
